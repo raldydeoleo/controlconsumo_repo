@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TextView
+        android:background="@drawable/selector_input_text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/input_text"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtViewMaterial"
+        android:singleLine="true"
+        android:layout_marginRight="@dimen/dp_5"
+        android:layout_weight=".35" />
+    <TextView
+        android:background="@drawable/selector_input_text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/input_text"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_5"
+        android:id="@+id/txtViewLoteSap"
+        android:singleLine="true"
+        android:gravity="center"
+        android:layout_weight=".13" />
+   <TextView
+        android:background="@drawable/selector_input_text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/input_text"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_5"
+        android:id="@+id/txtViewLoteSup"
+        android:singleLine="true"
+        android:gravity="center"
+        android:layout_weight=".13" />
+    <TextView
+        android:background="@drawable/selector_input_text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/input_text"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/txtViewEntregado"
+        android:layout_marginRight="@dimen/dp_5"
+        android:singleLine="True"
+        android:layout_weight=".13" />
+    <TextView
+        android:background="@drawable/selector_input_text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/input_text"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/txtViewConsumido"
+        android:layout_marginRight="@dimen/dp_5"
+        android:singleLine="True"
+        android:layout_weight=".13" />
+    <TextView
+        android:background="@drawable/selector_input_text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/input_text"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/txtViewFinal"
+        android:layout_marginRight="@dimen/dp_5"
+        android:singleLine="True"
+        android:layout_weight=".13" />
+</LinearLayout>

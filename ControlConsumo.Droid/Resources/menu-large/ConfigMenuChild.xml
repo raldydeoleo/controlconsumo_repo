@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      android:actionBarStyle="@style/ActionbarStyle">
+  <item
+      android:id="@+id/Menu_A_delete"
+      android:orderInCategory="100"
+      android:showAsAction="always|withText"
+      android:title="@string/menu_Deleted"
+      android:icon="@android:drawable/ic_menu_delete"/>
+  <item
+     android:id="@+id/Menu_A_edit"
+     android:orderInCategory="100"
+     android:showAsAction="always|withText"
+     android:title="@string/menu_Edit"
+     android:icon="@android:drawable/ic_menu_edit"/>
+</menu>

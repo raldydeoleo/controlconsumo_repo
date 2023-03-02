@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SodiQubeDbModelStoreContainer" CdmEntityContainer="SodiQubeDbEntities">
+    <EntitySetMapping Name="Details">
+      <EntityTypeMapping TypeName="SodiQubeDbModel.Detail">
+        <MappingFragment StoreEntitySet="Details">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="SubTypeID" ColumnName="SubTypeID" />
+          <ScalarProperty Name="ParametroID" ColumnName="ParametroID" />
+          <ScalarProperty Name="Display" ColumnName="Display" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Machines">
+      <EntityTypeMapping TypeName="SodiQubeDbModel.Machine">
+        <MappingFragment StoreEntitySet="Machines">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parametros">
+      <EntityTypeMapping TypeName="SodiQubeDbModel.Parametro">
+        <MappingFragment StoreEntitySet="Parametros">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="SodiQubeDbModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QualityStats">
+      <EntityTypeMapping TypeName="SodiQubeDbModel.QualityStat">
+        <MappingFragment StoreEntitySet="QualityStats">
+          <ScalarProperty Name="SodimatId" ColumnName="SodimatId" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+          <ScalarProperty Name="RodNumber" ColumnName="RodNumber" />
+          <ScalarProperty Name="StatId" ColumnName="StatId" />
+          <ScalarProperty Name="TstFile" ColumnName="TstFile" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
+          <ScalarProperty Name="BrandCode" ColumnName="BrandCode" />
+          <ScalarProperty Name="BatchCode" ColumnName="BatchCode" />
+          <ScalarProperty Name="ReservedFlag" ColumnName="ReservedFlag" />
+          <ScalarProperty Name="ReservedCode" ColumnName="ReservedCode" />
+          <ScalarProperty Name="ReservedCounter" ColumnName="ReservedCounter" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="WeightCor" ColumnName="WeightCor" />
+          <ScalarProperty Name="Moisture1" ColumnName="Moisture1" />
+          <ScalarProperty Name="PressureDrop" ColumnName="PressureDrop" />
+          <ScalarProperty Name="PressureDrop_FE" ColumnName="PressureDrop_FE" />
+          <ScalarProperty Name="FilterVent" ColumnName="FilterVent" />
+          <ScalarProperty Name="PaperVent" ColumnName="PaperVent" />
+          <ScalarProperty Name="Moisture2" ColumnName="Moisture2" />
+          <ScalarProperty Name="Dia_Cir" ColumnName="Dia_Cir" />
+          <ScalarProperty Name="Ovality" ColumnName="Ovality" />
+          <ScalarProperty Name="Hardness" ColumnName="Hardness" />
+          <ScalarProperty Name="HardnessCor" ColumnName="HardnessCor" />
+          <ScalarProperty Name="HardnessDiff" ColumnName="HardnessDiff" />
+          <ScalarProperty Name="HardnessDiffCor" ColumnName="HardnessDiffCor" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="Dia_Cir2" ColumnName="Dia_Cir2" />
+          <ScalarProperty Name="Ovality2" ColumnName="Ovality2" />
+          <ScalarProperty Name="PressureDropSealed" ColumnName="PressureDropSealed" />
+          <ScalarProperty Name="FilterVentSealed" ColumnName="FilterVentSealed" />
+          <ScalarProperty Name="Dia_Cir3" ColumnName="Dia_Cir3" />
+          <ScalarProperty Name="Ovality3" ColumnName="Ovality3" />
+          <ScalarProperty Name="GlobalPorosity" ColumnName="GlobalPorosity" />
+          <ScalarProperty Name="LocalPorosity" ColumnName="LocalPorosity" />
+          <ScalarProperty Name="AreaPorosity" ColumnName="AreaPorosity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QualityTests">
+      <EntityTypeMapping TypeName="SodiQubeDbModel.QualityTest">
+        <MappingFragment StoreEntitySet="QualityTests">
+          <ScalarProperty Name="SodimatId" ColumnName="SodimatId" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+          <ScalarProperty Name="RodId" ColumnName="RodId" />
+          <ScalarProperty Name="IsLastRod" ColumnName="IsLastRod" />
+          <ScalarProperty Name="TstFile" ColumnName="TstFile" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
+          <ScalarProperty Name="BrandCode" ColumnName="BrandCode" />
+          <ScalarProperty Name="BatchCode" ColumnName="BatchCode" />
+          <ScalarProperty Name="ReservedFlag" ColumnName="ReservedFlag" />
+          <ScalarProperty Name="ReservedCode" ColumnName="ReservedCode" />
+          <ScalarProperty Name="ReservedCounter" ColumnName="ReservedCounter" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="WeightCor" ColumnName="WeightCor" />
+          <ScalarProperty Name="Moisture1" ColumnName="Moisture1" />
+          <ScalarProperty Name="PressureDrop" ColumnName="PressureDrop" />
+          <ScalarProperty Name="PressureDrop_FE" ColumnName="PressureDrop_FE" />
+          <ScalarProperty Name="FilterVent" ColumnName="FilterVent" />
+          <ScalarProperty Name="PaperVent" ColumnName="PaperVent" />
+          <ScalarProperty Name="Moisture2" ColumnName="Moisture2" />
+          <ScalarProperty Name="Dia_Cir" ColumnName="Dia_Cir" />
+          <ScalarProperty Name="Ovality" ColumnName="Ovality" />
+          <ScalarProperty Name="Hardness" ColumnName="Hardness" />
+          <ScalarProperty Name="HardnessCor" ColumnName="HardnessCor" />
+          <ScalarProperty Name="HardnessDiff" ColumnName="HardnessDiff" />
+          <ScalarProperty Name="HardnessDiffCor" ColumnName="HardnessDiffCor" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="Dia_Cir2" ColumnName="Dia_Cir2" />
+          <ScalarProperty Name="Ovality2" ColumnName="Ovality2" />
+          <ScalarProperty Name="PressureDropSealed" ColumnName="PressureDropSealed" />
+          <ScalarProperty Name="FilterVentSealed" ColumnName="FilterVentSealed" />
+          <ScalarProperty Name="Dia_Cir3" ColumnName="Dia_Cir3" />
+          <ScalarProperty Name="Ovality3" ColumnName="Ovality3" />
+          <ScalarProperty Name="GlobalPorosity" ColumnName="GlobalPorosity" />
+          <ScalarProperty Name="LocalPorosity" ColumnName="LocalPorosity" />
+          <ScalarProperty Name="AreaPorosity" ColumnName="AreaPorosity" />
+          <ScalarProperty Name="WeightOutOfBounds" ColumnName="WeightOutOfBounds" />
+          <ScalarProperty Name="DiameterOutOfBounds" ColumnName="DiameterOutOfBounds" />
+          <ScalarProperty Name="PressureDropOutOfBounds" ColumnName="PressureDropOutOfBounds" />
+          <ScalarProperty Name="WeightCommentOutOfBounds" ColumnName="WeightCommentOutOfBounds" />
+          <ScalarProperty Name="DiameterCommentOutOfBounds" ColumnName="DiameterCommentOutOfBounds" />
+          <ScalarProperty Name="PressureDropCommentOutOfBounds" ColumnName="PressureDropCommentOutOfBounds" />
+          <ScalarProperty Name="NotificationDatePressureDrop" ColumnName="NotificationDatePressureDrop" />
+          <ScalarProperty Name="NotificationEmail" ColumnName="NotificationEmail" />
+          <ScalarProperty Name="isPressureDropProcessed" ColumnName="isPressureDropProcessed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubTypes">
+      <EntityTypeMapping TypeName="SodiQubeDbModel.SubType">
+        <MappingFragment StoreEntitySet="SubTypes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TR_Historial">
+      <EntityTypeMapping TypeName="SodiQubeDbModel.TR_Historial">
+        <MappingFragment StoreEntitySet="TR_Historial">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fechaModificacionDatos" ColumnName="fechaModificacionDatos" />
+          <ScalarProperty Name="nombreUsuarioModificacion" ColumnName="nombreUsuarioModificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TR_QualityTestsSummary">
+      <EntityTypeMapping TypeName="SodiQubeDbModel.TR_QualityTestsSummary">
+        <MappingFragment StoreEntitySet="TR_QualityTestsSummary">
+          <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+          <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="SodimatId" ColumnName="SodimatId" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="Tiro" ColumnName="Tiro" />
+          <ScalarProperty Name="Diametro" ColumnName="Diametro" />
+          <ScalarProperty Name="Turno" ColumnName="Turno" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Fecha2" ColumnName="Fecha2" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="notificadoPeso" ColumnName="notificadoPeso" />
+          <ScalarProperty Name="notificadoDiametro" ColumnName="notificadoDiametro" />
+          <ScalarProperty Name="fechaNotificacionPeso" ColumnName="fechaNotificacionPeso" />
+          <ScalarProperty Name="fechaNotificacionDiametro" ColumnName="fechaNotificacionDiametro" />
+          <ScalarProperty Name="notificadoTiro" ColumnName="notificadoTiro" />
+          <ScalarProperty Name="fechaNotificacionTiro" ColumnName="fechaNotificacionTiro" />
+          <ScalarProperty Name="correoNotificado" ColumnName="correoNotificado" />
+          <ScalarProperty Name="comentarioNotificacionTiro" ColumnName="comentarioNotificacionTiro" />
+          <ScalarProperty Name="comentarioNotificacionDiametro" ColumnName="comentarioNotificacionDiametro" />
+          <ScalarProperty Name="comentarioNotificacionPeso" ColumnName="comentarioNotificacionPeso" />
+          <ScalarProperty Name="LciTiro" ColumnName="LciTiro" />
+          <ScalarProperty Name="LcsTiro" ColumnName="LcsTiro" />
+          <ScalarProperty Name="TargetTiro" ColumnName="TargetTiro" />
+          <ScalarProperty Name="LciPeso" ColumnName="LciPeso" />
+          <ScalarProperty Name="LcsPeso" ColumnName="LcsPeso" />
+          <ScalarProperty Name="TargetPeso" ColumnName="TargetPeso" />
+          <ScalarProperty Name="LeiPeso" ColumnName="LeiPeso" />
+          <ScalarProperty Name="LesPeso" ColumnName="LesPeso" />
+          <ScalarProperty Name="LciDiametro" ColumnName="LciDiametro" />
+          <ScalarProperty Name="LcsDiametro" ColumnName="LcsDiametro" />
+          <ScalarProperty Name="TargetDiametro" ColumnName="TargetDiametro" />
+          <ScalarProperty Name="LeiDiametro" ColumnName="LeiDiametro" />
+          <ScalarProperty Name="LesDiametro" ColumnName="LesDiametro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Turnoes">
+      <EntityTypeMapping TypeName="SodiQubeDbModel.Turno">
+        <MappingFragment StoreEntitySet="Turno">
+          <ScalarProperty Name="IDTurno" ColumnName="IDTurno" />
+          <ScalarProperty Name="Inicio" ColumnName="Inicio" />
+          <ScalarProperty Name="Fin" ColumnName="Fin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Types">
+      <EntityTypeMapping TypeName="SodiQubeDbModel.Type">
+        <MappingFragment StoreEntitySet="Types">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QualityProceseds">
+      <EntityTypeMapping TypeName="SodiQubeDbModel.QualityProcesed">
+        <MappingFragment StoreEntitySet="QualityProcesed">
+          <ScalarProperty Name="SodimatId" ColumnName="SodimatId" />
+          <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+          <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="Tiro" ColumnName="Tiro" />
+          <ScalarProperty Name="Diametro" ColumnName="Diametro" />
+          <ScalarProperty Name="RangoPeso" ColumnName="RangoPeso" />
+          <ScalarProperty Name="RangoTiro" ColumnName="RangoTiro" />
+          <ScalarProperty Name="RangoDiametro" ColumnName="RangoDiametro" />
+          <ScalarProperty Name="Turno" ColumnName="Turno" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Fecha2" ColumnName="Fecha2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QualityProcesedDetails">
+      <EntityTypeMapping TypeName="SodiQubeDbModel.QualityProcesedDetail">
+        <MappingFragment StoreEntitySet="QualityProcesedDetail">
+          <ScalarProperty Name="SodimatId" ColumnName="SodimatId" />
+          <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+          <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="Tiro" ColumnName="Tiro" />
+          <ScalarProperty Name="Diametro" ColumnName="Diametro" />
+          <ScalarProperty Name="Turno" ColumnName="Turno" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_ParametrosProductos">
+      <EntityTypeMapping TypeName="SodiQubeDbModel.V_ParametrosProductos">
+        <MappingFragment StoreEntitySet="V_ParametrosProductos">
+          <ScalarProperty Name="Product_ID" ColumnName="Product ID" />
+          <ScalarProperty Name="Filler_Name" ColumnName="Filler Name" />
+          <ScalarProperty Name="Type_ID" ColumnName="Type ID" />
+          <ScalarProperty Name="Subtype_ID" ColumnName="Subtype ID" />
+          <ScalarProperty Name="Parameter_ID" ColumnName="Parameter ID" />
+          <ScalarProperty Name="Parameter_Description" ColumnName="Parameter Description" />
+          <ScalarProperty Name="Display" ColumnName="Display" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_ProductosNotificados">
+      <EntityTypeMapping TypeName="SodiQubeDbModel.V_ProductosNotificados">
+        <MappingFragment StoreEntitySet="V_ProductosNotificados">
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Turno" ColumnName="Turno" />
+          <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+          <ScalarProperty Name="Producto" ColumnName="Producto" />
+          <ScalarProperty Name="Máquina" ColumnName="Máquina" />
+          <ScalarProperty Name="SodiQube" ColumnName="SodiQube" />
+          <ScalarProperty Name="Diametro" ColumnName="Diametro" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="Tiro" ColumnName="Tiro" />
+          <ScalarProperty Name="Notificación_de_Tiro" ColumnName="Notificación de Tiro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_QualityProcesed">
+      <EntityTypeMapping TypeName="SodiQubeDbModel.V_QualityProcesed">
+        <MappingFragment StoreEntitySet="V_QualityProcesed">
+          <ScalarProperty Name="SodimatId" ColumnName="SodimatId" />
+          <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+          <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="Tiro" ColumnName="Tiro" />
+          <ScalarProperty Name="Diametro" ColumnName="Diametro" />
+          <ScalarProperty Name="RangoPeso" ColumnName="RangoPeso" />
+          <ScalarProperty Name="RangoTiro" ColumnName="RangoTiro" />
+          <ScalarProperty Name="RangoDiametro" ColumnName="RangoDiametro" />
+          <ScalarProperty Name="Turno" ColumnName="Turno" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Fecha2" ColumnName="Fecha2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_QualitystatsLast3moths">
+      <EntityTypeMapping TypeName="SodiQubeDbModel.V_QualitystatsLast3moths">
+        <MappingFragment StoreEntitySet="V_QualitystatsLast3moths">
+          <ScalarProperty Name="SodimatId" ColumnName="SodimatId" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+          <ScalarProperty Name="RodNumber" ColumnName="RodNumber" />
+          <ScalarProperty Name="StatId" ColumnName="StatId" />
+          <ScalarProperty Name="TstFile" ColumnName="TstFile" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
+          <ScalarProperty Name="BrandCode" ColumnName="BrandCode" />
+          <ScalarProperty Name="BatchCode" ColumnName="BatchCode" />
+          <ScalarProperty Name="ReservedFlag" ColumnName="ReservedFlag" />
+          <ScalarProperty Name="ReservedCode" ColumnName="ReservedCode" />
+          <ScalarProperty Name="ReservedCounter" ColumnName="ReservedCounter" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="WeightCor" ColumnName="WeightCor" />
+          <ScalarProperty Name="Moisture1" ColumnName="Moisture1" />
+          <ScalarProperty Name="PressureDrop" ColumnName="PressureDrop" />
+          <ScalarProperty Name="PressureDrop_FE" ColumnName="PressureDrop_FE" />
+          <ScalarProperty Name="FilterVent" ColumnName="FilterVent" />
+          <ScalarProperty Name="PaperVent" ColumnName="PaperVent" />
+          <ScalarProperty Name="Moisture2" ColumnName="Moisture2" />
+          <ScalarProperty Name="Dia_Cir" ColumnName="Dia_Cir" />
+          <ScalarProperty Name="Ovality" ColumnName="Ovality" />
+          <ScalarProperty Name="Hardness" ColumnName="Hardness" />
+          <ScalarProperty Name="HardnessCor" ColumnName="HardnessCor" />
+          <ScalarProperty Name="HardnessDiff" ColumnName="HardnessDiff" />
+          <ScalarProperty Name="HardnessDiffCor" ColumnName="HardnessDiffCor" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="Dia_Cir2" ColumnName="Dia_Cir2" />
+          <ScalarProperty Name="Ovality2" ColumnName="Ovality2" />
+          <ScalarProperty Name="PressureDropSealed" ColumnName="PressureDropSealed" />
+          <ScalarProperty Name="FilterVentSealed" ColumnName="FilterVentSealed" />
+          <ScalarProperty Name="Dia_Cir3" ColumnName="Dia_Cir3" />
+          <ScalarProperty Name="Ovality3" ColumnName="Ovality3" />
+          <ScalarProperty Name="GlobalPorosity" ColumnName="GlobalPorosity" />
+          <ScalarProperty Name="LocalPorosity" ColumnName="LocalPorosity" />
+          <ScalarProperty Name="AreaPorosity" ColumnName="AreaPorosity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_QualitytestLast3moths">
+      <EntityTypeMapping TypeName="SodiQubeDbModel.V_QualitytestLast3moths">
+        <MappingFragment StoreEntitySet="V_QualitytestLast3moths">
+          <ScalarProperty Name="SodimatId" ColumnName="SodimatId" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+          <ScalarProperty Name="RodId" ColumnName="RodId" />
+          <ScalarProperty Name="IsLastRod" ColumnName="IsLastRod" />
+          <ScalarProperty Name="TstFile" ColumnName="TstFile" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
+          <ScalarProperty Name="BrandCode" ColumnName="BrandCode" />
+          <ScalarProperty Name="BatchCode" ColumnName="BatchCode" />
+          <ScalarProperty Name="ReservedFlag" ColumnName="ReservedFlag" />
+          <ScalarProperty Name="ReservedCode" ColumnName="ReservedCode" />
+          <ScalarProperty Name="ReservedCounter" ColumnName="ReservedCounter" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="WeightCor" ColumnName="WeightCor" />
+          <ScalarProperty Name="Moisture1" ColumnName="Moisture1" />
+          <ScalarProperty Name="PressureDrop" ColumnName="PressureDrop" />
+          <ScalarProperty Name="PressureDrop_FE" ColumnName="PressureDrop_FE" />
+          <ScalarProperty Name="FilterVent" ColumnName="FilterVent" />
+          <ScalarProperty Name="PaperVent" ColumnName="PaperVent" />
+          <ScalarProperty Name="Moisture2" ColumnName="Moisture2" />
+          <ScalarProperty Name="Dia_Cir" ColumnName="Dia_Cir" />
+          <ScalarProperty Name="Ovality" ColumnName="Ovality" />
+          <ScalarProperty Name="Hardness" ColumnName="Hardness" />
+          <ScalarProperty Name="HardnessCor" ColumnName="HardnessCor" />
+          <ScalarProperty Name="HardnessDiff" ColumnName="HardnessDiff" />
+          <ScalarProperty Name="HardnessDiffCor" ColumnName="HardnessDiffCor" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="Dia_Cir2" ColumnName="Dia_Cir2" />
+          <ScalarProperty Name="Ovality2" ColumnName="Ovality2" />
+          <ScalarProperty Name="PressureDropSealed" ColumnName="PressureDropSealed" />
+          <ScalarProperty Name="FilterVentSealed" ColumnName="FilterVentSealed" />
+          <ScalarProperty Name="Dia_Cir3" ColumnName="Dia_Cir3" />
+          <ScalarProperty Name="Ovality3" ColumnName="Ovality3" />
+          <ScalarProperty Name="GlobalPorosity" ColumnName="GlobalPorosity" />
+          <ScalarProperty Name="LocalPorosity" ColumnName="LocalPorosity" />
+          <ScalarProperty Name="AreaPorosity" ColumnName="AreaPorosity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_QualityTestsLast5Months">
+      <EntityTypeMapping TypeName="SodiQubeDbModel.V_QualityTestsLast5Months">
+        <MappingFragment StoreEntitySet="V_QualityTestsLast5Months">
+          <ScalarProperty Name="SodimatId" ColumnName="SodimatId" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+          <ScalarProperty Name="RodId" ColumnName="RodId" />
+          <ScalarProperty Name="IsLastRod" ColumnName="IsLastRod" />
+          <ScalarProperty Name="TstFile" ColumnName="TstFile" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
+          <ScalarProperty Name="BrandCode" ColumnName="BrandCode" />
+          <ScalarProperty Name="BatchCode" ColumnName="BatchCode" />
+          <ScalarProperty Name="ReservedFlag" ColumnName="ReservedFlag" />
+          <ScalarProperty Name="ReservedCode" ColumnName="ReservedCode" />
+          <ScalarProperty Name="ReservedCounter" ColumnName="ReservedCounter" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="WeightCor" ColumnName="WeightCor" />
+          <ScalarProperty Name="Moisture1" ColumnName="Moisture1" />
+          <ScalarProperty Name="PressureDrop" ColumnName="PressureDrop" />
+          <ScalarProperty Name="PressureDrop_FE" ColumnName="PressureDrop_FE" />
+          <ScalarProperty Name="FilterVent" ColumnName="FilterVent" />
+          <ScalarProperty Name="PaperVent" ColumnName="PaperVent" />
+          <ScalarProperty Name="Moisture2" ColumnName="Moisture2" />
+          <ScalarProperty Name="Dia_Cir" ColumnName="Dia_Cir" />
+          <ScalarProperty Name="Ovality" ColumnName="Ovality" />
+          <ScalarProperty Name="Hardness" ColumnName="Hardness" />
+          <ScalarProperty Name="HardnessCor" ColumnName="HardnessCor" />
+          <ScalarProperty Name="HardnessDiff" ColumnName="HardnessDiff" />
+          <ScalarProperty Name="HardnessDiffCor" ColumnName="HardnessDiffCor" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="Dia_Cir2" ColumnName="Dia_Cir2" />
+          <ScalarProperty Name="Ovality2" ColumnName="Ovality2" />
+          <ScalarProperty Name="PressureDropSealed" ColumnName="PressureDropSealed" />
+          <ScalarProperty Name="FilterVentSealed" ColumnName="FilterVentSealed" />
+          <ScalarProperty Name="Dia_Cir3" ColumnName="Dia_Cir3" />
+          <ScalarProperty Name="Ovality3" ColumnName="Ovality3" />
+          <ScalarProperty Name="GlobalPorosity" ColumnName="GlobalPorosity" />
+          <ScalarProperty Name="LocalPorosity" ColumnName="LocalPorosity" />
+          <ScalarProperty Name="AreaPorosity" ColumnName="AreaPorosity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_QualityTestsLast6Months">
+      <EntityTypeMapping TypeName="SodiQubeDbModel.V_QualityTestsLast6Months">
+        <MappingFragment StoreEntitySet="V_QualityTestsLast6Months">
+          <ScalarProperty Name="Año" ColumnName="Año" />
+          <ScalarProperty Name="Mes" ColumnName="Mes" />
+          <ScalarProperty Name="Semana" ColumnName="Semana" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Fecha_y_hora" ColumnName="Fecha y hora" />
+          <ScalarProperty Name="Turno" ColumnName="Turno" />
+          <ScalarProperty Name="No__Sodiqube" ColumnName="No. Sodiqube" />
+          <ScalarProperty Name="Código_de_Filler" ColumnName="Código de Filler" />
+          <ScalarProperty Name="Filler" ColumnName="Filler" />
+          <ScalarProperty Name="Máquina" ColumnName="Máquina" />
+          <ScalarProperty Name="Diámetro__mm_" ColumnName="Diámetro (mm)" />
+          <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+          <ScalarProperty Name="Notificación_diámetro" ColumnName="Notificación diámetro" />
+          <ScalarProperty Name="Peso__gr_" ColumnName="Peso (gr)" />
+          <ScalarProperty Name="Notificación_de_peso" ColumnName="Notificación de peso" />
+          <ScalarProperty Name="Tiro__mm_h2O_" ColumnName="Tiro (mm h2O)" />
+          <ScalarProperty Name="Notificación_de_tiro" ColumnName="Notificación de tiro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_ReporteDatosIndividuales">
+      <EntityTypeMapping TypeName="SodiQubeDbModel.V_ReporteDatosIndividuales">
+        <MappingFragment StoreEntitySet="V_ReporteDatosIndividuales">
+          <ScalarProperty Name="Año" ColumnName="Año" />
+          <ScalarProperty Name="Mes" ColumnName="Mes" />
+          <ScalarProperty Name="Semana" ColumnName="Semana" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Fecha_y_hora" ColumnName="Fecha y hora" />
+          <ScalarProperty Name="Turno" ColumnName="Turno" />
+          <ScalarProperty Name="No__Sodiqube" ColumnName="No. Sodiqube" />
+          <ScalarProperty Name="Producto" ColumnName="Producto" />
+          <ScalarProperty Name="Máquina" ColumnName="Máquina" />
+          <ScalarProperty Name="Diámetro" ColumnName="Diámetro" />
+          <ScalarProperty Name="Notificación_diámetro" ColumnName="Notificación diámetro" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="Notificación_de_peso" ColumnName="Notificación de peso" />
+          <ScalarProperty Name="Tiro" ColumnName="Tiro" />
+          <ScalarProperty Name="Notificación_de_tiro" ColumnName="Notificación de tiro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_ReporteMuestras">
+      <EntityTypeMapping TypeName="SodiQubeDbModel.V_ReporteMuestras">
+        <MappingFragment StoreEntitySet="V_ReporteMuestras">
+          <ScalarProperty Name="Año" ColumnName="Año" />
+          <ScalarProperty Name="Mes" ColumnName="Mes" />
+          <ScalarProperty Name="Semana" ColumnName="Semana" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Fecha_y_hora" ColumnName="Fecha y hora" />
+          <ScalarProperty Name="Turno" ColumnName="Turno" />
+          <ScalarProperty Name="Máquina" ColumnName="Máquina" />
+          <ScalarProperty Name="Código_de_Filler" ColumnName="Código de Filler" />
+          <ScalarProperty Name="Filler" ColumnName="Filler" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Variable" ColumnName="Variable" />
+          <ScalarProperty Name="Límite_Especificación_Inferior" ColumnName="Límite Especificación Inferior" />
+          <ScalarProperty Name="Límite_Especificación_Superior" ColumnName="Límite Especificación Superior" />
+          <ScalarProperty Name="Media" ColumnName="Media" />
+          <ScalarProperty Name="Límite_Control_Inferior" ColumnName="Límite Control Inferior" />
+          <ScalarProperty Name="Límite_Control_Superior" ColumnName="Límite Control Superior" />
+          <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+          <ScalarProperty Name="No__Sodiqube" ColumnName="No. Sodiqube" />
+          <ScalarProperty Name="C_Fue_notificado_" ColumnName="¿Fue notificado?" />
+          <ScalarProperty Name="Tipo_de_notificación" ColumnName="Tipo de notificación" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="InsertarNuevosRegistros" FunctionName="SodiQubeDbModel.Store.InsertarNuevosRegistros" />
+    <FunctionImportMapping FunctionImportName="InsertarRegistrosVerificados_OLD_" FunctionName="SodiQubeDbModel.Store.InsertarRegistrosVerificados_OLD_" />
+    <FunctionImportMapping FunctionImportName="VerificarLimiteInferiorDiametro" FunctionName="SodiQubeDbModel.Store.VerificarLimiteInferiorDiametro" />
+    <FunctionImportMapping FunctionImportName="VerificarLimiteInferiorPeso" FunctionName="SodiQubeDbModel.Store.VerificarLimiteInferiorPeso" />
+    <FunctionImportMapping FunctionImportName="VerificarLimiteInferiorTiro" FunctionName="SodiQubeDbModel.Store.VerificarLimiteInferiorTiro" />
+    <FunctionImportMapping FunctionImportName="VerificarLimiteSuperiorDiametro" FunctionName="SodiQubeDbModel.Store.VerificarLimiteSuperiorDiametro" />
+    <FunctionImportMapping FunctionImportName="VerificarLimiteSuperiorPeso" FunctionName="SodiQubeDbModel.Store.VerificarLimiteSuperiorPeso" />
+    <FunctionImportMapping FunctionImportName="VerificarLimiteSuperiorTiro" FunctionName="SodiQubeDbModel.Store.VerificarLimiteSuperiorTiro" />
+    <FunctionImportMapping FunctionImportName="VerificarTiroDatosIndividuales" FunctionName="SodiQubeDbModel.Store.VerificarTiroDatosIndividuales" />
+  </EntityContainerMapping>
+</Mapping>

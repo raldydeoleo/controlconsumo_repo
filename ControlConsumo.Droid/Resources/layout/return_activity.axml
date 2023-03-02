@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TextView
+        android:background="@drawable/selector_input_text"
+        android:layout_margin="@dimen/dp_8"
+        android:textSize="@dimen/dp_20"
+        android:textStyle="bold"
+        android:layout_weight=".05"
+        android:gravity="center"
+        android:text="@string/ReturnTitle"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_weight=".95"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0">
+        <ListView
+            android:scrollbars="vertical"
+            android:verticalScrollbarPosition="right"
+            android:layout_margin="@dimen/dp_1"
+            android:background="@android:color/transparent"
+            android:cacheColorHint="@android:color/transparent"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="@dimen/dp_1"
+            android:listSelector="@drawable/selector_normal_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listDevolucion"
+            android:descendantFocusability="afterDescendants"
+            android:focusable="false"
+            android:focusableInTouchMode="false" />
+    </LinearLayout>
+</LinearLayout>

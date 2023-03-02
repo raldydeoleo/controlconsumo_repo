@@ -1,0 +1,867 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SodiQubeDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Details">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="TypeID" />
+      <PropertyRef Name="SubTypeID" />
+      <PropertyRef Name="ParametroID" />
+    </Key>
+    <Property Name="ProductID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TypeID" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="SubTypeID" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="ParametroID" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Display" Type="bit" Nullable="false" />
+    <Property Name="Value" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Machines">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="MachineCode" Type="nvarchar" MaxLength="22" Nullable="false" />
+    <Property Name="CreateDate" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Parametros">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateDate" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ProductCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CreateDate" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QualityStats">
+    <Key>
+      <PropertyRef Name="SodimatId" />
+      <PropertyRef Name="DateTime" />
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="RodNumber" />
+      <PropertyRef Name="StatId" />
+    </Key>
+    <Property Name="SodimatId" Type="smallint" Nullable="false" />
+    <Property Name="DateTime" Type="datetime" Nullable="false" />
+    <Property Name="CycleId" Type="smallint" Nullable="false" />
+    <Property Name="RodNumber" Type="smallint" Nullable="false" />
+    <Property Name="StatId" Type="smallint" Nullable="false" />
+    <Property Name="TstFile" Type="nvarchar" MaxLength="40" />
+    <Property Name="ProductCode" Type="nvarchar" MaxLength="40" />
+    <Property Name="MachineCode" Type="nvarchar" MaxLength="22" />
+    <Property Name="BrandCode" Type="int" />
+    <Property Name="BatchCode" Type="nvarchar" MaxLength="22" />
+    <Property Name="ReservedFlag" Type="smallint" />
+    <Property Name="ReservedCode" Type="int" />
+    <Property Name="ReservedCounter" Type="int" />
+    <Property Name="Weight" Type="real" />
+    <Property Name="WeightCor" Type="real" />
+    <Property Name="Moisture1" Type="real" />
+    <Property Name="PressureDrop" Type="real" />
+    <Property Name="PressureDrop_FE" Type="real" />
+    <Property Name="FilterVent" Type="real" />
+    <Property Name="PaperVent" Type="real" />
+    <Property Name="Moisture2" Type="real" />
+    <Property Name="Dia_Cir" Type="real" />
+    <Property Name="Ovality" Type="real" />
+    <Property Name="Hardness" Type="real" />
+    <Property Name="HardnessCor" Type="real" />
+    <Property Name="HardnessDiff" Type="real" />
+    <Property Name="HardnessDiffCor" Type="real" />
+    <Property Name="Length" Type="real" />
+    <Property Name="Dia_Cir2" Type="real" />
+    <Property Name="Ovality2" Type="real" />
+    <Property Name="PressureDropSealed" Type="real" />
+    <Property Name="FilterVentSealed" Type="real" />
+    <Property Name="Dia_Cir3" Type="real" />
+    <Property Name="Ovality3" Type="real" />
+    <Property Name="GlobalPorosity" Type="real" />
+    <Property Name="LocalPorosity" Type="real" />
+    <Property Name="AreaPorosity" Type="real" />
+  </EntityType>
+  <EntityType Name="QualityTests">
+    <Key>
+      <PropertyRef Name="SodimatId" />
+      <PropertyRef Name="DateTime" />
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="RodId" />
+      <PropertyRef Name="IsLastRod" />
+    </Key>
+    <Property Name="SodimatId" Type="smallint" Nullable="false" />
+    <Property Name="DateTime" Type="datetime" Nullable="false" />
+    <Property Name="CycleId" Type="smallint" Nullable="false" />
+    <Property Name="RodId" Type="smallint" Nullable="false" />
+    <Property Name="IsLastRod" Type="smallint" Nullable="false" />
+    <Property Name="TstFile" Type="nvarchar" MaxLength="40" />
+    <Property Name="ProductCode" Type="nvarchar" MaxLength="40" />
+    <Property Name="MachineCode" Type="nvarchar" MaxLength="22" />
+    <Property Name="BrandCode" Type="int" />
+    <Property Name="BatchCode" Type="nvarchar" MaxLength="22" />
+    <Property Name="ReservedFlag" Type="smallint" />
+    <Property Name="ReservedCode" Type="int" />
+    <Property Name="ReservedCounter" Type="int" />
+    <Property Name="Weight" Type="real" />
+    <Property Name="WeightCor" Type="real" />
+    <Property Name="Moisture1" Type="real" />
+    <Property Name="PressureDrop" Type="real" />
+    <Property Name="PressureDrop_FE" Type="real" />
+    <Property Name="FilterVent" Type="real" />
+    <Property Name="PaperVent" Type="real" />
+    <Property Name="Moisture2" Type="real" />
+    <Property Name="Dia_Cir" Type="real" />
+    <Property Name="Ovality" Type="real" />
+    <Property Name="Hardness" Type="real" />
+    <Property Name="HardnessCor" Type="real" />
+    <Property Name="HardnessDiff" Type="real" />
+    <Property Name="HardnessDiffCor" Type="real" />
+    <Property Name="Length" Type="real" />
+    <Property Name="Dia_Cir2" Type="real" />
+    <Property Name="Ovality2" Type="real" />
+    <Property Name="PressureDropSealed" Type="real" />
+    <Property Name="FilterVentSealed" Type="real" />
+    <Property Name="Dia_Cir3" Type="real" />
+    <Property Name="Ovality3" Type="real" />
+    <Property Name="GlobalPorosity" Type="real" />
+    <Property Name="LocalPorosity" Type="real" />
+    <Property Name="AreaPorosity" Type="real" />
+    <Property Name="WeightOutOfBounds" Type="bit" />
+    <Property Name="DiameterOutOfBounds" Type="bit" />
+    <Property Name="PressureDropOutOfBounds" Type="bit" />
+    <Property Name="WeightCommentOutOfBounds" Type="varchar" MaxLength="50" />
+    <Property Name="DiameterCommentOutOfBounds" Type="varchar" MaxLength="50" />
+    <Property Name="PressureDropCommentOutOfBounds" Type="varchar" MaxLength="50" />
+    <Property Name="NotificationDatePressureDrop" Type="datetime" />
+    <Property Name="NotificationEmail" Type="varchar" MaxLength="50" />
+    <Property Name="isPressureDropProcessed" Type="bit" />
+  </EntityType>
+  <EntityType Name="SubTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TR_Historial">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fechaModificacionDatos" Type="datetime" Nullable="false" />
+    <Property Name="nombreUsuarioModificacion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TR_QualityTestsSummary">
+    <Key>
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="MachineCode" />
+      <PropertyRef Name="Product" />
+      <PropertyRef Name="SodimatId" />
+      <PropertyRef Name="Fecha2" />
+    </Key>
+    <Property Name="CycleId" Type="smallint" Nullable="false" />
+    <Property Name="MachineCode" Type="nvarchar" MaxLength="22" Nullable="false" />
+    <Property Name="Product" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="SodimatId" Type="smallint" Nullable="false" />
+    <Property Name="Peso" Type="float" />
+    <Property Name="Tiro" Type="float" />
+    <Property Name="Diametro" Type="float" />
+    <Property Name="Turno" Type="tinyint" />
+    <Property Name="Fecha" Type="smalldatetime" Nullable="false" />
+    <Property Name="Fecha2" Type="datetime" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="notificadoPeso" Type="bit" />
+    <Property Name="notificadoDiametro" Type="bit" />
+    <Property Name="fechaNotificacionPeso" Type="datetime" />
+    <Property Name="fechaNotificacionDiametro" Type="datetime" />
+    <Property Name="notificadoTiro" Type="bit" />
+    <Property Name="fechaNotificacionTiro" Type="datetime" />
+    <Property Name="correoNotificado" Type="varchar" MaxLength="100" />
+    <Property Name="comentarioNotificacionTiro" Type="varchar" MaxLength="50" />
+    <Property Name="comentarioNotificacionDiametro" Type="varchar" MaxLength="50" />
+    <Property Name="comentarioNotificacionPeso" Type="varchar" MaxLength="50" />
+    <Property Name="LciTiro" Type="float" />
+    <Property Name="LcsTiro" Type="float" />
+    <Property Name="TargetTiro" Type="float" />
+    <Property Name="LciPeso" Type="float" />
+    <Property Name="LcsPeso" Type="float" />
+    <Property Name="TargetPeso" Type="float" />
+    <Property Name="LeiPeso" Type="float" />
+    <Property Name="LesPeso" Type="float" />
+    <Property Name="LciDiametro" Type="float" />
+    <Property Name="LcsDiametro" Type="float" />
+    <Property Name="TargetDiametro" Type="float" />
+    <Property Name="LeiDiametro" Type="float" />
+    <Property Name="LesDiametro" Type="float" />
+  </EntityType>
+  <EntityType Name="Turno">
+    <Key>
+      <PropertyRef Name="IDTurno" />
+    </Key>
+    <Property Name="IDTurno" Type="tinyint" Nullable="false" />
+    <Property Name="Inicio" Type="tinyint" Nullable="false" />
+    <Property Name="Fin" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Types">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SodiQubeDb.dbo.QualityProcesed' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="QualityProcesed">
+    <Key>
+      <PropertyRef Name="SodimatId" />
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="MachineCode" />
+      <PropertyRef Name="Product" />
+    </Key>
+    <Property Name="SodimatId" Type="smallint" Nullable="false" />
+    <Property Name="CycleId" Type="smallint" Nullable="false" />
+    <Property Name="MachineCode" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Product" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Peso" Type="float" />
+    <Property Name="Tiro" Type="float" />
+    <Property Name="Diametro" Type="float" />
+    <Property Name="RangoPeso" Type="real" />
+    <Property Name="RangoTiro" Type="real" />
+    <Property Name="RangoDiametro" Type="real" />
+    <Property Name="Turno" Type="tinyint" />
+    <Property Name="Fecha" Type="smalldatetime" />
+    <Property Name="Fecha2" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SodiQubeDb.dbo.QualityProcesedDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="QualityProcesedDetail">
+    <Key>
+      <PropertyRef Name="SodimatId" />
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="MachineCode" />
+      <PropertyRef Name="Product" />
+    </Key>
+    <Property Name="SodimatId" Type="smallint" Nullable="false" />
+    <Property Name="CycleId" Type="smallint" Nullable="false" />
+    <Property Name="MachineCode" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Product" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Peso" Type="real" />
+    <Property Name="Tiro" Type="real" />
+    <Property Name="Diametro" Type="real" />
+    <Property Name="Turno" Type="tinyint" />
+    <Property Name="Fecha" Type="smalldatetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SodiQubeDb.dbo.V_ParametrosProductos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="V_ParametrosProductos">
+    <Key>
+      <PropertyRef Name="Product ID" />
+      <PropertyRef Name="Filler Name" />
+      <PropertyRef Name="Type ID" />
+      <PropertyRef Name="Subtype ID" />
+      <PropertyRef Name="Parameter ID" />
+      <PropertyRef Name="Parameter Description" />
+      <PropertyRef Name="Display" />
+      <PropertyRef Name="Value" />
+    </Key>
+    <Property Name="Product ID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Filler Name" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Type ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Subtype ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Parameter ID" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Parameter Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Display" Type="bit" Nullable="false" />
+    <Property Name="Value" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SodiQubeDb.dbo.V_ProductosNotificados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="V_ProductosNotificados">
+    <Key>
+      <PropertyRef Name="Fecha" />
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="Producto" />
+      <PropertyRef Name="Máquina" />
+      <PropertyRef Name="SodiQube" />
+    </Key>
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Turno" Type="tinyint" />
+    <Property Name="CycleId" Type="smallint" Nullable="false" />
+    <Property Name="Producto" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Máquina" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="SodiQube" Type="smallint" Nullable="false" />
+    <Property Name="Diametro" Type="float" />
+    <Property Name="Peso" Type="float" />
+    <Property Name="Tiro" Type="float" />
+    <Property Name="Notificación de Tiro" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SodiQubeDb.dbo.V_QualityProcesed' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="V_QualityProcesed">
+    <Key>
+      <PropertyRef Name="SodimatId" />
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="MachineCode" />
+      <PropertyRef Name="Product" />
+    </Key>
+    <Property Name="SodimatId" Type="smallint" Nullable="false" />
+    <Property Name="CycleId" Type="smallint" Nullable="false" />
+    <Property Name="MachineCode" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Product" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Peso" Type="float" />
+    <Property Name="Tiro" Type="float" />
+    <Property Name="Diametro" Type="float" />
+    <Property Name="RangoPeso" Type="real" />
+    <Property Name="RangoTiro" Type="real" />
+    <Property Name="RangoDiametro" Type="real" />
+    <Property Name="Turno" Type="tinyint" />
+    <Property Name="Fecha" Type="smalldatetime" />
+    <Property Name="Fecha2" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SodiQubeDb.dbo.V_QualitystatsLast3moths' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="V_QualitystatsLast3moths">
+    <Key>
+      <PropertyRef Name="SodimatId" />
+      <PropertyRef Name="DateTime" />
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="RodNumber" />
+      <PropertyRef Name="StatId" />
+    </Key>
+    <Property Name="SodimatId" Type="smallint" Nullable="false" />
+    <Property Name="DateTime" Type="datetime" Nullable="false" />
+    <Property Name="CycleId" Type="smallint" Nullable="false" />
+    <Property Name="RodNumber" Type="smallint" Nullable="false" />
+    <Property Name="StatId" Type="smallint" Nullable="false" />
+    <Property Name="TstFile" Type="nvarchar" MaxLength="40" />
+    <Property Name="ProductCode" Type="nvarchar" MaxLength="40" />
+    <Property Name="MachineCode" Type="nvarchar" MaxLength="8" />
+    <Property Name="BrandCode" Type="int" />
+    <Property Name="BatchCode" Type="nvarchar" MaxLength="22" />
+    <Property Name="ReservedFlag" Type="smallint" />
+    <Property Name="ReservedCode" Type="int" />
+    <Property Name="ReservedCounter" Type="int" />
+    <Property Name="Weight" Type="real" />
+    <Property Name="WeightCor" Type="real" />
+    <Property Name="Moisture1" Type="real" />
+    <Property Name="PressureDrop" Type="real" />
+    <Property Name="PressureDrop_FE" Type="real" />
+    <Property Name="FilterVent" Type="real" />
+    <Property Name="PaperVent" Type="real" />
+    <Property Name="Moisture2" Type="real" />
+    <Property Name="Dia_Cir" Type="real" />
+    <Property Name="Ovality" Type="real" />
+    <Property Name="Hardness" Type="real" />
+    <Property Name="HardnessCor" Type="real" />
+    <Property Name="HardnessDiff" Type="real" />
+    <Property Name="HardnessDiffCor" Type="real" />
+    <Property Name="Length" Type="real" />
+    <Property Name="Dia_Cir2" Type="real" />
+    <Property Name="Ovality2" Type="real" />
+    <Property Name="PressureDropSealed" Type="real" />
+    <Property Name="FilterVentSealed" Type="real" />
+    <Property Name="Dia_Cir3" Type="real" />
+    <Property Name="Ovality3" Type="real" />
+    <Property Name="GlobalPorosity" Type="real" />
+    <Property Name="LocalPorosity" Type="real" />
+    <Property Name="AreaPorosity" Type="real" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SodiQubeDb.dbo.V_QualitytestLast3moths' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="V_QualitytestLast3moths">
+    <Key>
+      <PropertyRef Name="SodimatId" />
+      <PropertyRef Name="DateTime" />
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="RodId" />
+      <PropertyRef Name="IsLastRod" />
+    </Key>
+    <Property Name="SodimatId" Type="smallint" Nullable="false" />
+    <Property Name="DateTime" Type="datetime" Nullable="false" />
+    <Property Name="CycleId" Type="smallint" Nullable="false" />
+    <Property Name="RodId" Type="smallint" Nullable="false" />
+    <Property Name="IsLastRod" Type="smallint" Nullable="false" />
+    <Property Name="TstFile" Type="nvarchar" MaxLength="40" />
+    <Property Name="ProductCode" Type="nvarchar" MaxLength="40" />
+    <Property Name="MachineCode" Type="nvarchar" MaxLength="8" />
+    <Property Name="BrandCode" Type="int" />
+    <Property Name="BatchCode" Type="nvarchar" MaxLength="22" />
+    <Property Name="ReservedFlag" Type="smallint" />
+    <Property Name="ReservedCode" Type="int" />
+    <Property Name="ReservedCounter" Type="int" />
+    <Property Name="Weight" Type="real" />
+    <Property Name="WeightCor" Type="real" />
+    <Property Name="Moisture1" Type="real" />
+    <Property Name="PressureDrop" Type="real" />
+    <Property Name="PressureDrop_FE" Type="real" />
+    <Property Name="FilterVent" Type="real" />
+    <Property Name="PaperVent" Type="real" />
+    <Property Name="Moisture2" Type="real" />
+    <Property Name="Dia_Cir" Type="real" />
+    <Property Name="Ovality" Type="real" />
+    <Property Name="Hardness" Type="real" />
+    <Property Name="HardnessCor" Type="real" />
+    <Property Name="HardnessDiff" Type="real" />
+    <Property Name="HardnessDiffCor" Type="real" />
+    <Property Name="Length" Type="real" />
+    <Property Name="Dia_Cir2" Type="real" />
+    <Property Name="Ovality2" Type="real" />
+    <Property Name="PressureDropSealed" Type="real" />
+    <Property Name="FilterVentSealed" Type="real" />
+    <Property Name="Dia_Cir3" Type="real" />
+    <Property Name="Ovality3" Type="real" />
+    <Property Name="GlobalPorosity" Type="real" />
+    <Property Name="LocalPorosity" Type="real" />
+    <Property Name="AreaPorosity" Type="real" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SodiQubeDb.dbo.V_QualityTestsLast5Months' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="V_QualityTestsLast5Months">
+    <Key>
+      <PropertyRef Name="SodimatId" />
+      <PropertyRef Name="DateTime" />
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="RodId" />
+      <PropertyRef Name="IsLastRod" />
+    </Key>
+    <Property Name="SodimatId" Type="smallint" Nullable="false" />
+    <Property Name="DateTime" Type="datetime" Nullable="false" />
+    <Property Name="CycleId" Type="smallint" Nullable="false" />
+    <Property Name="RodId" Type="smallint" Nullable="false" />
+    <Property Name="IsLastRod" Type="smallint" Nullable="false" />
+    <Property Name="TstFile" Type="nvarchar" MaxLength="40" />
+    <Property Name="ProductCode" Type="nvarchar" MaxLength="40" />
+    <Property Name="MachineCode" Type="nvarchar" MaxLength="22" />
+    <Property Name="BrandCode" Type="int" />
+    <Property Name="BatchCode" Type="nvarchar" MaxLength="22" />
+    <Property Name="ReservedFlag" Type="smallint" />
+    <Property Name="ReservedCode" Type="int" />
+    <Property Name="ReservedCounter" Type="int" />
+    <Property Name="Weight" Type="real" />
+    <Property Name="WeightCor" Type="real" />
+    <Property Name="Moisture1" Type="real" />
+    <Property Name="PressureDrop" Type="real" />
+    <Property Name="PressureDrop_FE" Type="real" />
+    <Property Name="FilterVent" Type="real" />
+    <Property Name="PaperVent" Type="real" />
+    <Property Name="Moisture2" Type="real" />
+    <Property Name="Dia_Cir" Type="real" />
+    <Property Name="Ovality" Type="real" />
+    <Property Name="Hardness" Type="real" />
+    <Property Name="HardnessCor" Type="real" />
+    <Property Name="HardnessDiff" Type="real" />
+    <Property Name="HardnessDiffCor" Type="real" />
+    <Property Name="Length" Type="real" />
+    <Property Name="Dia_Cir2" Type="real" />
+    <Property Name="Ovality2" Type="real" />
+    <Property Name="PressureDropSealed" Type="real" />
+    <Property Name="FilterVentSealed" Type="real" />
+    <Property Name="Dia_Cir3" Type="real" />
+    <Property Name="Ovality3" Type="real" />
+    <Property Name="GlobalPorosity" Type="real" />
+    <Property Name="LocalPorosity" Type="real" />
+    <Property Name="AreaPorosity" Type="real" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SodiQubeDb.dbo.V_QualityTestsLast6Months' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="V_QualityTestsLast6Months">
+    <Key>
+      <PropertyRef Name="Fecha y hora" />
+      <PropertyRef Name="No. Sodiqube" />
+      <PropertyRef Name="Código de Filler" />
+      <PropertyRef Name="Máquina" />
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="Notificación diámetro" />
+      <PropertyRef Name="Notificación de peso" />
+      <PropertyRef Name="Notificación de tiro" />
+    </Key>
+    <Property Name="Año" Type="int" />
+    <Property Name="Mes" Type="int" />
+    <Property Name="Semana" Type="int" />
+    <Property Name="Fecha" Type="smalldatetime" />
+    <Property Name="Fecha y hora" Type="datetime" Nullable="false" />
+    <Property Name="Turno" Type="tinyint" />
+    <Property Name="No. Sodiqube" Type="smallint" Nullable="false" />
+    <Property Name="Código de Filler" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Filler" Type="nvarchar" MaxLength="40" />
+    <Property Name="Máquina" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Diámetro (mm)" Type="real" />
+    <Property Name="CycleId" Type="smallint" Nullable="false" />
+    <Property Name="Notificación diámetro" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="Peso (gr)" Type="real" />
+    <Property Name="Notificación de peso" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="Tiro (mm h2O)" Type="real" />
+    <Property Name="Notificación de tiro" Type="varchar" MaxLength="4" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SodiQubeDb.dbo.V_ReporteDatosIndividuales' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="V_ReporteDatosIndividuales">
+    <Key>
+      <PropertyRef Name="Fecha y hora" />
+      <PropertyRef Name="No. Sodiqube" />
+      <PropertyRef Name="Máquina" />
+      <PropertyRef Name="Notificación diámetro" />
+      <PropertyRef Name="Notificación de peso" />
+      <PropertyRef Name="Notificación de tiro" />
+    </Key>
+    <Property Name="Año" Type="int" />
+    <Property Name="Mes" Type="int" />
+    <Property Name="Semana" Type="int" />
+    <Property Name="Fecha" Type="smalldatetime" />
+    <Property Name="Fecha y hora" Type="datetime" Nullable="false" />
+    <Property Name="Turno" Type="tinyint" />
+    <Property Name="No. Sodiqube" Type="smallint" Nullable="false" />
+    <Property Name="Producto" Type="nvarchar" MaxLength="40" />
+    <Property Name="Máquina" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Diámetro" Type="real" />
+    <Property Name="Notificación diámetro" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="Peso" Type="real" />
+    <Property Name="Notificación de peso" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="Tiro" Type="real" />
+    <Property Name="Notificación de tiro" Type="varchar" MaxLength="4" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SodiQubeDb.dbo.V_ReporteMuestras' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="V_ReporteMuestras">
+    <Key>
+      <PropertyRef Name="Fecha" />
+      <PropertyRef Name="Fecha y hora" />
+      <PropertyRef Name="Filler" />
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Variable" />
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="No. Sodiqube" />
+    </Key>
+    <Property Name="Año" Type="int" />
+    <Property Name="Mes" Type="int" />
+    <Property Name="Semana" Type="int" />
+    <Property Name="Fecha" Type="smalldatetime" Nullable="false" />
+    <Property Name="Fecha y hora" Type="datetime" Nullable="false" />
+    <Property Name="Turno" Type="tinyint" />
+    <Property Name="Máquina" Type="nvarchar" MaxLength="5" />
+    <Property Name="Código de Filler" Type="int" />
+    <Property Name="Filler" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Valor" Type="float" />
+    <Property Name="Variable" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="Límite Especificación Inferior" Type="float" />
+    <Property Name="Límite Especificación Superior" Type="float" />
+    <Property Name="Media" Type="float" />
+    <Property Name="Límite Control Inferior" Type="float" />
+    <Property Name="Límite Control Superior" Type="float" />
+    <Property Name="CycleId" Type="smallint" Nullable="false" />
+    <Property Name="No. Sodiqube" Type="smallint" Nullable="false" />
+    <Property Name="¿Fue notificado?" Type="bit" />
+    <Property Name="Tipo de notificación" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Details_Types">
+    <End Role="Types" Type="Self.Types" Multiplicity="1" />
+    <End Role="Details" Type="Self.Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Types">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Details">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="FN_GETMACHINECODE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+    <Parameter Name="EquipoID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="fn_GetMaterial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+    <Parameter Name="Material" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="fn_GetTurno" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="tinyint">
+    <Parameter Name="Fecha" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="InsertarNuevosRegistros" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="InsertarRegistrosVerificados_OLD_" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="InsertarRegistrosVerificados(OLD)" />
+  <Function Name="VerificarLimiteInferiorDiametro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="VerificarLimiteInferiorPeso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="VerificarLimiteInferiorTiro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="VerificarLimiteSuperiorDiametro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="VerificarLimiteSuperiorPeso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="VerificarLimiteSuperiorTiro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="VerificarTiroDatosIndividuales" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="SodiQubeDbModelStoreContainer">
+    <EntitySet Name="Details" EntityType="Self.Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Machines" EntityType="Self.Machines" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Parametros" EntityType="Self.Parametros" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QualityStats" EntityType="Self.QualityStats" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QualityTests" EntityType="Self.QualityTests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubTypes" EntityType="Self.SubTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TR_Historial" EntityType="Self.TR_Historial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TR_QualityTestsSummary" EntityType="Self.TR_QualityTestsSummary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Turno" EntityType="Self.Turno" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Types" EntityType="Self.Types" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QualityProcesed" EntityType="Self.QualityProcesed" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [QualityProcesed].[SodimatId] AS [SodimatId], 
+    [QualityProcesed].[CycleId] AS [CycleId], 
+    [QualityProcesed].[MachineCode] AS [MachineCode], 
+    [QualityProcesed].[Product] AS [Product], 
+    [QualityProcesed].[Peso] AS [Peso], 
+    [QualityProcesed].[Tiro] AS [Tiro], 
+    [QualityProcesed].[Diametro] AS [Diametro], 
+    [QualityProcesed].[RangoPeso] AS [RangoPeso], 
+    [QualityProcesed].[RangoTiro] AS [RangoTiro], 
+    [QualityProcesed].[RangoDiametro] AS [RangoDiametro], 
+    [QualityProcesed].[Turno] AS [Turno], 
+    [QualityProcesed].[Fecha] AS [Fecha], 
+    [QualityProcesed].[Fecha2] AS [Fecha2]
+    FROM [dbo].[QualityProcesed] AS [QualityProcesed]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="QualityProcesedDetail" EntityType="Self.QualityProcesedDetail" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [QualityProcesedDetail].[SodimatId] AS [SodimatId], 
+    [QualityProcesedDetail].[CycleId] AS [CycleId], 
+    [QualityProcesedDetail].[MachineCode] AS [MachineCode], 
+    [QualityProcesedDetail].[Product] AS [Product], 
+    [QualityProcesedDetail].[Peso] AS [Peso], 
+    [QualityProcesedDetail].[Tiro] AS [Tiro], 
+    [QualityProcesedDetail].[Diametro] AS [Diametro], 
+    [QualityProcesedDetail].[Turno] AS [Turno], 
+    [QualityProcesedDetail].[Fecha] AS [Fecha]
+    FROM [dbo].[QualityProcesedDetail] AS [QualityProcesedDetail]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_ParametrosProductos" EntityType="Self.V_ParametrosProductos" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_ParametrosProductos].[Product ID] AS [Product ID], 
+    [V_ParametrosProductos].[Filler Name] AS [Filler Name], 
+    [V_ParametrosProductos].[Type ID] AS [Type ID], 
+    [V_ParametrosProductos].[Subtype ID] AS [Subtype ID], 
+    [V_ParametrosProductos].[Parameter ID] AS [Parameter ID], 
+    [V_ParametrosProductos].[Parameter Description] AS [Parameter Description], 
+    [V_ParametrosProductos].[Display] AS [Display], 
+    [V_ParametrosProductos].[Value] AS [Value]
+    FROM [dbo].[V_ParametrosProductos] AS [V_ParametrosProductos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_ProductosNotificados" EntityType="Self.V_ProductosNotificados" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_ProductosNotificados].[Fecha] AS [Fecha], 
+    [V_ProductosNotificados].[Turno] AS [Turno], 
+    [V_ProductosNotificados].[CycleId] AS [CycleId], 
+    [V_ProductosNotificados].[Producto] AS [Producto], 
+    [V_ProductosNotificados].[Máquina] AS [Máquina], 
+    [V_ProductosNotificados].[SodiQube] AS [SodiQube], 
+    [V_ProductosNotificados].[Diametro] AS [Diametro], 
+    [V_ProductosNotificados].[Peso] AS [Peso], 
+    [V_ProductosNotificados].[Tiro] AS [Tiro], 
+    [V_ProductosNotificados].[Notificación de Tiro] AS [Notificación de Tiro]
+    FROM [dbo].[V_ProductosNotificados] AS [V_ProductosNotificados]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_QualityProcesed" EntityType="Self.V_QualityProcesed" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_QualityProcesed].[SodimatId] AS [SodimatId], 
+    [V_QualityProcesed].[CycleId] AS [CycleId], 
+    [V_QualityProcesed].[MachineCode] AS [MachineCode], 
+    [V_QualityProcesed].[Product] AS [Product], 
+    [V_QualityProcesed].[Peso] AS [Peso], 
+    [V_QualityProcesed].[Tiro] AS [Tiro], 
+    [V_QualityProcesed].[Diametro] AS [Diametro], 
+    [V_QualityProcesed].[RangoPeso] AS [RangoPeso], 
+    [V_QualityProcesed].[RangoTiro] AS [RangoTiro], 
+    [V_QualityProcesed].[RangoDiametro] AS [RangoDiametro], 
+    [V_QualityProcesed].[Turno] AS [Turno], 
+    [V_QualityProcesed].[Fecha] AS [Fecha], 
+    [V_QualityProcesed].[Fecha2] AS [Fecha2]
+    FROM [dbo].[V_QualityProcesed] AS [V_QualityProcesed]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_QualitystatsLast3moths" EntityType="Self.V_QualitystatsLast3moths" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_QualitystatsLast3moths].[SodimatId] AS [SodimatId], 
+    [V_QualitystatsLast3moths].[DateTime] AS [DateTime], 
+    [V_QualitystatsLast3moths].[CycleId] AS [CycleId], 
+    [V_QualitystatsLast3moths].[RodNumber] AS [RodNumber], 
+    [V_QualitystatsLast3moths].[StatId] AS [StatId], 
+    [V_QualitystatsLast3moths].[TstFile] AS [TstFile], 
+    [V_QualitystatsLast3moths].[ProductCode] AS [ProductCode], 
+    [V_QualitystatsLast3moths].[MachineCode] AS [MachineCode], 
+    [V_QualitystatsLast3moths].[BrandCode] AS [BrandCode], 
+    [V_QualitystatsLast3moths].[BatchCode] AS [BatchCode], 
+    [V_QualitystatsLast3moths].[ReservedFlag] AS [ReservedFlag], 
+    [V_QualitystatsLast3moths].[ReservedCode] AS [ReservedCode], 
+    [V_QualitystatsLast3moths].[ReservedCounter] AS [ReservedCounter], 
+    [V_QualitystatsLast3moths].[Weight] AS [Weight], 
+    [V_QualitystatsLast3moths].[WeightCor] AS [WeightCor], 
+    [V_QualitystatsLast3moths].[Moisture1] AS [Moisture1], 
+    [V_QualitystatsLast3moths].[PressureDrop] AS [PressureDrop], 
+    [V_QualitystatsLast3moths].[PressureDrop_FE] AS [PressureDrop_FE], 
+    [V_QualitystatsLast3moths].[FilterVent] AS [FilterVent], 
+    [V_QualitystatsLast3moths].[PaperVent] AS [PaperVent], 
+    [V_QualitystatsLast3moths].[Moisture2] AS [Moisture2], 
+    [V_QualitystatsLast3moths].[Dia_Cir] AS [Dia_Cir], 
+    [V_QualitystatsLast3moths].[Ovality] AS [Ovality], 
+    [V_QualitystatsLast3moths].[Hardness] AS [Hardness], 
+    [V_QualitystatsLast3moths].[HardnessCor] AS [HardnessCor], 
+    [V_QualitystatsLast3moths].[HardnessDiff] AS [HardnessDiff], 
+    [V_QualitystatsLast3moths].[HardnessDiffCor] AS [HardnessDiffCor], 
+    [V_QualitystatsLast3moths].[Length] AS [Length], 
+    [V_QualitystatsLast3moths].[Dia_Cir2] AS [Dia_Cir2], 
+    [V_QualitystatsLast3moths].[Ovality2] AS [Ovality2], 
+    [V_QualitystatsLast3moths].[PressureDropSealed] AS [PressureDropSealed], 
+    [V_QualitystatsLast3moths].[FilterVentSealed] AS [FilterVentSealed], 
+    [V_QualitystatsLast3moths].[Dia_Cir3] AS [Dia_Cir3], 
+    [V_QualitystatsLast3moths].[Ovality3] AS [Ovality3], 
+    [V_QualitystatsLast3moths].[GlobalPorosity] AS [GlobalPorosity], 
+    [V_QualitystatsLast3moths].[LocalPorosity] AS [LocalPorosity], 
+    [V_QualitystatsLast3moths].[AreaPorosity] AS [AreaPorosity]
+    FROM [dbo].[V_QualitystatsLast3moths] AS [V_QualitystatsLast3moths]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_QualitytestLast3moths" EntityType="Self.V_QualitytestLast3moths" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_QualitytestLast3moths].[SodimatId] AS [SodimatId], 
+    [V_QualitytestLast3moths].[DateTime] AS [DateTime], 
+    [V_QualitytestLast3moths].[CycleId] AS [CycleId], 
+    [V_QualitytestLast3moths].[RodId] AS [RodId], 
+    [V_QualitytestLast3moths].[IsLastRod] AS [IsLastRod], 
+    [V_QualitytestLast3moths].[TstFile] AS [TstFile], 
+    [V_QualitytestLast3moths].[ProductCode] AS [ProductCode], 
+    [V_QualitytestLast3moths].[MachineCode] AS [MachineCode], 
+    [V_QualitytestLast3moths].[BrandCode] AS [BrandCode], 
+    [V_QualitytestLast3moths].[BatchCode] AS [BatchCode], 
+    [V_QualitytestLast3moths].[ReservedFlag] AS [ReservedFlag], 
+    [V_QualitytestLast3moths].[ReservedCode] AS [ReservedCode], 
+    [V_QualitytestLast3moths].[ReservedCounter] AS [ReservedCounter], 
+    [V_QualitytestLast3moths].[Weight] AS [Weight], 
+    [V_QualitytestLast3moths].[WeightCor] AS [WeightCor], 
+    [V_QualitytestLast3moths].[Moisture1] AS [Moisture1], 
+    [V_QualitytestLast3moths].[PressureDrop] AS [PressureDrop], 
+    [V_QualitytestLast3moths].[PressureDrop_FE] AS [PressureDrop_FE], 
+    [V_QualitytestLast3moths].[FilterVent] AS [FilterVent], 
+    [V_QualitytestLast3moths].[PaperVent] AS [PaperVent], 
+    [V_QualitytestLast3moths].[Moisture2] AS [Moisture2], 
+    [V_QualitytestLast3moths].[Dia_Cir] AS [Dia_Cir], 
+    [V_QualitytestLast3moths].[Ovality] AS [Ovality], 
+    [V_QualitytestLast3moths].[Hardness] AS [Hardness], 
+    [V_QualitytestLast3moths].[HardnessCor] AS [HardnessCor], 
+    [V_QualitytestLast3moths].[HardnessDiff] AS [HardnessDiff], 
+    [V_QualitytestLast3moths].[HardnessDiffCor] AS [HardnessDiffCor], 
+    [V_QualitytestLast3moths].[Length] AS [Length], 
+    [V_QualitytestLast3moths].[Dia_Cir2] AS [Dia_Cir2], 
+    [V_QualitytestLast3moths].[Ovality2] AS [Ovality2], 
+    [V_QualitytestLast3moths].[PressureDropSealed] AS [PressureDropSealed], 
+    [V_QualitytestLast3moths].[FilterVentSealed] AS [FilterVentSealed], 
+    [V_QualitytestLast3moths].[Dia_Cir3] AS [Dia_Cir3], 
+    [V_QualitytestLast3moths].[Ovality3] AS [Ovality3], 
+    [V_QualitytestLast3moths].[GlobalPorosity] AS [GlobalPorosity], 
+    [V_QualitytestLast3moths].[LocalPorosity] AS [LocalPorosity], 
+    [V_QualitytestLast3moths].[AreaPorosity] AS [AreaPorosity]
+    FROM [dbo].[V_QualitytestLast3moths] AS [V_QualitytestLast3moths]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_QualityTestsLast5Months" EntityType="Self.V_QualityTestsLast5Months" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_QualityTestsLast5Months].[SodimatId] AS [SodimatId], 
+    [V_QualityTestsLast5Months].[DateTime] AS [DateTime], 
+    [V_QualityTestsLast5Months].[CycleId] AS [CycleId], 
+    [V_QualityTestsLast5Months].[RodId] AS [RodId], 
+    [V_QualityTestsLast5Months].[IsLastRod] AS [IsLastRod], 
+    [V_QualityTestsLast5Months].[TstFile] AS [TstFile], 
+    [V_QualityTestsLast5Months].[ProductCode] AS [ProductCode], 
+    [V_QualityTestsLast5Months].[MachineCode] AS [MachineCode], 
+    [V_QualityTestsLast5Months].[BrandCode] AS [BrandCode], 
+    [V_QualityTestsLast5Months].[BatchCode] AS [BatchCode], 
+    [V_QualityTestsLast5Months].[ReservedFlag] AS [ReservedFlag], 
+    [V_QualityTestsLast5Months].[ReservedCode] AS [ReservedCode], 
+    [V_QualityTestsLast5Months].[ReservedCounter] AS [ReservedCounter], 
+    [V_QualityTestsLast5Months].[Weight] AS [Weight], 
+    [V_QualityTestsLast5Months].[WeightCor] AS [WeightCor], 
+    [V_QualityTestsLast5Months].[Moisture1] AS [Moisture1], 
+    [V_QualityTestsLast5Months].[PressureDrop] AS [PressureDrop], 
+    [V_QualityTestsLast5Months].[PressureDrop_FE] AS [PressureDrop_FE], 
+    [V_QualityTestsLast5Months].[FilterVent] AS [FilterVent], 
+    [V_QualityTestsLast5Months].[PaperVent] AS [PaperVent], 
+    [V_QualityTestsLast5Months].[Moisture2] AS [Moisture2], 
+    [V_QualityTestsLast5Months].[Dia_Cir] AS [Dia_Cir], 
+    [V_QualityTestsLast5Months].[Ovality] AS [Ovality], 
+    [V_QualityTestsLast5Months].[Hardness] AS [Hardness], 
+    [V_QualityTestsLast5Months].[HardnessCor] AS [HardnessCor], 
+    [V_QualityTestsLast5Months].[HardnessDiff] AS [HardnessDiff], 
+    [V_QualityTestsLast5Months].[HardnessDiffCor] AS [HardnessDiffCor], 
+    [V_QualityTestsLast5Months].[Length] AS [Length], 
+    [V_QualityTestsLast5Months].[Dia_Cir2] AS [Dia_Cir2], 
+    [V_QualityTestsLast5Months].[Ovality2] AS [Ovality2], 
+    [V_QualityTestsLast5Months].[PressureDropSealed] AS [PressureDropSealed], 
+    [V_QualityTestsLast5Months].[FilterVentSealed] AS [FilterVentSealed], 
+    [V_QualityTestsLast5Months].[Dia_Cir3] AS [Dia_Cir3], 
+    [V_QualityTestsLast5Months].[Ovality3] AS [Ovality3], 
+    [V_QualityTestsLast5Months].[GlobalPorosity] AS [GlobalPorosity], 
+    [V_QualityTestsLast5Months].[LocalPorosity] AS [LocalPorosity], 
+    [V_QualityTestsLast5Months].[AreaPorosity] AS [AreaPorosity]
+    FROM [dbo].[V_QualityTestsLast5Months] AS [V_QualityTestsLast5Months]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_QualityTestsLast6Months" EntityType="Self.V_QualityTestsLast6Months" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_QualityTestsLast6Months].[Año] AS [Año], 
+    [V_QualityTestsLast6Months].[Mes] AS [Mes], 
+    [V_QualityTestsLast6Months].[Semana] AS [Semana], 
+    [V_QualityTestsLast6Months].[Fecha] AS [Fecha], 
+    [V_QualityTestsLast6Months].[Fecha y hora] AS [Fecha y hora], 
+    [V_QualityTestsLast6Months].[Turno] AS [Turno], 
+    [V_QualityTestsLast6Months].[No. Sodiqube] AS [No. Sodiqube], 
+    [V_QualityTestsLast6Months].[Código de Filler] AS [Código de Filler], 
+    [V_QualityTestsLast6Months].[Filler] AS [Filler], 
+    [V_QualityTestsLast6Months].[Máquina] AS [Máquina], 
+    [V_QualityTestsLast6Months].[Diámetro (mm)] AS [Diámetro (mm)], 
+    [V_QualityTestsLast6Months].[CycleId] AS [CycleId], 
+    [V_QualityTestsLast6Months].[Notificación diámetro] AS [Notificación diámetro], 
+    [V_QualityTestsLast6Months].[Peso (gr)] AS [Peso (gr)], 
+    [V_QualityTestsLast6Months].[Notificación de peso] AS [Notificación de peso], 
+    [V_QualityTestsLast6Months].[Tiro (mm h2O)] AS [Tiro (mm h2O)], 
+    [V_QualityTestsLast6Months].[Notificación de tiro] AS [Notificación de tiro]
+    FROM [dbo].[V_QualityTestsLast6Months] AS [V_QualityTestsLast6Months]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_ReporteDatosIndividuales" EntityType="Self.V_ReporteDatosIndividuales" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_ReporteDatosIndividuales].[Año] AS [Año], 
+    [V_ReporteDatosIndividuales].[Mes] AS [Mes], 
+    [V_ReporteDatosIndividuales].[Semana] AS [Semana], 
+    [V_ReporteDatosIndividuales].[Fecha] AS [Fecha], 
+    [V_ReporteDatosIndividuales].[Fecha y hora] AS [Fecha y hora], 
+    [V_ReporteDatosIndividuales].[Turno] AS [Turno], 
+    [V_ReporteDatosIndividuales].[No. Sodiqube] AS [No. Sodiqube], 
+    [V_ReporteDatosIndividuales].[Producto] AS [Producto], 
+    [V_ReporteDatosIndividuales].[Máquina] AS [Máquina], 
+    [V_ReporteDatosIndividuales].[Diámetro] AS [Diámetro], 
+    [V_ReporteDatosIndividuales].[Notificación diámetro] AS [Notificación diámetro], 
+    [V_ReporteDatosIndividuales].[Peso] AS [Peso], 
+    [V_ReporteDatosIndividuales].[Notificación de peso] AS [Notificación de peso], 
+    [V_ReporteDatosIndividuales].[Tiro] AS [Tiro], 
+    [V_ReporteDatosIndividuales].[Notificación de tiro] AS [Notificación de tiro]
+    FROM [dbo].[V_ReporteDatosIndividuales] AS [V_ReporteDatosIndividuales]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_ReporteMuestras" EntityType="Self.V_ReporteMuestras" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_ReporteMuestras].[Año] AS [Año], 
+    [V_ReporteMuestras].[Mes] AS [Mes], 
+    [V_ReporteMuestras].[Semana] AS [Semana], 
+    [V_ReporteMuestras].[Fecha] AS [Fecha], 
+    [V_ReporteMuestras].[Fecha y hora] AS [Fecha y hora], 
+    [V_ReporteMuestras].[Turno] AS [Turno], 
+    [V_ReporteMuestras].[Máquina] AS [Máquina], 
+    [V_ReporteMuestras].[Código de Filler] AS [Código de Filler], 
+    [V_ReporteMuestras].[Filler] AS [Filler], 
+    [V_ReporteMuestras].[ID] AS [ID], 
+    [V_ReporteMuestras].[Valor] AS [Valor], 
+    [V_ReporteMuestras].[Variable] AS [Variable], 
+    [V_ReporteMuestras].[Límite Especificación Inferior] AS [Límite Especificación Inferior], 
+    [V_ReporteMuestras].[Límite Especificación Superior] AS [Límite Especificación Superior], 
+    [V_ReporteMuestras].[Media] AS [Media], 
+    [V_ReporteMuestras].[Límite Control Inferior] AS [Límite Control Inferior], 
+    [V_ReporteMuestras].[Límite Control Superior] AS [Límite Control Superior], 
+    [V_ReporteMuestras].[CycleId] AS [CycleId], 
+    [V_ReporteMuestras].[No. Sodiqube] AS [No. Sodiqube], 
+    [V_ReporteMuestras].[¿Fue notificado?] AS [¿Fue notificado?], 
+    [V_ReporteMuestras].[Tipo de notificación] AS [Tipo de notificación]
+    FROM [dbo].[V_ReporteMuestras] AS [V_ReporteMuestras]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Details_Types" Association="Self.FK_Details_Types">
+      <End Role="Types" EntitySet="Types" />
+      <End Role="Details" EntitySet="Details" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ControlConsumoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Bandeja">
+    <Key>
+      <PropertyRef Name="idBandeja" />
+    </Key>
+    <Property Name="idBandeja" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="secuenciaInicial" Type="Int32" Nullable="false" />
+    <Property Name="secuenciaFinal" Type="Int32" Nullable="false" />
+    <Property Name="procesarSap" Type="Boolean" Nullable="false" />
+    <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioRegistro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="estatusVigencia" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="EstatusBandejas" Relationship="Self.FK__EstatusBa__idBan__0F624AF8" FromRole="Bandeja" ToRole="EstatusBandeja" />
+  </EntityType>
+  <EntityType Name="ConfiguracionInicialControlSalida">
+    <Key>
+      <PropertyRef Name="IdEquipo" />
+      <PropertyRef Name="IdProducto" />
+      <PropertyRef Name="FechaProduccion" />
+      <PropertyRef Name="Turno" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEquipo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdProducto" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaProduccion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Turno" Type="Int32" Nullable="false" />
+    <Property Name="CantidadConsumoPendiente" Type="Double" Nullable="false" />
+    <Property Name="Unidad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaLectura" Type="DateTime" Precision="3" />
+    <Property Name="FechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UsuarioRegistro" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Estatus" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ConfiguracionSincronizacionTabla">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreTabla" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="procesarSap" Type="Boolean" Nullable="false" />
+    <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioRegistro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="usuarioModificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ConfiguracionTiempoSalida">
+    <Key>
+      <PropertyRef Name="idProceso" />
+      <PropertyRef Name="idTiempo" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idProceso" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idTiempo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tiempoMinimo" Type="Double" Nullable="false" />
+    <Property Name="unidadTiempo" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="horaRegistro" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="usuarioRegistro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="usuarioModificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="HoraModificacion" Type="Time" Precision="7" />
+    <Property Name="estatus" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Consumo">
+    <Key>
+      <PropertyRef Name="IdProceso" />
+      <PropertyRef Name="Centro" />
+      <PropertyRef Name="IdEquipo" />
+      <PropertyRef Name="IdTiempo" />
+      <PropertyRef Name="IdProducto" />
+      <PropertyRef Name="VersionFabricacion" />
+      <PropertyRef Name="Secuencia" />
+      <PropertyRef Name="FechaProduccion" />
+      <PropertyRef Name="Turno" />
+      <PropertyRef Name="IdMaterial" />
+      <PropertyRef Name="Usuario" />
+    </Key>
+    <Property Name="IdProceso" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Centro" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdEquipo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdTiempo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdProducto" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VersionFabricacion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Secuencia" Type="Int32" Nullable="false" />
+    <Property Name="FechaProduccion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Turno" Type="Int32" Nullable="false" />
+    <Property Name="IdMaterial" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Usuario" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdSubEquipo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Lote" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cantidad" Type="Double" Nullable="false" />
+    <Property Name="Unidad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NumeroCaja" Type="Int32" Nullable="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaSincronizacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IdBandeja" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="IdEquipoOrigenMaterial" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SecuenciaSalida" Type="Int32" />
+    <Property Name="FechaSalida" Type="DateTime" Precision="3" />
+    <Property Name="BatchId" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+    <Property Name="EstadoSalidaNotificacion" Type="Boolean" />
+    <Property Name="Sync" Type="Boolean" Nullable="false" />
+    <Property Name="FechaCargaErp" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="EstatusBandeja">
+    <Key>
+      <PropertyRef Name="idBandeja" />
+      <PropertyRef Name="secuenciaBandeja" />
+    </Key>
+    <Property Name="idBandeja" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="secuenciaBandeja" Type="Int32" Nullable="false" />
+    <Property Name="estatus" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idEquipoLlenado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="idProceso" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="idTiempo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="idMaterial" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="versionFabricacion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="fechaLlenada" Type="DateTime" Precision="0" />
+    <Property Name="horaLlenada" Type="Time" Precision="7" />
+    <Property Name="usuarioLlenada" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="secuenciaSalida" Type="Int32" Nullable="false" />
+    <Property Name="batchId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cantidad" Type="Double" Nullable="false" />
+    <Property Name="UMP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="horaRegistro" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="fechaVaciada" Type="DateTime" Precision="0" />
+    <Property Name="horaVaciada" Type="Time" Precision="7" />
+    <Property Name="idEquipoVaciado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="usuarioVaciada" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="formaVaciada" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Bandeja" Relationship="Self.FK__EstatusBa__idBan__0F624AF8" FromRole="EstatusBandeja" ToRole="Bandeja" />
+  </EntityType>
+  <EntityType Name="HistorialReimpresionEtiqueta">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEquipo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SecuenciaEtiqueta" Type="Int32" Nullable="false" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="FechaProduccion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Turno" Type="Int32" Nullable="false" />
+    <Property Name="Empaque" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlmFiller" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioReimpresion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaReimpresion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Estatus" Type="Boolean" Nullable="false" />
+    <Property Name="IdMotivoReimpresion" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MezclasProduccion">
+    <Key>
+      <PropertyRef Name="Idproceso" />
+      <PropertyRef Name="Idequipo" />
+      <PropertyRef Name="SecuenciaEntrada" />
+      <PropertyRef Name="FechaEntrada" />
+      <PropertyRef Name="SecuenciaSalida" />
+      <PropertyRef Name="FechaSalida" />
+    </Key>
+    <Property Name="Idproceso" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Idequipo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SecuenciaEntrada" Type="Int32" Nullable="false" />
+    <Property Name="FechaEntrada" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SecuenciaSalida" Type="Int32" Nullable="false" />
+    <Property Name="FechaSalida" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaLlenada" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fechaCarga" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Sync" Type="Boolean" Nullable="false" />
+    <Property Name="FechaCargaErp" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="MotivoReimpresionEtiqueta">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Estatus" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ParametrosSSI">
+    <Key>
+      <PropertyRef Name="Llave" />
+    </Key>
+    <Property Name="Llave" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Valor" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductoTipoAlmacenamiento">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idTipoProductoTerminado" Type="Int32" Nullable="false" />
+    <Property Name="idTipoAlmacenamiento" Type="Int32" Nullable="false" />
+    <Property Name="identificador" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="horaRegistro" Type="Time" Precision="7" />
+    <Property Name="usuarioRegistro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="usuarioModificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fechaModificacion" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="HoraModificacion" Type="Time" Precision="7" />
+    <Property Name="estatus" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="TipoProductoTerminado" Relationship="Self.FK__ProductoT__idTip__571DF1D5" FromRole="ProductoTipoAlmacenamiento" ToRole="TipoProductoTerminado" />
+    <NavigationProperty Name="TipoAlmacenamientoProducto" Relationship="Self.FK__ProductoT__idTip__5812160E" FromRole="ProductoTipoAlmacenamiento" ToRole="TipoAlmacenamientoProducto" />
+  </EntityType>
+  <EntityType Name="SalidaProducto">
+    <Key>
+      <PropertyRef Name="IdProceso" />
+      <PropertyRef Name="Centro" />
+      <PropertyRef Name="IdEquipo" />
+      <PropertyRef Name="IdTiempo" />
+      <PropertyRef Name="IdProducto" />
+      <PropertyRef Name="VersionFabricacion" />
+      <PropertyRef Name="Secuencia" />
+      <PropertyRef Name="FechaProduccion" />
+      <PropertyRef Name="Turno" />
+      <PropertyRef Name="BatchId" />
+      <PropertyRef Name="Usuario" />
+    </Key>
+    <Property Name="IdProceso" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Centro" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdEquipo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdTiempo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdProducto" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VersionFabricacion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Secuencia" Type="Int32" Nullable="false" />
+    <Property Name="FechaProduccion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Turno" Type="Int32" Nullable="false" />
+    <Property Name="BatchId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Usuario" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdBandeja" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Cantidad" Type="Double" Nullable="false" />
+    <Property Name="Unidad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PesoProducto" Type="Double" Nullable="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaSincronizacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Devuelto" Type="Boolean" />
+    <Property Name="SecuenciaEtiqueta" Type="Int32" />
+    <Property Name="Lote" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCaducidad" Type="DateTime" Precision="0" />
+    <Property Name="EstadoSalidaNotificacion" Type="Boolean" />
+    <Property Name="SubEquipo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Empaque" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DocumentoMaterial" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FechaContabilizacion" Type="DateTime" Precision="0" />
+    <Property Name="AlmFiller" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Sync" Type="Boolean" Nullable="false" />
+    <Property Name="FechaCargaErp" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TiempoBandeja">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idProceso" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idTiempo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idBandeja" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cantidad" Type="Double" Nullable="false" />
+    <Property Name="unidad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="TipoAlmacenamientoProducto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="horaRegistro" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="usuarioRegistro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="usuarioModificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="HoraModificacion" Type="Time" Precision="7" />
+    <Property Name="estatus" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ProductoTipoAlmacenamientoes" Relationship="Self.FK__ProductoT__idTip__5812160E" FromRole="TipoAlmacenamientoProducto" ToRole="ProductoTipoAlmacenamiento" />
+  </EntityType>
+  <EntityType Name="TipoProductoTerminado">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="alias" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="horaRegistro" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="usuarioRegistro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fechaModificacion" Type="DateTime" Precision="0" />
+    <Property Name="horaModificacion" Type="Time" Precision="7" />
+    <Property Name="usuarioModificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="estatus" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ProductoTipoAlmacenamientoes" Relationship="Self.FK__ProductoT__idTip__571DF1D5" FromRole="TipoProductoTerminado" ToRole="ProductoTipoAlmacenamiento" />
+  </EntityType>
+  <EntityType Name="Traza">
+    <Key>
+      <PropertyRef Name="IdProceso" />
+      <PropertyRef Name="IdTiempo" />
+      <PropertyRef Name="IdRegistro" />
+      <PropertyRef Name="AnoEjercicio" />
+    </Key>
+    <Property Name="IdProceso" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdTiempo" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdRegistro" Type="Int32" Nullable="false" />
+    <Property Name="AnoEjercicio" Type="Int32" Nullable="false" />
+    <Property Name="IdEquipo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Centro" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdProducto" Type="String" MaxLength="18" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VersionFabricacion" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NumeroLote" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LoteManufactura" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SecuenciaSalida" Type="Int32" Nullable="false" />
+    <Property Name="FechaProduccion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Turno" Type="Int32" Nullable="false" />
+    <Property Name="BatchId" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+    <Property Name="IdBandeja" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="IdEmpaque" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SecuenciaEmpaque" Type="Int32" />
+    <Property Name="CantidadPedido" Type="Double" Nullable="false" />
+    <Property Name="UnidadMedidaPedido" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Peso" Type="Double" Nullable="false" />
+    <Property Name="EstatusBandeja" Type="Boolean" Nullable="false" />
+    <Property Name="DocumentoMaterial" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FechaContabilizacionDocumento" Type="DateTime" Precision="3" />
+    <Property Name="Usuario" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaSalida" Type="DateTime" Precision="3" />
+    <Property Name="FechaRegistro" Type="DateTime" Precision="3" />
+    <Property Name="IdTiempoRegistroPadre" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="IdRegistroPadre" Type="Int32" />
+    <Property Name="AnoEjercicioPadre" Type="Int32" />
+    <Property Name="Sync" Type="Boolean" Nullable="false" />
+    <Property Name="FechaCargaErp" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TrazaSequence">
+    <Key>
+      <PropertyRef Name="AnoEjercicioDocumentoMaterial" />
+      <PropertyRef Name="IdTiempo" />
+    </Key>
+    <Property Name="AnoEjercicioDocumentoMaterial" Type="Int16" Nullable="false" />
+    <Property Name="IdTiempo" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdRegistro" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Turno">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Byte" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Etiqueta" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Inicio" Type="Int32" Nullable="false" />
+    <Property Name="Fin" Type="Int32" Nullable="false" />
+    <Property Name="MinutosInicio" Type="Int32" Nullable="false" />
+    <Property Name="MinutosFin" Type="Int32" Nullable="false" />
+    <Property Name="Empaque" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SSIS_Configuration">
+    <Key>
+      <PropertyRef Name="ConfigurationFilter" />
+      <PropertyRef Name="PackagePath" />
+      <PropertyRef Name="ConfiguredValueType" />
+    </Key>
+    <Property Name="ConfigurationFilter" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ConfiguredValue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PackagePath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ConfiguredValueType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_EstatusBandejas">
+    <Key>
+      <PropertyRef Name="Id_Bandeja" />
+      <PropertyRef Name="Secuencia" />
+      <PropertyRef Name="estatus" />
+      <PropertyRef Name="Secuencia_Salida" />
+      <PropertyRef Name="cantidad" />
+      <PropertyRef Name="Fecha_de_registro" />
+      <PropertyRef Name="Hora__de_registro" />
+    </Key>
+    <Property Name="Id_Bandeja" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Secuencia" Type="Int32" Nullable="false" />
+    <Property Name="estatus" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Id_Proc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Id_Tiempo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Material" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="Versión_fabricación" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Equipo_llenado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha_" Type="DateTime" Precision="0" />
+    <Property Name="Hora_de_llenada" Type="Time" Precision="7" />
+    <Property Name="Usuario_de_llenado" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Secuencia_Salida" Type="Int32" Nullable="false" />
+    <Property Name="Batch_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cantidad" Type="Double" Nullable="false" />
+    <Property Name="UMP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha_de_registro" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Hora__de_registro" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="Equipo_de_vaciado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha_de_vaciado_" Type="DateTime" Precision="0" />
+    <Property Name="Hora_de_vaciado" Type="Time" Precision="7" />
+    <Property Name="Usuario" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Forma_de_vaciado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__EstatusBa__idBan__0F624AF8">
+    <End Role="Bandeja" Type="Self.Bandeja" Multiplicity="1" />
+    <End Role="EstatusBandeja" Type="Self.EstatusBandeja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bandeja">
+        <PropertyRef Name="idBandeja" />
+      </Principal>
+      <Dependent Role="EstatusBandeja">
+        <PropertyRef Name="idBandeja" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProductoT__idTip__571DF1D5">
+    <End Role="TipoProductoTerminado" Type="Self.TipoProductoTerminado" Multiplicity="1" />
+    <End Role="ProductoTipoAlmacenamiento" Type="Self.ProductoTipoAlmacenamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoProductoTerminado">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProductoTipoAlmacenamiento">
+        <PropertyRef Name="idTipoProductoTerminado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProductoT__idTip__5812160E">
+    <End Role="TipoAlmacenamientoProducto" Type="Self.TipoAlmacenamientoProducto" Multiplicity="1" />
+    <End Role="ProductoTipoAlmacenamiento" Type="Self.ProductoTipoAlmacenamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoAlmacenamientoProducto">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProductoTipoAlmacenamiento">
+        <PropertyRef Name="idTipoAlmacenamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bandejas" EntityType="Self.Bandeja" />
+    <EntitySet Name="ConfiguracionInicialControlSalidas" EntityType="Self.ConfiguracionInicialControlSalida" />
+    <EntitySet Name="ConfiguracionSincronizacionTablas" EntityType="Self.ConfiguracionSincronizacionTabla" />
+    <EntitySet Name="ConfiguracionTiempoSalidas" EntityType="Self.ConfiguracionTiempoSalida" />
+    <EntitySet Name="Consumoes" EntityType="Self.Consumo" />
+    <EntitySet Name="EstatusBandejas" EntityType="Self.EstatusBandeja" />
+    <EntitySet Name="HistorialReimpresionEtiquetas" EntityType="Self.HistorialReimpresionEtiqueta" />
+    <EntitySet Name="MezclasProduccions" EntityType="Self.MezclasProduccion" />
+    <EntitySet Name="MotivoReimpresionEtiquetas" EntityType="Self.MotivoReimpresionEtiqueta" />
+    <EntitySet Name="ParametrosSSIS" EntityType="Self.ParametrosSSI" />
+    <EntitySet Name="ProductoTipoAlmacenamientoes" EntityType="Self.ProductoTipoAlmacenamiento" />
+    <EntitySet Name="SalidaProductoes" EntityType="Self.SalidaProducto" />
+    <EntitySet Name="TiempoBandejas" EntityType="Self.TiempoBandeja" />
+    <EntitySet Name="TipoAlmacenamientoProductoes" EntityType="Self.TipoAlmacenamientoProducto" />
+    <EntitySet Name="TipoProductoTerminadoes" EntityType="Self.TipoProductoTerminado" />
+    <EntitySet Name="Trazas" EntityType="Self.Traza" />
+    <EntitySet Name="TrazaSequences" EntityType="Self.TrazaSequence" />
+    <EntitySet Name="Turnos" EntityType="Self.Turno" />
+    <EntitySet Name="SSIS_Configurations" EntityType="Self.SSIS_Configuration" />
+    <EntitySet Name="View_EstatusBandejas" EntityType="Self.View_EstatusBandejas" />
+    <AssociationSet Name="FK__EstatusBa__idBan__0F624AF8" Association="Self.FK__EstatusBa__idBan__0F624AF8">
+      <End Role="Bandeja" EntitySet="Bandejas" />
+      <End Role="EstatusBandeja" EntitySet="EstatusBandejas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProductoT__idTip__571DF1D5" Association="Self.FK__ProductoT__idTip__571DF1D5">
+      <End Role="TipoProductoTerminado" EntitySet="TipoProductoTerminadoes" />
+      <End Role="ProductoTipoAlmacenamiento" EntitySet="ProductoTipoAlmacenamientoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProductoT__idTip__5812160E" Association="Self.FK__ProductoT__idTip__5812160E">
+      <End Role="TipoAlmacenamientoProducto" EntitySet="TipoAlmacenamientoProductoes" />
+      <End Role="ProductoTipoAlmacenamiento" EntitySet="ProductoTipoAlmacenamientoes" />
+    </AssociationSet>
+    <FunctionImport Name="Lynxsp_CargarDatosTraza" ReturnType="Collection(ControlConsumoModel.Lynxsp_CargarDatosTraza_Result)">
+      <Parameter Name="IdProceso" Mode="In" Type="String" />
+      <Parameter Name="IdEquipo" Mode="In" Type="String" />
+      <Parameter Name="SecSalida" Mode="In" Type="Int32" />
+      <Parameter Name="FechaSalida" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetSalidas" ReturnType="Collection(ControlConsumoModel.SP_GetSalidas_Result)">
+      <Parameter Name="FechaProduccion" Mode="In" Type="DateTime" />
+      <Parameter Name="Turno" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="Lynxsp_CargarDatosTraza_Result">
+    <Property Type="String" Name="IdTiempo" Nullable="false" MaxLength="2" />
+    <Property Type="Int32" Name="IdRegistro" Nullable="false" />
+    <Property Type="Int32" Name="AnoEjercicio" Nullable="false" />
+    <Property Type="String" Name="LoteManufactura" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SP_GetSalidas_Result">
+    <Property Type="String" Name="Fecha" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Maquina" Nullable="false" MaxLength="10" />
+    <Property Type="Double" Name="Cantidad_de_Cigarros" Nullable="true" />
+    <Property Type="String" Name="Unidad" Nullable="false" MaxLength="10" />
+  </ComplexType>
+</Schema>

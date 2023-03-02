@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/dp_35"
+    android:gravity="center"
+    android:paddingLeft="@dimen/dp_25"
+    android:background="@drawable/selector_normal_list"
+    android:descendantFocusability="blocksDescendants">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_2">
+        <TextView
+            android:textColor="@color/input_text"
+            android:text="Codigo"
+            android:singleLine="true"
+            android:gravity="center"
+            android:focusableInTouchMode="false"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:id="@+id/txtCodigo"
+            android:textStyle="bold"
+            android:layout_weight=".1" />
+        <TextView
+            android:gravity="center"
+            android:textColor="@color/input_text"
+            android:text="Name"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:focusableInTouchMode="false"
+            android:id="@+id/txtName"
+            android:singleLine="true"
+            android:layout_weight=".1" />
+        <TextView
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="@color/input_text"
+            android:text="Short"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:focusableInTouchMode="false"
+            android:id="@+id/txtShort"
+            android:singleLine="true"
+            android:layout_weight=".2" />
+        <TextView
+            android:gravity="center"
+            android:textColor="@color/input_text"
+            android:text="Version"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:focusableInTouchMode="false"
+            android:id="@+id/txtVersion"
+            android:singleLine="true"
+            android:layout_weight=".1" />
+        <TextView
+            android:gravity="center"
+            android:textColor="@color/input_text"
+            android:text="Date"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:focusableInTouchMode="false"
+            android:id="@+id/txtDate"
+            android:singleLine="true"
+            android:layout_weight=".2" />
+        <Spinner
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_30"
+            android:id="@+id/spnArea"
+            android:visibility="invisible"
+            android:background="@drawable/selector_spinner"
+            android:layout_weight=".2"
+            android:singleLine="true" />
+        <Switch
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight=".1"
+            android:id="@+id/SwtStatus" />
+    </LinearLayout>
+</LinearLayout>

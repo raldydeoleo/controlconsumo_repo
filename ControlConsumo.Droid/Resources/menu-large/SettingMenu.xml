@@ -1,0 +1,26 @@
+﻿<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+  <item
+       android:id="@+id/menu_user"
+       android:title="@string/menu_User"
+       android:icon="@android:drawable/ic_menu_view"
+       android:orderInCategory="400"
+       android:showAsAction="always|withText" />
+  <item
+       android:id="@+id/menu_Update"
+       android:title="@string/menu_Update"
+       android:icon="@android:drawable/ic_popup_sync"
+       android:orderInCategory="400"
+       android:showAsAction="always|withText" />
+  <item
+       android:id="@+id/menu_Cancel"
+       android:title="@string/Back"
+       android:icon="@drawable/ic_action_back"
+       android:orderInCategory="400"
+       android:showAsAction="always|withText" />
+  <item
+       android:id="@+id/menu_Add"
+       android:title="@string/menu_Save"
+       android:icon="@android:drawable/ic_menu_save"
+       android:orderInCategory="500"
+       android:showAsAction="always|withText" />
+</menu>

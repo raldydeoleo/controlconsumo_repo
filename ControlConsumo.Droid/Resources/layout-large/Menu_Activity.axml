@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+        <include
+            layout="@layout/include_display_common" />
+        <include
+            layout="@layout/include_body_common" />
+        <ViewFlipper
+            android:id="@+id/flipper_view"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="1"
+            android:layout_width="fill_parent">
+            <include
+                layout="@layout/include_no_config" />
+            <include
+                layout="@layout/include_activate_config" />
+            <include
+                layout="@layout/include_choose_action" />
+            <include
+                layout="@layout/include_entrada_materiales" />
+            <include
+                layout="@layout/include_salida_materiales" />
+            <include
+                layout="@layout/include_report_operator" />
+            <include
+                layout="@layout/include_waste_capture" />
+            <include
+                layout="@layout/include_report_entradas" />
+            <include
+                layout="@layout/include_report_salida" />
+            <include
+                layout="@layout/include_report_peso" />
+            <include
+                layout="@layout/include_report_stock" />
+            <include
+                layout="@layout/include_report_bill_of_material" />
+        </ViewFlipper>
+        <include
+            layout="@layout/include_display_errors" />
+    </LinearLayout>
+    <include
+        layout="@layout/include_drawer_left" />
+</android.support.v4.widget.DrawerLayout>

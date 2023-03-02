@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_5"
+        android:id="@+id/chkActivar"
+        android:checked="false" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:background="@drawable/selector_input_text"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/input_text"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtViewMaterial"
+            android:singleLine="true"
+            android:layout_marginRight="@dimen/dp_5"
+            android:layout_weight=".5" />
+        <TextView
+            android:background="@drawable/selector_input_text"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/input_text"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_5"
+            android:id="@+id/txtViewCantidad"
+            android:singleLine="true"
+            android:gravity="center"
+            android:layout_weight=".2" />
+        <EditText
+            android:inputType="numberDecimal"
+            android:background="@drawable/selector_input_text"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/input_text"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:gravity="center"
+            android:id="@+id/EditCantidad"
+            android:layout_marginRight="@dimen/dp_5"
+            android:singleLine="True"
+            android:imeOptions="actionDone"
+            android:layout_weight=".2" />
+        <TextView
+            android:background="@drawable/selector_input_text"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/input_text"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/txtViewUnidad"
+            android:layout_marginRight="@dimen/dp_5"
+            android:singleLine="true"
+            android:layout_weight=".1" />
+    </LinearLayout>
+</LinearLayout>

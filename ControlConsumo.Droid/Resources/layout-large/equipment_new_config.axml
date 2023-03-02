@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/linearLayout3"
+        android:padding="@dimen/dp_5">
+        <TextView
+            android:background="@drawable/bg_input_disabled"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_45"
+            android:id="@+id/txtEquipmentID" />
+        <TextView
+            android:background="@drawable/bg_input_disabled"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_45"
+            android:id="@+id/txtEquipment" />
+        <Spinner
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/bg_spinner_white"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_45"
+            android:id="@+id/spnTiempo" />
+        <Spinner
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/bg_spinner_white"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_45"
+            android:id="@+id/spnMaterial" />
+        <TextView
+            android:background="@drawable/bg_input_disabled"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_45"
+            android:id="@+id/txtShort"
+            android:layout_marginTop="@dimen/dp_10" />
+        <TextView
+            android:background="@drawable/bg_input_disabled"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_45"
+            android:id="@+id/txtMaterial"
+            android:layout_marginTop="@dimen/dp_10" />
+        <Spinner
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/bg_spinner_white"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_45"
+            android:id="@+id/spnVersion" />
+        <Spinner
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/bg_spinner_white"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_45"
+            android:id="@+id/spnSubEquipment" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_45"
+            android:id="@+id/linearLayout1"
+            android:layout_marginTop="@dimen/dp_10"
+            android:padding="@dimen/dp_2">
+            <Button
+                android:textColor="@android:color/white"
+                android:background="@drawable/selector_button_orange"
+                android:text="@string/ChangeDate"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/btnDate"
+                android:layout_marginRight="@dimen/dp_2" />
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_input_disabled"
+                android:layout_weight="1"
+                android:id="@+id/editDate"
+                android:editable="false"
+                android:gravity="center_horizontal"
+                android:singleLine="true"
+                android:layout_marginLeft="@dimen/dp_2" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_45"
+            android:id="@+id/linearLayout2"
+            android:layout_marginTop="@dimen/dp_10"
+            android:padding="@dimen/dp_2">
+            <Button
+                android:textColor="@android:color/white"
+                android:background="@drawable/selector_button_orange"
+                android:text="@string/ChangeTime"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/btnTime"
+                android:layout_marginRight="@dimen/dp_2" />
+            <EditText
+                android:background="@drawable/bg_input_disabled"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/editTime"
+                android:editable="false"
+                android:gravity="center_horizontal"
+                android:singleLine="true"
+                android:layout_marginLeft="@dimen/dp_2" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

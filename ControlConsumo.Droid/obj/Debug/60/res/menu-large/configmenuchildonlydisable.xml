@@ -1,0 +1,1 @@
+<menu android:actionBarStyle="@style/ActionbarStyle" xmlns:android="http://schemas.android.com/apk/res/android"><item android:id="@+id/Menu_A_delete" android:orderInCategory="100" android:showAsAction="always|withText" android:title="@string/menu_Deleted" android:icon="@android:drawable/ic_menu_delete" /></menu>

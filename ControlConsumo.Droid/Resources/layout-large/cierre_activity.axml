@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TextView
+        android:id="@+id/txtViewTitle"
+        android:background="@drawable/selector_input_text"
+        android:layout_margin="@dimen/dp_16"
+        android:textSize="@dimen/dp_40"
+        android:textStyle="bold"
+        android:layout_weight=".05"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_10"
+        android:orientation="horizontal"
+        android:layout_weight=".03"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_weight=".2"
+            android:textSize="@dimen/dp_35"
+            android:text="@string/ChooseProducto"
+            android:background="@drawable/selector_input_text"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_16" />
+        <TextView
+            android:layout_weight=".8"
+            android:textSize="@dimen/dp_35"
+            android:text="Large Text"
+            android:background="@drawable/selector_input_text"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtViewProductoLarge"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_16" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight=".92"
+        android:layout_margin="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+		android:orientation="vertical">
+        <android.support.v7.widget.RecyclerView
+            android:scrollbars="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/listCierres" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,1991 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SodiQubeDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Details">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="TypeID" />
+            <PropertyRef Name="SubTypeID" />
+            <PropertyRef Name="ParametroID" />
+          </Key>
+          <Property Name="ProductID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="TypeID" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="SubTypeID" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="ParametroID" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Display" Type="bit" Nullable="false" />
+          <Property Name="Value" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Machines">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="MachineCode" Type="nvarchar" MaxLength="22" Nullable="false" />
+          <Property Name="CreateDate" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Parametros">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreateDate" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="ProductCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CreateDate" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QualityStats">
+          <Key>
+            <PropertyRef Name="SodimatId" />
+            <PropertyRef Name="DateTime" />
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="RodNumber" />
+            <PropertyRef Name="StatId" />
+          </Key>
+          <Property Name="SodimatId" Type="smallint" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
+          <Property Name="CycleId" Type="smallint" Nullable="false" />
+          <Property Name="RodNumber" Type="smallint" Nullable="false" />
+          <Property Name="StatId" Type="smallint" Nullable="false" />
+          <Property Name="TstFile" Type="nvarchar" MaxLength="40" />
+          <Property Name="ProductCode" Type="nvarchar" MaxLength="40" />
+          <Property Name="MachineCode" Type="nvarchar" MaxLength="22" />
+          <Property Name="BrandCode" Type="int" />
+          <Property Name="BatchCode" Type="nvarchar" MaxLength="22" />
+          <Property Name="ReservedFlag" Type="smallint" />
+          <Property Name="ReservedCode" Type="int" />
+          <Property Name="ReservedCounter" Type="int" />
+          <Property Name="Weight" Type="real" />
+          <Property Name="WeightCor" Type="real" />
+          <Property Name="Moisture1" Type="real" />
+          <Property Name="PressureDrop" Type="real" />
+          <Property Name="PressureDrop_FE" Type="real" />
+          <Property Name="FilterVent" Type="real" />
+          <Property Name="PaperVent" Type="real" />
+          <Property Name="Moisture2" Type="real" />
+          <Property Name="Dia_Cir" Type="real" />
+          <Property Name="Ovality" Type="real" />
+          <Property Name="Hardness" Type="real" />
+          <Property Name="HardnessCor" Type="real" />
+          <Property Name="HardnessDiff" Type="real" />
+          <Property Name="HardnessDiffCor" Type="real" />
+          <Property Name="Length" Type="real" />
+          <Property Name="Dia_Cir2" Type="real" />
+          <Property Name="Ovality2" Type="real" />
+          <Property Name="PressureDropSealed" Type="real" />
+          <Property Name="FilterVentSealed" Type="real" />
+          <Property Name="Dia_Cir3" Type="real" />
+          <Property Name="Ovality3" Type="real" />
+          <Property Name="GlobalPorosity" Type="real" />
+          <Property Name="LocalPorosity" Type="real" />
+          <Property Name="AreaPorosity" Type="real" />
+        </EntityType>
+        <EntityType Name="QualityTests">
+          <Key>
+            <PropertyRef Name="SodimatId" />
+            <PropertyRef Name="DateTime" />
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="RodId" />
+            <PropertyRef Name="IsLastRod" />
+          </Key>
+          <Property Name="SodimatId" Type="smallint" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
+          <Property Name="CycleId" Type="smallint" Nullable="false" />
+          <Property Name="RodId" Type="smallint" Nullable="false" />
+          <Property Name="IsLastRod" Type="smallint" Nullable="false" />
+          <Property Name="TstFile" Type="nvarchar" MaxLength="40" />
+          <Property Name="ProductCode" Type="nvarchar" MaxLength="40" />
+          <Property Name="MachineCode" Type="nvarchar" MaxLength="22" />
+          <Property Name="BrandCode" Type="int" />
+          <Property Name="BatchCode" Type="nvarchar" MaxLength="22" />
+          <Property Name="ReservedFlag" Type="smallint" />
+          <Property Name="ReservedCode" Type="int" />
+          <Property Name="ReservedCounter" Type="int" />
+          <Property Name="Weight" Type="real" />
+          <Property Name="WeightCor" Type="real" />
+          <Property Name="Moisture1" Type="real" />
+          <Property Name="PressureDrop" Type="real" />
+          <Property Name="PressureDrop_FE" Type="real" />
+          <Property Name="FilterVent" Type="real" />
+          <Property Name="PaperVent" Type="real" />
+          <Property Name="Moisture2" Type="real" />
+          <Property Name="Dia_Cir" Type="real" />
+          <Property Name="Ovality" Type="real" />
+          <Property Name="Hardness" Type="real" />
+          <Property Name="HardnessCor" Type="real" />
+          <Property Name="HardnessDiff" Type="real" />
+          <Property Name="HardnessDiffCor" Type="real" />
+          <Property Name="Length" Type="real" />
+          <Property Name="Dia_Cir2" Type="real" />
+          <Property Name="Ovality2" Type="real" />
+          <Property Name="PressureDropSealed" Type="real" />
+          <Property Name="FilterVentSealed" Type="real" />
+          <Property Name="Dia_Cir3" Type="real" />
+          <Property Name="Ovality3" Type="real" />
+          <Property Name="GlobalPorosity" Type="real" />
+          <Property Name="LocalPorosity" Type="real" />
+          <Property Name="AreaPorosity" Type="real" />
+          <Property Name="WeightOutOfBounds" Type="bit" />
+          <Property Name="DiameterOutOfBounds" Type="bit" />
+          <Property Name="PressureDropOutOfBounds" Type="bit" />
+          <Property Name="WeightCommentOutOfBounds" Type="varchar" MaxLength="50" />
+          <Property Name="DiameterCommentOutOfBounds" Type="varchar" MaxLength="50" />
+          <Property Name="PressureDropCommentOutOfBounds" Type="varchar" MaxLength="50" />
+          <Property Name="NotificationDatePressureDrop" Type="datetime" />
+          <Property Name="NotificationEmail" Type="varchar" MaxLength="50" />
+          <Property Name="isPressureDropProcessed" Type="bit" />
+        </EntityType>
+        <EntityType Name="SubTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TR_Historial">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fechaModificacionDatos" Type="datetime" Nullable="false" />
+          <Property Name="nombreUsuarioModificacion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TR_QualityTestsSummary">
+          <Key>
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="MachineCode" />
+            <PropertyRef Name="Product" />
+            <PropertyRef Name="SodimatId" />
+            <PropertyRef Name="Fecha2" />
+          </Key>
+          <Property Name="CycleId" Type="smallint" Nullable="false" />
+          <Property Name="MachineCode" Type="nvarchar" MaxLength="22" Nullable="false" />
+          <Property Name="Product" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="SodimatId" Type="smallint" Nullable="false" />
+          <Property Name="Peso" Type="float" />
+          <Property Name="Tiro" Type="float" />
+          <Property Name="Diametro" Type="float" />
+          <Property Name="Turno" Type="tinyint" />
+          <Property Name="Fecha" Type="smalldatetime" Nullable="false" />
+          <Property Name="Fecha2" Type="datetime" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="notificadoPeso" Type="bit" />
+          <Property Name="notificadoDiametro" Type="bit" />
+          <Property Name="fechaNotificacionPeso" Type="datetime" />
+          <Property Name="fechaNotificacionDiametro" Type="datetime" />
+          <Property Name="notificadoTiro" Type="bit" />
+          <Property Name="fechaNotificacionTiro" Type="datetime" />
+          <Property Name="correoNotificado" Type="varchar" MaxLength="100" />
+          <Property Name="comentarioNotificacionTiro" Type="varchar" MaxLength="50" />
+          <Property Name="comentarioNotificacionDiametro" Type="varchar" MaxLength="50" />
+          <Property Name="comentarioNotificacionPeso" Type="varchar" MaxLength="50" />
+          <Property Name="LciTiro" Type="float" />
+          <Property Name="LcsTiro" Type="float" />
+          <Property Name="TargetTiro" Type="float" />
+          <Property Name="LciPeso" Type="float" />
+          <Property Name="LcsPeso" Type="float" />
+          <Property Name="TargetPeso" Type="float" />
+          <Property Name="LeiPeso" Type="float" />
+          <Property Name="LesPeso" Type="float" />
+          <Property Name="LciDiametro" Type="float" />
+          <Property Name="LcsDiametro" Type="float" />
+          <Property Name="TargetDiametro" Type="float" />
+          <Property Name="LeiDiametro" Type="float" />
+          <Property Name="LesDiametro" Type="float" />
+        </EntityType>
+        <EntityType Name="Turno">
+          <Key>
+            <PropertyRef Name="IDTurno" />
+          </Key>
+          <Property Name="IDTurno" Type="tinyint" Nullable="false" />
+          <Property Name="Inicio" Type="tinyint" Nullable="false" />
+          <Property Name="Fin" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Types">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SodiQubeDb.dbo.QualityProcesed' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="QualityProcesed">
+          <Key>
+            <PropertyRef Name="SodimatId" />
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="MachineCode" />
+            <PropertyRef Name="Product" />
+          </Key>
+          <Property Name="SodimatId" Type="smallint" Nullable="false" />
+          <Property Name="CycleId" Type="smallint" Nullable="false" />
+          <Property Name="MachineCode" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Product" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Peso" Type="float" />
+          <Property Name="Tiro" Type="float" />
+          <Property Name="Diametro" Type="float" />
+          <Property Name="RangoPeso" Type="real" />
+          <Property Name="RangoTiro" Type="real" />
+          <Property Name="RangoDiametro" Type="real" />
+          <Property Name="Turno" Type="tinyint" />
+          <Property Name="Fecha" Type="smalldatetime" />
+          <Property Name="Fecha2" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SodiQubeDb.dbo.QualityProcesedDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="QualityProcesedDetail">
+          <Key>
+            <PropertyRef Name="SodimatId" />
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="MachineCode" />
+            <PropertyRef Name="Product" />
+          </Key>
+          <Property Name="SodimatId" Type="smallint" Nullable="false" />
+          <Property Name="CycleId" Type="smallint" Nullable="false" />
+          <Property Name="MachineCode" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Product" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Peso" Type="real" />
+          <Property Name="Tiro" Type="real" />
+          <Property Name="Diametro" Type="real" />
+          <Property Name="Turno" Type="tinyint" />
+          <Property Name="Fecha" Type="smalldatetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SodiQubeDb.dbo.V_ParametrosProductos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_ParametrosProductos">
+          <Key>
+            <PropertyRef Name="Product ID" />
+            <PropertyRef Name="Filler Name" />
+            <PropertyRef Name="Type ID" />
+            <PropertyRef Name="Subtype ID" />
+            <PropertyRef Name="Parameter ID" />
+            <PropertyRef Name="Parameter Description" />
+            <PropertyRef Name="Display" />
+            <PropertyRef Name="Value" />
+          </Key>
+          <Property Name="Product ID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Filler Name" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Type ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Subtype ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Parameter ID" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Parameter Description" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Display" Type="bit" Nullable="false" />
+          <Property Name="Value" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SodiQubeDb.dbo.V_ProductosNotificados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_ProductosNotificados">
+          <Key>
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="Producto" />
+            <PropertyRef Name="Máquina" />
+            <PropertyRef Name="SodiQube" />
+          </Key>
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="Turno" Type="tinyint" />
+          <Property Name="CycleId" Type="smallint" Nullable="false" />
+          <Property Name="Producto" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Máquina" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="SodiQube" Type="smallint" Nullable="false" />
+          <Property Name="Diametro" Type="float" />
+          <Property Name="Peso" Type="float" />
+          <Property Name="Tiro" Type="float" />
+          <Property Name="Notificación de Tiro" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SodiQubeDb.dbo.V_QualityProcesed' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_QualityProcesed">
+          <Key>
+            <PropertyRef Name="SodimatId" />
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="MachineCode" />
+            <PropertyRef Name="Product" />
+          </Key>
+          <Property Name="SodimatId" Type="smallint" Nullable="false" />
+          <Property Name="CycleId" Type="smallint" Nullable="false" />
+          <Property Name="MachineCode" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Product" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Peso" Type="float" />
+          <Property Name="Tiro" Type="float" />
+          <Property Name="Diametro" Type="float" />
+          <Property Name="RangoPeso" Type="real" />
+          <Property Name="RangoTiro" Type="real" />
+          <Property Name="RangoDiametro" Type="real" />
+          <Property Name="Turno" Type="tinyint" />
+          <Property Name="Fecha" Type="smalldatetime" />
+          <Property Name="Fecha2" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SodiQubeDb.dbo.V_QualitystatsLast3moths' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_QualitystatsLast3moths">
+          <Key>
+            <PropertyRef Name="SodimatId" />
+            <PropertyRef Name="DateTime" />
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="RodNumber" />
+            <PropertyRef Name="StatId" />
+          </Key>
+          <Property Name="SodimatId" Type="smallint" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
+          <Property Name="CycleId" Type="smallint" Nullable="false" />
+          <Property Name="RodNumber" Type="smallint" Nullable="false" />
+          <Property Name="StatId" Type="smallint" Nullable="false" />
+          <Property Name="TstFile" Type="nvarchar" MaxLength="40" />
+          <Property Name="ProductCode" Type="nvarchar" MaxLength="40" />
+          <Property Name="MachineCode" Type="nvarchar" MaxLength="8" />
+          <Property Name="BrandCode" Type="int" />
+          <Property Name="BatchCode" Type="nvarchar" MaxLength="22" />
+          <Property Name="ReservedFlag" Type="smallint" />
+          <Property Name="ReservedCode" Type="int" />
+          <Property Name="ReservedCounter" Type="int" />
+          <Property Name="Weight" Type="real" />
+          <Property Name="WeightCor" Type="real" />
+          <Property Name="Moisture1" Type="real" />
+          <Property Name="PressureDrop" Type="real" />
+          <Property Name="PressureDrop_FE" Type="real" />
+          <Property Name="FilterVent" Type="real" />
+          <Property Name="PaperVent" Type="real" />
+          <Property Name="Moisture2" Type="real" />
+          <Property Name="Dia_Cir" Type="real" />
+          <Property Name="Ovality" Type="real" />
+          <Property Name="Hardness" Type="real" />
+          <Property Name="HardnessCor" Type="real" />
+          <Property Name="HardnessDiff" Type="real" />
+          <Property Name="HardnessDiffCor" Type="real" />
+          <Property Name="Length" Type="real" />
+          <Property Name="Dia_Cir2" Type="real" />
+          <Property Name="Ovality2" Type="real" />
+          <Property Name="PressureDropSealed" Type="real" />
+          <Property Name="FilterVentSealed" Type="real" />
+          <Property Name="Dia_Cir3" Type="real" />
+          <Property Name="Ovality3" Type="real" />
+          <Property Name="GlobalPorosity" Type="real" />
+          <Property Name="LocalPorosity" Type="real" />
+          <Property Name="AreaPorosity" Type="real" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SodiQubeDb.dbo.V_QualitytestLast3moths' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_QualitytestLast3moths">
+          <Key>
+            <PropertyRef Name="SodimatId" />
+            <PropertyRef Name="DateTime" />
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="RodId" />
+            <PropertyRef Name="IsLastRod" />
+          </Key>
+          <Property Name="SodimatId" Type="smallint" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
+          <Property Name="CycleId" Type="smallint" Nullable="false" />
+          <Property Name="RodId" Type="smallint" Nullable="false" />
+          <Property Name="IsLastRod" Type="smallint" Nullable="false" />
+          <Property Name="TstFile" Type="nvarchar" MaxLength="40" />
+          <Property Name="ProductCode" Type="nvarchar" MaxLength="40" />
+          <Property Name="MachineCode" Type="nvarchar" MaxLength="8" />
+          <Property Name="BrandCode" Type="int" />
+          <Property Name="BatchCode" Type="nvarchar" MaxLength="22" />
+          <Property Name="ReservedFlag" Type="smallint" />
+          <Property Name="ReservedCode" Type="int" />
+          <Property Name="ReservedCounter" Type="int" />
+          <Property Name="Weight" Type="real" />
+          <Property Name="WeightCor" Type="real" />
+          <Property Name="Moisture1" Type="real" />
+          <Property Name="PressureDrop" Type="real" />
+          <Property Name="PressureDrop_FE" Type="real" />
+          <Property Name="FilterVent" Type="real" />
+          <Property Name="PaperVent" Type="real" />
+          <Property Name="Moisture2" Type="real" />
+          <Property Name="Dia_Cir" Type="real" />
+          <Property Name="Ovality" Type="real" />
+          <Property Name="Hardness" Type="real" />
+          <Property Name="HardnessCor" Type="real" />
+          <Property Name="HardnessDiff" Type="real" />
+          <Property Name="HardnessDiffCor" Type="real" />
+          <Property Name="Length" Type="real" />
+          <Property Name="Dia_Cir2" Type="real" />
+          <Property Name="Ovality2" Type="real" />
+          <Property Name="PressureDropSealed" Type="real" />
+          <Property Name="FilterVentSealed" Type="real" />
+          <Property Name="Dia_Cir3" Type="real" />
+          <Property Name="Ovality3" Type="real" />
+          <Property Name="GlobalPorosity" Type="real" />
+          <Property Name="LocalPorosity" Type="real" />
+          <Property Name="AreaPorosity" Type="real" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SodiQubeDb.dbo.V_QualityTestsLast5Months' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_QualityTestsLast5Months">
+          <Key>
+            <PropertyRef Name="SodimatId" />
+            <PropertyRef Name="DateTime" />
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="RodId" />
+            <PropertyRef Name="IsLastRod" />
+          </Key>
+          <Property Name="SodimatId" Type="smallint" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
+          <Property Name="CycleId" Type="smallint" Nullable="false" />
+          <Property Name="RodId" Type="smallint" Nullable="false" />
+          <Property Name="IsLastRod" Type="smallint" Nullable="false" />
+          <Property Name="TstFile" Type="nvarchar" MaxLength="40" />
+          <Property Name="ProductCode" Type="nvarchar" MaxLength="40" />
+          <Property Name="MachineCode" Type="nvarchar" MaxLength="22" />
+          <Property Name="BrandCode" Type="int" />
+          <Property Name="BatchCode" Type="nvarchar" MaxLength="22" />
+          <Property Name="ReservedFlag" Type="smallint" />
+          <Property Name="ReservedCode" Type="int" />
+          <Property Name="ReservedCounter" Type="int" />
+          <Property Name="Weight" Type="real" />
+          <Property Name="WeightCor" Type="real" />
+          <Property Name="Moisture1" Type="real" />
+          <Property Name="PressureDrop" Type="real" />
+          <Property Name="PressureDrop_FE" Type="real" />
+          <Property Name="FilterVent" Type="real" />
+          <Property Name="PaperVent" Type="real" />
+          <Property Name="Moisture2" Type="real" />
+          <Property Name="Dia_Cir" Type="real" />
+          <Property Name="Ovality" Type="real" />
+          <Property Name="Hardness" Type="real" />
+          <Property Name="HardnessCor" Type="real" />
+          <Property Name="HardnessDiff" Type="real" />
+          <Property Name="HardnessDiffCor" Type="real" />
+          <Property Name="Length" Type="real" />
+          <Property Name="Dia_Cir2" Type="real" />
+          <Property Name="Ovality2" Type="real" />
+          <Property Name="PressureDropSealed" Type="real" />
+          <Property Name="FilterVentSealed" Type="real" />
+          <Property Name="Dia_Cir3" Type="real" />
+          <Property Name="Ovality3" Type="real" />
+          <Property Name="GlobalPorosity" Type="real" />
+          <Property Name="LocalPorosity" Type="real" />
+          <Property Name="AreaPorosity" Type="real" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SodiQubeDb.dbo.V_QualityTestsLast6Months' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_QualityTestsLast6Months">
+          <Key>
+            <PropertyRef Name="Fecha y hora" />
+            <PropertyRef Name="No. Sodiqube" />
+            <PropertyRef Name="Código de Filler" />
+            <PropertyRef Name="Máquina" />
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="Notificación diámetro" />
+            <PropertyRef Name="Notificación de peso" />
+            <PropertyRef Name="Notificación de tiro" />
+          </Key>
+          <Property Name="Año" Type="int" />
+          <Property Name="Mes" Type="int" />
+          <Property Name="Semana" Type="int" />
+          <Property Name="Fecha" Type="smalldatetime" />
+          <Property Name="Fecha y hora" Type="datetime" Nullable="false" />
+          <Property Name="Turno" Type="tinyint" />
+          <Property Name="No. Sodiqube" Type="smallint" Nullable="false" />
+          <Property Name="Código de Filler" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Filler" Type="nvarchar" MaxLength="40" />
+          <Property Name="Máquina" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Diámetro (mm)" Type="real" />
+          <Property Name="CycleId" Type="smallint" Nullable="false" />
+          <Property Name="Notificación diámetro" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="Peso (gr)" Type="real" />
+          <Property Name="Notificación de peso" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="Tiro (mm h2O)" Type="real" />
+          <Property Name="Notificación de tiro" Type="varchar" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SodiQubeDb.dbo.V_ReporteDatosIndividuales' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_ReporteDatosIndividuales">
+          <Key>
+            <PropertyRef Name="Fecha y hora" />
+            <PropertyRef Name="No. Sodiqube" />
+            <PropertyRef Name="Máquina" />
+            <PropertyRef Name="Notificación diámetro" />
+            <PropertyRef Name="Notificación de peso" />
+            <PropertyRef Name="Notificación de tiro" />
+          </Key>
+          <Property Name="Año" Type="int" />
+          <Property Name="Mes" Type="int" />
+          <Property Name="Semana" Type="int" />
+          <Property Name="Fecha" Type="smalldatetime" />
+          <Property Name="Fecha y hora" Type="datetime" Nullable="false" />
+          <Property Name="Turno" Type="tinyint" />
+          <Property Name="No. Sodiqube" Type="smallint" Nullable="false" />
+          <Property Name="Producto" Type="nvarchar" MaxLength="40" />
+          <Property Name="Máquina" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Diámetro" Type="real" />
+          <Property Name="Notificación diámetro" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="Peso" Type="real" />
+          <Property Name="Notificación de peso" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="Tiro" Type="real" />
+          <Property Name="Notificación de tiro" Type="varchar" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SodiQubeDb.dbo.V_ReporteMuestras' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_ReporteMuestras">
+          <Key>
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="Fecha y hora" />
+            <PropertyRef Name="Filler" />
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Variable" />
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="No. Sodiqube" />
+          </Key>
+          <Property Name="Año" Type="int" />
+          <Property Name="Mes" Type="int" />
+          <Property Name="Semana" Type="int" />
+          <Property Name="Fecha" Type="smalldatetime" Nullable="false" />
+          <Property Name="Fecha y hora" Type="datetime" Nullable="false" />
+          <Property Name="Turno" Type="tinyint" />
+          <Property Name="Máquina" Type="nvarchar" MaxLength="5" />
+          <Property Name="Código de Filler" Type="int" />
+          <Property Name="Filler" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Valor" Type="float" />
+          <Property Name="Variable" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="Límite Especificación Inferior" Type="float" />
+          <Property Name="Límite Especificación Superior" Type="float" />
+          <Property Name="Media" Type="float" />
+          <Property Name="Límite Control Inferior" Type="float" />
+          <Property Name="Límite Control Superior" Type="float" />
+          <Property Name="CycleId" Type="smallint" Nullable="false" />
+          <Property Name="No. Sodiqube" Type="smallint" Nullable="false" />
+          <Property Name="¿Fue notificado?" Type="bit" />
+          <Property Name="Tipo de notificación" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Details_Types">
+          <End Role="Types" Type="Self.Types" Multiplicity="1" />
+          <End Role="Details" Type="Self.Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Types">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Details">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="FN_GETMACHINECODE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+          <Parameter Name="EquipoID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="fn_GetMaterial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+          <Parameter Name="Material" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="fn_GetTurno" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="tinyint">
+          <Parameter Name="Fecha" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="InsertarNuevosRegistros" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="InsertarRegistrosVerificados_OLD_" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="InsertarRegistrosVerificados(OLD)" />
+        <Function Name="VerificarLimiteInferiorDiametro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="VerificarLimiteInferiorPeso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="VerificarLimiteInferiorTiro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="VerificarLimiteSuperiorDiametro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="VerificarLimiteSuperiorPeso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="VerificarLimiteSuperiorTiro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="VerificarTiroDatosIndividuales" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="SodiQubeDbModelStoreContainer">
+          <EntitySet Name="Details" EntityType="Self.Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Machines" EntityType="Self.Machines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Parametros" EntityType="Self.Parametros" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QualityStats" EntityType="Self.QualityStats" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QualityTests" EntityType="Self.QualityTests" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubTypes" EntityType="Self.SubTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TR_Historial" EntityType="Self.TR_Historial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TR_QualityTestsSummary" EntityType="Self.TR_QualityTestsSummary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Turno" EntityType="Self.Turno" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Types" EntityType="Self.Types" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QualityProcesed" EntityType="Self.QualityProcesed" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [QualityProcesed].[SodimatId] AS [SodimatId], 
+    [QualityProcesed].[CycleId] AS [CycleId], 
+    [QualityProcesed].[MachineCode] AS [MachineCode], 
+    [QualityProcesed].[Product] AS [Product], 
+    [QualityProcesed].[Peso] AS [Peso], 
+    [QualityProcesed].[Tiro] AS [Tiro], 
+    [QualityProcesed].[Diametro] AS [Diametro], 
+    [QualityProcesed].[RangoPeso] AS [RangoPeso], 
+    [QualityProcesed].[RangoTiro] AS [RangoTiro], 
+    [QualityProcesed].[RangoDiametro] AS [RangoDiametro], 
+    [QualityProcesed].[Turno] AS [Turno], 
+    [QualityProcesed].[Fecha] AS [Fecha], 
+    [QualityProcesed].[Fecha2] AS [Fecha2]
+    FROM [dbo].[QualityProcesed] AS [QualityProcesed]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="QualityProcesedDetail" EntityType="Self.QualityProcesedDetail" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [QualityProcesedDetail].[SodimatId] AS [SodimatId], 
+    [QualityProcesedDetail].[CycleId] AS [CycleId], 
+    [QualityProcesedDetail].[MachineCode] AS [MachineCode], 
+    [QualityProcesedDetail].[Product] AS [Product], 
+    [QualityProcesedDetail].[Peso] AS [Peso], 
+    [QualityProcesedDetail].[Tiro] AS [Tiro], 
+    [QualityProcesedDetail].[Diametro] AS [Diametro], 
+    [QualityProcesedDetail].[Turno] AS [Turno], 
+    [QualityProcesedDetail].[Fecha] AS [Fecha]
+    FROM [dbo].[QualityProcesedDetail] AS [QualityProcesedDetail]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_ParametrosProductos" EntityType="Self.V_ParametrosProductos" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_ParametrosProductos].[Product ID] AS [Product ID], 
+    [V_ParametrosProductos].[Filler Name] AS [Filler Name], 
+    [V_ParametrosProductos].[Type ID] AS [Type ID], 
+    [V_ParametrosProductos].[Subtype ID] AS [Subtype ID], 
+    [V_ParametrosProductos].[Parameter ID] AS [Parameter ID], 
+    [V_ParametrosProductos].[Parameter Description] AS [Parameter Description], 
+    [V_ParametrosProductos].[Display] AS [Display], 
+    [V_ParametrosProductos].[Value] AS [Value]
+    FROM [dbo].[V_ParametrosProductos] AS [V_ParametrosProductos]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_ProductosNotificados" EntityType="Self.V_ProductosNotificados" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_ProductosNotificados].[Fecha] AS [Fecha], 
+    [V_ProductosNotificados].[Turno] AS [Turno], 
+    [V_ProductosNotificados].[CycleId] AS [CycleId], 
+    [V_ProductosNotificados].[Producto] AS [Producto], 
+    [V_ProductosNotificados].[Máquina] AS [Máquina], 
+    [V_ProductosNotificados].[SodiQube] AS [SodiQube], 
+    [V_ProductosNotificados].[Diametro] AS [Diametro], 
+    [V_ProductosNotificados].[Peso] AS [Peso], 
+    [V_ProductosNotificados].[Tiro] AS [Tiro], 
+    [V_ProductosNotificados].[Notificación de Tiro] AS [Notificación de Tiro]
+    FROM [dbo].[V_ProductosNotificados] AS [V_ProductosNotificados]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_QualityProcesed" EntityType="Self.V_QualityProcesed" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_QualityProcesed].[SodimatId] AS [SodimatId], 
+    [V_QualityProcesed].[CycleId] AS [CycleId], 
+    [V_QualityProcesed].[MachineCode] AS [MachineCode], 
+    [V_QualityProcesed].[Product] AS [Product], 
+    [V_QualityProcesed].[Peso] AS [Peso], 
+    [V_QualityProcesed].[Tiro] AS [Tiro], 
+    [V_QualityProcesed].[Diametro] AS [Diametro], 
+    [V_QualityProcesed].[RangoPeso] AS [RangoPeso], 
+    [V_QualityProcesed].[RangoTiro] AS [RangoTiro], 
+    [V_QualityProcesed].[RangoDiametro] AS [RangoDiametro], 
+    [V_QualityProcesed].[Turno] AS [Turno], 
+    [V_QualityProcesed].[Fecha] AS [Fecha], 
+    [V_QualityProcesed].[Fecha2] AS [Fecha2]
+    FROM [dbo].[V_QualityProcesed] AS [V_QualityProcesed]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_QualitystatsLast3moths" EntityType="Self.V_QualitystatsLast3moths" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_QualitystatsLast3moths].[SodimatId] AS [SodimatId], 
+    [V_QualitystatsLast3moths].[DateTime] AS [DateTime], 
+    [V_QualitystatsLast3moths].[CycleId] AS [CycleId], 
+    [V_QualitystatsLast3moths].[RodNumber] AS [RodNumber], 
+    [V_QualitystatsLast3moths].[StatId] AS [StatId], 
+    [V_QualitystatsLast3moths].[TstFile] AS [TstFile], 
+    [V_QualitystatsLast3moths].[ProductCode] AS [ProductCode], 
+    [V_QualitystatsLast3moths].[MachineCode] AS [MachineCode], 
+    [V_QualitystatsLast3moths].[BrandCode] AS [BrandCode], 
+    [V_QualitystatsLast3moths].[BatchCode] AS [BatchCode], 
+    [V_QualitystatsLast3moths].[ReservedFlag] AS [ReservedFlag], 
+    [V_QualitystatsLast3moths].[ReservedCode] AS [ReservedCode], 
+    [V_QualitystatsLast3moths].[ReservedCounter] AS [ReservedCounter], 
+    [V_QualitystatsLast3moths].[Weight] AS [Weight], 
+    [V_QualitystatsLast3moths].[WeightCor] AS [WeightCor], 
+    [V_QualitystatsLast3moths].[Moisture1] AS [Moisture1], 
+    [V_QualitystatsLast3moths].[PressureDrop] AS [PressureDrop], 
+    [V_QualitystatsLast3moths].[PressureDrop_FE] AS [PressureDrop_FE], 
+    [V_QualitystatsLast3moths].[FilterVent] AS [FilterVent], 
+    [V_QualitystatsLast3moths].[PaperVent] AS [PaperVent], 
+    [V_QualitystatsLast3moths].[Moisture2] AS [Moisture2], 
+    [V_QualitystatsLast3moths].[Dia_Cir] AS [Dia_Cir], 
+    [V_QualitystatsLast3moths].[Ovality] AS [Ovality], 
+    [V_QualitystatsLast3moths].[Hardness] AS [Hardness], 
+    [V_QualitystatsLast3moths].[HardnessCor] AS [HardnessCor], 
+    [V_QualitystatsLast3moths].[HardnessDiff] AS [HardnessDiff], 
+    [V_QualitystatsLast3moths].[HardnessDiffCor] AS [HardnessDiffCor], 
+    [V_QualitystatsLast3moths].[Length] AS [Length], 
+    [V_QualitystatsLast3moths].[Dia_Cir2] AS [Dia_Cir2], 
+    [V_QualitystatsLast3moths].[Ovality2] AS [Ovality2], 
+    [V_QualitystatsLast3moths].[PressureDropSealed] AS [PressureDropSealed], 
+    [V_QualitystatsLast3moths].[FilterVentSealed] AS [FilterVentSealed], 
+    [V_QualitystatsLast3moths].[Dia_Cir3] AS [Dia_Cir3], 
+    [V_QualitystatsLast3moths].[Ovality3] AS [Ovality3], 
+    [V_QualitystatsLast3moths].[GlobalPorosity] AS [GlobalPorosity], 
+    [V_QualitystatsLast3moths].[LocalPorosity] AS [LocalPorosity], 
+    [V_QualitystatsLast3moths].[AreaPorosity] AS [AreaPorosity]
+    FROM [dbo].[V_QualitystatsLast3moths] AS [V_QualitystatsLast3moths]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_QualitytestLast3moths" EntityType="Self.V_QualitytestLast3moths" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_QualitytestLast3moths].[SodimatId] AS [SodimatId], 
+    [V_QualitytestLast3moths].[DateTime] AS [DateTime], 
+    [V_QualitytestLast3moths].[CycleId] AS [CycleId], 
+    [V_QualitytestLast3moths].[RodId] AS [RodId], 
+    [V_QualitytestLast3moths].[IsLastRod] AS [IsLastRod], 
+    [V_QualitytestLast3moths].[TstFile] AS [TstFile], 
+    [V_QualitytestLast3moths].[ProductCode] AS [ProductCode], 
+    [V_QualitytestLast3moths].[MachineCode] AS [MachineCode], 
+    [V_QualitytestLast3moths].[BrandCode] AS [BrandCode], 
+    [V_QualitytestLast3moths].[BatchCode] AS [BatchCode], 
+    [V_QualitytestLast3moths].[ReservedFlag] AS [ReservedFlag], 
+    [V_QualitytestLast3moths].[ReservedCode] AS [ReservedCode], 
+    [V_QualitytestLast3moths].[ReservedCounter] AS [ReservedCounter], 
+    [V_QualitytestLast3moths].[Weight] AS [Weight], 
+    [V_QualitytestLast3moths].[WeightCor] AS [WeightCor], 
+    [V_QualitytestLast3moths].[Moisture1] AS [Moisture1], 
+    [V_QualitytestLast3moths].[PressureDrop] AS [PressureDrop], 
+    [V_QualitytestLast3moths].[PressureDrop_FE] AS [PressureDrop_FE], 
+    [V_QualitytestLast3moths].[FilterVent] AS [FilterVent], 
+    [V_QualitytestLast3moths].[PaperVent] AS [PaperVent], 
+    [V_QualitytestLast3moths].[Moisture2] AS [Moisture2], 
+    [V_QualitytestLast3moths].[Dia_Cir] AS [Dia_Cir], 
+    [V_QualitytestLast3moths].[Ovality] AS [Ovality], 
+    [V_QualitytestLast3moths].[Hardness] AS [Hardness], 
+    [V_QualitytestLast3moths].[HardnessCor] AS [HardnessCor], 
+    [V_QualitytestLast3moths].[HardnessDiff] AS [HardnessDiff], 
+    [V_QualitytestLast3moths].[HardnessDiffCor] AS [HardnessDiffCor], 
+    [V_QualitytestLast3moths].[Length] AS [Length], 
+    [V_QualitytestLast3moths].[Dia_Cir2] AS [Dia_Cir2], 
+    [V_QualitytestLast3moths].[Ovality2] AS [Ovality2], 
+    [V_QualitytestLast3moths].[PressureDropSealed] AS [PressureDropSealed], 
+    [V_QualitytestLast3moths].[FilterVentSealed] AS [FilterVentSealed], 
+    [V_QualitytestLast3moths].[Dia_Cir3] AS [Dia_Cir3], 
+    [V_QualitytestLast3moths].[Ovality3] AS [Ovality3], 
+    [V_QualitytestLast3moths].[GlobalPorosity] AS [GlobalPorosity], 
+    [V_QualitytestLast3moths].[LocalPorosity] AS [LocalPorosity], 
+    [V_QualitytestLast3moths].[AreaPorosity] AS [AreaPorosity]
+    FROM [dbo].[V_QualitytestLast3moths] AS [V_QualitytestLast3moths]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_QualityTestsLast5Months" EntityType="Self.V_QualityTestsLast5Months" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_QualityTestsLast5Months].[SodimatId] AS [SodimatId], 
+    [V_QualityTestsLast5Months].[DateTime] AS [DateTime], 
+    [V_QualityTestsLast5Months].[CycleId] AS [CycleId], 
+    [V_QualityTestsLast5Months].[RodId] AS [RodId], 
+    [V_QualityTestsLast5Months].[IsLastRod] AS [IsLastRod], 
+    [V_QualityTestsLast5Months].[TstFile] AS [TstFile], 
+    [V_QualityTestsLast5Months].[ProductCode] AS [ProductCode], 
+    [V_QualityTestsLast5Months].[MachineCode] AS [MachineCode], 
+    [V_QualityTestsLast5Months].[BrandCode] AS [BrandCode], 
+    [V_QualityTestsLast5Months].[BatchCode] AS [BatchCode], 
+    [V_QualityTestsLast5Months].[ReservedFlag] AS [ReservedFlag], 
+    [V_QualityTestsLast5Months].[ReservedCode] AS [ReservedCode], 
+    [V_QualityTestsLast5Months].[ReservedCounter] AS [ReservedCounter], 
+    [V_QualityTestsLast5Months].[Weight] AS [Weight], 
+    [V_QualityTestsLast5Months].[WeightCor] AS [WeightCor], 
+    [V_QualityTestsLast5Months].[Moisture1] AS [Moisture1], 
+    [V_QualityTestsLast5Months].[PressureDrop] AS [PressureDrop], 
+    [V_QualityTestsLast5Months].[PressureDrop_FE] AS [PressureDrop_FE], 
+    [V_QualityTestsLast5Months].[FilterVent] AS [FilterVent], 
+    [V_QualityTestsLast5Months].[PaperVent] AS [PaperVent], 
+    [V_QualityTestsLast5Months].[Moisture2] AS [Moisture2], 
+    [V_QualityTestsLast5Months].[Dia_Cir] AS [Dia_Cir], 
+    [V_QualityTestsLast5Months].[Ovality] AS [Ovality], 
+    [V_QualityTestsLast5Months].[Hardness] AS [Hardness], 
+    [V_QualityTestsLast5Months].[HardnessCor] AS [HardnessCor], 
+    [V_QualityTestsLast5Months].[HardnessDiff] AS [HardnessDiff], 
+    [V_QualityTestsLast5Months].[HardnessDiffCor] AS [HardnessDiffCor], 
+    [V_QualityTestsLast5Months].[Length] AS [Length], 
+    [V_QualityTestsLast5Months].[Dia_Cir2] AS [Dia_Cir2], 
+    [V_QualityTestsLast5Months].[Ovality2] AS [Ovality2], 
+    [V_QualityTestsLast5Months].[PressureDropSealed] AS [PressureDropSealed], 
+    [V_QualityTestsLast5Months].[FilterVentSealed] AS [FilterVentSealed], 
+    [V_QualityTestsLast5Months].[Dia_Cir3] AS [Dia_Cir3], 
+    [V_QualityTestsLast5Months].[Ovality3] AS [Ovality3], 
+    [V_QualityTestsLast5Months].[GlobalPorosity] AS [GlobalPorosity], 
+    [V_QualityTestsLast5Months].[LocalPorosity] AS [LocalPorosity], 
+    [V_QualityTestsLast5Months].[AreaPorosity] AS [AreaPorosity]
+    FROM [dbo].[V_QualityTestsLast5Months] AS [V_QualityTestsLast5Months]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_QualityTestsLast6Months" EntityType="Self.V_QualityTestsLast6Months" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_QualityTestsLast6Months].[Año] AS [Año], 
+    [V_QualityTestsLast6Months].[Mes] AS [Mes], 
+    [V_QualityTestsLast6Months].[Semana] AS [Semana], 
+    [V_QualityTestsLast6Months].[Fecha] AS [Fecha], 
+    [V_QualityTestsLast6Months].[Fecha y hora] AS [Fecha y hora], 
+    [V_QualityTestsLast6Months].[Turno] AS [Turno], 
+    [V_QualityTestsLast6Months].[No. Sodiqube] AS [No. Sodiqube], 
+    [V_QualityTestsLast6Months].[Código de Filler] AS [Código de Filler], 
+    [V_QualityTestsLast6Months].[Filler] AS [Filler], 
+    [V_QualityTestsLast6Months].[Máquina] AS [Máquina], 
+    [V_QualityTestsLast6Months].[Diámetro (mm)] AS [Diámetro (mm)], 
+    [V_QualityTestsLast6Months].[CycleId] AS [CycleId], 
+    [V_QualityTestsLast6Months].[Notificación diámetro] AS [Notificación diámetro], 
+    [V_QualityTestsLast6Months].[Peso (gr)] AS [Peso (gr)], 
+    [V_QualityTestsLast6Months].[Notificación de peso] AS [Notificación de peso], 
+    [V_QualityTestsLast6Months].[Tiro (mm h2O)] AS [Tiro (mm h2O)], 
+    [V_QualityTestsLast6Months].[Notificación de tiro] AS [Notificación de tiro]
+    FROM [dbo].[V_QualityTestsLast6Months] AS [V_QualityTestsLast6Months]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_ReporteDatosIndividuales" EntityType="Self.V_ReporteDatosIndividuales" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_ReporteDatosIndividuales].[Año] AS [Año], 
+    [V_ReporteDatosIndividuales].[Mes] AS [Mes], 
+    [V_ReporteDatosIndividuales].[Semana] AS [Semana], 
+    [V_ReporteDatosIndividuales].[Fecha] AS [Fecha], 
+    [V_ReporteDatosIndividuales].[Fecha y hora] AS [Fecha y hora], 
+    [V_ReporteDatosIndividuales].[Turno] AS [Turno], 
+    [V_ReporteDatosIndividuales].[No. Sodiqube] AS [No. Sodiqube], 
+    [V_ReporteDatosIndividuales].[Producto] AS [Producto], 
+    [V_ReporteDatosIndividuales].[Máquina] AS [Máquina], 
+    [V_ReporteDatosIndividuales].[Diámetro] AS [Diámetro], 
+    [V_ReporteDatosIndividuales].[Notificación diámetro] AS [Notificación diámetro], 
+    [V_ReporteDatosIndividuales].[Peso] AS [Peso], 
+    [V_ReporteDatosIndividuales].[Notificación de peso] AS [Notificación de peso], 
+    [V_ReporteDatosIndividuales].[Tiro] AS [Tiro], 
+    [V_ReporteDatosIndividuales].[Notificación de tiro] AS [Notificación de tiro]
+    FROM [dbo].[V_ReporteDatosIndividuales] AS [V_ReporteDatosIndividuales]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_ReporteMuestras" EntityType="Self.V_ReporteMuestras" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_ReporteMuestras].[Año] AS [Año], 
+    [V_ReporteMuestras].[Mes] AS [Mes], 
+    [V_ReporteMuestras].[Semana] AS [Semana], 
+    [V_ReporteMuestras].[Fecha] AS [Fecha], 
+    [V_ReporteMuestras].[Fecha y hora] AS [Fecha y hora], 
+    [V_ReporteMuestras].[Turno] AS [Turno], 
+    [V_ReporteMuestras].[Máquina] AS [Máquina], 
+    [V_ReporteMuestras].[Código de Filler] AS [Código de Filler], 
+    [V_ReporteMuestras].[Filler] AS [Filler], 
+    [V_ReporteMuestras].[ID] AS [ID], 
+    [V_ReporteMuestras].[Valor] AS [Valor], 
+    [V_ReporteMuestras].[Variable] AS [Variable], 
+    [V_ReporteMuestras].[Límite Especificación Inferior] AS [Límite Especificación Inferior], 
+    [V_ReporteMuestras].[Límite Especificación Superior] AS [Límite Especificación Superior], 
+    [V_ReporteMuestras].[Media] AS [Media], 
+    [V_ReporteMuestras].[Límite Control Inferior] AS [Límite Control Inferior], 
+    [V_ReporteMuestras].[Límite Control Superior] AS [Límite Control Superior], 
+    [V_ReporteMuestras].[CycleId] AS [CycleId], 
+    [V_ReporteMuestras].[No. Sodiqube] AS [No. Sodiqube], 
+    [V_ReporteMuestras].[¿Fue notificado?] AS [¿Fue notificado?], 
+    [V_ReporteMuestras].[Tipo de notificación] AS [Tipo de notificación]
+    FROM [dbo].[V_ReporteMuestras] AS [V_ReporteMuestras]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Details_Types" Association="Self.FK_Details_Types">
+            <End Role="Types" EntitySet="Types" />
+            <End Role="Details" EntitySet="Details" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SodiQubeDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Detail">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="TypeID" />
+            <PropertyRef Name="SubTypeID" />
+            <PropertyRef Name="ParametroID" />
+          </Key>
+          <Property Name="ProductID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TypeID" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="SubTypeID" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ParametroID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Display" Type="Boolean" Nullable="false" />
+          <Property Name="Value" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
+          <NavigationProperty Name="Type" Relationship="Self.FK_Details_Types" FromRole="Details" ToRole="Types" />
+        </EntityType>
+        <EntityType Name="Machine">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MachineCode" Type="String" MaxLength="22" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="Parametro">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="QualityStat">
+          <Key>
+            <PropertyRef Name="SodimatId" />
+            <PropertyRef Name="DateTime" />
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="RodNumber" />
+            <PropertyRef Name="StatId" />
+          </Key>
+          <Property Name="SodimatId" Type="Int16" Nullable="false" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CycleId" Type="Int16" Nullable="false" />
+          <Property Name="RodNumber" Type="Int16" Nullable="false" />
+          <Property Name="StatId" Type="Int16" Nullable="false" />
+          <Property Name="TstFile" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ProductCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="MachineCode" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+          <Property Name="BrandCode" Type="Int32" />
+          <Property Name="BatchCode" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+          <Property Name="ReservedFlag" Type="Int16" />
+          <Property Name="ReservedCode" Type="Int32" />
+          <Property Name="ReservedCounter" Type="Int32" />
+          <Property Name="Weight" Type="Single" />
+          <Property Name="WeightCor" Type="Single" />
+          <Property Name="Moisture1" Type="Single" />
+          <Property Name="PressureDrop" Type="Single" />
+          <Property Name="PressureDrop_FE" Type="Single" />
+          <Property Name="FilterVent" Type="Single" />
+          <Property Name="PaperVent" Type="Single" />
+          <Property Name="Moisture2" Type="Single" />
+          <Property Name="Dia_Cir" Type="Single" />
+          <Property Name="Ovality" Type="Single" />
+          <Property Name="Hardness" Type="Single" />
+          <Property Name="HardnessCor" Type="Single" />
+          <Property Name="HardnessDiff" Type="Single" />
+          <Property Name="HardnessDiffCor" Type="Single" />
+          <Property Name="Length" Type="Single" />
+          <Property Name="Dia_Cir2" Type="Single" />
+          <Property Name="Ovality2" Type="Single" />
+          <Property Name="PressureDropSealed" Type="Single" />
+          <Property Name="FilterVentSealed" Type="Single" />
+          <Property Name="Dia_Cir3" Type="Single" />
+          <Property Name="Ovality3" Type="Single" />
+          <Property Name="GlobalPorosity" Type="Single" />
+          <Property Name="LocalPorosity" Type="Single" />
+          <Property Name="AreaPorosity" Type="Single" />
+        </EntityType>
+        <EntityType Name="QualityTest">
+          <Key>
+            <PropertyRef Name="SodimatId" />
+            <PropertyRef Name="DateTime" />
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="RodId" />
+            <PropertyRef Name="IsLastRod" />
+          </Key>
+          <Property Name="SodimatId" Type="Int16" Nullable="false" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CycleId" Type="Int16" Nullable="false" />
+          <Property Name="RodId" Type="Int16" Nullable="false" />
+          <Property Name="IsLastRod" Type="Int16" Nullable="false" />
+          <Property Name="TstFile" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ProductCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="MachineCode" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+          <Property Name="BrandCode" Type="Int32" />
+          <Property Name="BatchCode" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+          <Property Name="ReservedFlag" Type="Int16" />
+          <Property Name="ReservedCode" Type="Int32" />
+          <Property Name="ReservedCounter" Type="Int32" />
+          <Property Name="Weight" Type="Single" />
+          <Property Name="WeightCor" Type="Single" />
+          <Property Name="Moisture1" Type="Single" />
+          <Property Name="PressureDrop" Type="Single" />
+          <Property Name="PressureDrop_FE" Type="Single" />
+          <Property Name="FilterVent" Type="Single" />
+          <Property Name="PaperVent" Type="Single" />
+          <Property Name="Moisture2" Type="Single" />
+          <Property Name="Dia_Cir" Type="Single" />
+          <Property Name="Ovality" Type="Single" />
+          <Property Name="Hardness" Type="Single" />
+          <Property Name="HardnessCor" Type="Single" />
+          <Property Name="HardnessDiff" Type="Single" />
+          <Property Name="HardnessDiffCor" Type="Single" />
+          <Property Name="Length" Type="Single" />
+          <Property Name="Dia_Cir2" Type="Single" />
+          <Property Name="Ovality2" Type="Single" />
+          <Property Name="PressureDropSealed" Type="Single" />
+          <Property Name="FilterVentSealed" Type="Single" />
+          <Property Name="Dia_Cir3" Type="Single" />
+          <Property Name="Ovality3" Type="Single" />
+          <Property Name="GlobalPorosity" Type="Single" />
+          <Property Name="LocalPorosity" Type="Single" />
+          <Property Name="AreaPorosity" Type="Single" />
+          <Property Name="WeightOutOfBounds" Type="Boolean" />
+          <Property Name="DiameterOutOfBounds" Type="Boolean" />
+          <Property Name="PressureDropOutOfBounds" Type="Boolean" />
+          <Property Name="WeightCommentOutOfBounds" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DiameterCommentOutOfBounds" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PressureDropCommentOutOfBounds" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NotificationDatePressureDrop" Type="DateTime" Precision="3" />
+          <Property Name="NotificationEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isPressureDropProcessed" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="SubType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TR_Historial">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fechaModificacionDatos" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="nombreUsuarioModificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TR_QualityTestsSummary">
+          <Key>
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="MachineCode" />
+            <PropertyRef Name="Product" />
+            <PropertyRef Name="SodimatId" />
+            <PropertyRef Name="Fecha2" />
+          </Key>
+          <Property Name="CycleId" Type="Int16" Nullable="false" />
+          <Property Name="MachineCode" Type="String" MaxLength="22" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Product" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SodimatId" Type="Int16" Nullable="false" />
+          <Property Name="Peso" Type="Double" />
+          <Property Name="Tiro" Type="Double" />
+          <Property Name="Diametro" Type="Double" />
+          <Property Name="Turno" Type="Byte" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fecha2" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="notificadoPeso" Type="Boolean" />
+          <Property Name="notificadoDiametro" Type="Boolean" />
+          <Property Name="fechaNotificacionPeso" Type="DateTime" Precision="3" />
+          <Property Name="fechaNotificacionDiametro" Type="DateTime" Precision="3" />
+          <Property Name="notificadoTiro" Type="Boolean" />
+          <Property Name="fechaNotificacionTiro" Type="DateTime" Precision="3" />
+          <Property Name="correoNotificado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="comentarioNotificacionTiro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="comentarioNotificacionDiametro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="comentarioNotificacionPeso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LciTiro" Type="Double" />
+          <Property Name="LcsTiro" Type="Double" />
+          <Property Name="TargetTiro" Type="Double" />
+          <Property Name="LciPeso" Type="Double" />
+          <Property Name="LcsPeso" Type="Double" />
+          <Property Name="TargetPeso" Type="Double" />
+          <Property Name="LeiPeso" Type="Double" />
+          <Property Name="LesPeso" Type="Double" />
+          <Property Name="LciDiametro" Type="Double" />
+          <Property Name="LcsDiametro" Type="Double" />
+          <Property Name="TargetDiametro" Type="Double" />
+          <Property Name="LeiDiametro" Type="Double" />
+          <Property Name="LesDiametro" Type="Double" />
+        </EntityType>
+        <EntityType Name="Turno">
+          <Key>
+            <PropertyRef Name="IDTurno" />
+          </Key>
+          <Property Name="IDTurno" Type="Byte" Nullable="false" />
+          <Property Name="Inicio" Type="Byte" Nullable="false" />
+          <Property Name="Fin" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Type">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Details" Relationship="Self.FK_Details_Types" FromRole="Types" ToRole="Details" />
+        </EntityType>
+        <EntityType Name="QualityProcesed">
+          <Key>
+            <PropertyRef Name="SodimatId" />
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="MachineCode" />
+            <PropertyRef Name="Product" />
+          </Key>
+          <Property Name="SodimatId" Type="Int16" Nullable="false" />
+          <Property Name="CycleId" Type="Int16" Nullable="false" />
+          <Property Name="MachineCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Product" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Peso" Type="Double" />
+          <Property Name="Tiro" Type="Double" />
+          <Property Name="Diametro" Type="Double" />
+          <Property Name="RangoPeso" Type="Single" />
+          <Property Name="RangoTiro" Type="Single" />
+          <Property Name="RangoDiametro" Type="Single" />
+          <Property Name="Turno" Type="Byte" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+          <Property Name="Fecha2" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="QualityProcesedDetail">
+          <Key>
+            <PropertyRef Name="SodimatId" />
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="MachineCode" />
+            <PropertyRef Name="Product" />
+          </Key>
+          <Property Name="SodimatId" Type="Int16" Nullable="false" />
+          <Property Name="CycleId" Type="Int16" Nullable="false" />
+          <Property Name="MachineCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Product" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Peso" Type="Single" />
+          <Property Name="Tiro" Type="Single" />
+          <Property Name="Diametro" Type="Single" />
+          <Property Name="Turno" Type="Byte" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="V_ParametrosProductos">
+          <Key>
+            <PropertyRef Name="Product_ID" />
+            <PropertyRef Name="Filler_Name" />
+            <PropertyRef Name="Type_ID" />
+            <PropertyRef Name="Subtype_ID" />
+            <PropertyRef Name="Parameter_ID" />
+            <PropertyRef Name="Parameter_Description" />
+            <PropertyRef Name="Display" />
+            <PropertyRef Name="Value" />
+          </Key>
+          <Property Name="Product_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Filler_Name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Type_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Subtype_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Parameter_ID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Parameter_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Display" Type="Boolean" Nullable="false" />
+          <Property Name="Value" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="V_ProductosNotificados">
+          <Key>
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="Producto" />
+            <PropertyRef Name="Máquina" />
+            <PropertyRef Name="SodiQube" />
+          </Key>
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Turno" Type="Byte" />
+          <Property Name="CycleId" Type="Int16" Nullable="false" />
+          <Property Name="Producto" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Máquina" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SodiQube" Type="Int16" Nullable="false" />
+          <Property Name="Diametro" Type="Double" />
+          <Property Name="Peso" Type="Double" />
+          <Property Name="Tiro" Type="Double" />
+          <Property Name="Notificación_de_Tiro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="V_QualityProcesed">
+          <Key>
+            <PropertyRef Name="SodimatId" />
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="MachineCode" />
+            <PropertyRef Name="Product" />
+          </Key>
+          <Property Name="SodimatId" Type="Int16" Nullable="false" />
+          <Property Name="CycleId" Type="Int16" Nullable="false" />
+          <Property Name="MachineCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Product" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Peso" Type="Double" />
+          <Property Name="Tiro" Type="Double" />
+          <Property Name="Diametro" Type="Double" />
+          <Property Name="RangoPeso" Type="Single" />
+          <Property Name="RangoTiro" Type="Single" />
+          <Property Name="RangoDiametro" Type="Single" />
+          <Property Name="Turno" Type="Byte" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+          <Property Name="Fecha2" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="V_QualitystatsLast3moths">
+          <Key>
+            <PropertyRef Name="SodimatId" />
+            <PropertyRef Name="DateTime" />
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="RodNumber" />
+            <PropertyRef Name="StatId" />
+          </Key>
+          <Property Name="SodimatId" Type="Int16" Nullable="false" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CycleId" Type="Int16" Nullable="false" />
+          <Property Name="RodNumber" Type="Int16" Nullable="false" />
+          <Property Name="StatId" Type="Int16" Nullable="false" />
+          <Property Name="TstFile" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ProductCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="MachineCode" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="BrandCode" Type="Int32" />
+          <Property Name="BatchCode" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+          <Property Name="ReservedFlag" Type="Int16" />
+          <Property Name="ReservedCode" Type="Int32" />
+          <Property Name="ReservedCounter" Type="Int32" />
+          <Property Name="Weight" Type="Single" />
+          <Property Name="WeightCor" Type="Single" />
+          <Property Name="Moisture1" Type="Single" />
+          <Property Name="PressureDrop" Type="Single" />
+          <Property Name="PressureDrop_FE" Type="Single" />
+          <Property Name="FilterVent" Type="Single" />
+          <Property Name="PaperVent" Type="Single" />
+          <Property Name="Moisture2" Type="Single" />
+          <Property Name="Dia_Cir" Type="Single" />
+          <Property Name="Ovality" Type="Single" />
+          <Property Name="Hardness" Type="Single" />
+          <Property Name="HardnessCor" Type="Single" />
+          <Property Name="HardnessDiff" Type="Single" />
+          <Property Name="HardnessDiffCor" Type="Single" />
+          <Property Name="Length" Type="Single" />
+          <Property Name="Dia_Cir2" Type="Single" />
+          <Property Name="Ovality2" Type="Single" />
+          <Property Name="PressureDropSealed" Type="Single" />
+          <Property Name="FilterVentSealed" Type="Single" />
+          <Property Name="Dia_Cir3" Type="Single" />
+          <Property Name="Ovality3" Type="Single" />
+          <Property Name="GlobalPorosity" Type="Single" />
+          <Property Name="LocalPorosity" Type="Single" />
+          <Property Name="AreaPorosity" Type="Single" />
+        </EntityType>
+        <EntityType Name="V_QualitytestLast3moths">
+          <Key>
+            <PropertyRef Name="SodimatId" />
+            <PropertyRef Name="DateTime" />
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="RodId" />
+            <PropertyRef Name="IsLastRod" />
+          </Key>
+          <Property Name="SodimatId" Type="Int16" Nullable="false" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CycleId" Type="Int16" Nullable="false" />
+          <Property Name="RodId" Type="Int16" Nullable="false" />
+          <Property Name="IsLastRod" Type="Int16" Nullable="false" />
+          <Property Name="TstFile" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ProductCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="MachineCode" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="BrandCode" Type="Int32" />
+          <Property Name="BatchCode" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+          <Property Name="ReservedFlag" Type="Int16" />
+          <Property Name="ReservedCode" Type="Int32" />
+          <Property Name="ReservedCounter" Type="Int32" />
+          <Property Name="Weight" Type="Single" />
+          <Property Name="WeightCor" Type="Single" />
+          <Property Name="Moisture1" Type="Single" />
+          <Property Name="PressureDrop" Type="Single" />
+          <Property Name="PressureDrop_FE" Type="Single" />
+          <Property Name="FilterVent" Type="Single" />
+          <Property Name="PaperVent" Type="Single" />
+          <Property Name="Moisture2" Type="Single" />
+          <Property Name="Dia_Cir" Type="Single" />
+          <Property Name="Ovality" Type="Single" />
+          <Property Name="Hardness" Type="Single" />
+          <Property Name="HardnessCor" Type="Single" />
+          <Property Name="HardnessDiff" Type="Single" />
+          <Property Name="HardnessDiffCor" Type="Single" />
+          <Property Name="Length" Type="Single" />
+          <Property Name="Dia_Cir2" Type="Single" />
+          <Property Name="Ovality2" Type="Single" />
+          <Property Name="PressureDropSealed" Type="Single" />
+          <Property Name="FilterVentSealed" Type="Single" />
+          <Property Name="Dia_Cir3" Type="Single" />
+          <Property Name="Ovality3" Type="Single" />
+          <Property Name="GlobalPorosity" Type="Single" />
+          <Property Name="LocalPorosity" Type="Single" />
+          <Property Name="AreaPorosity" Type="Single" />
+        </EntityType>
+        <EntityType Name="V_QualityTestsLast5Months">
+          <Key>
+            <PropertyRef Name="SodimatId" />
+            <PropertyRef Name="DateTime" />
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="RodId" />
+            <PropertyRef Name="IsLastRod" />
+          </Key>
+          <Property Name="SodimatId" Type="Int16" Nullable="false" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CycleId" Type="Int16" Nullable="false" />
+          <Property Name="RodId" Type="Int16" Nullable="false" />
+          <Property Name="IsLastRod" Type="Int16" Nullable="false" />
+          <Property Name="TstFile" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ProductCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="MachineCode" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+          <Property Name="BrandCode" Type="Int32" />
+          <Property Name="BatchCode" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+          <Property Name="ReservedFlag" Type="Int16" />
+          <Property Name="ReservedCode" Type="Int32" />
+          <Property Name="ReservedCounter" Type="Int32" />
+          <Property Name="Weight" Type="Single" />
+          <Property Name="WeightCor" Type="Single" />
+          <Property Name="Moisture1" Type="Single" />
+          <Property Name="PressureDrop" Type="Single" />
+          <Property Name="PressureDrop_FE" Type="Single" />
+          <Property Name="FilterVent" Type="Single" />
+          <Property Name="PaperVent" Type="Single" />
+          <Property Name="Moisture2" Type="Single" />
+          <Property Name="Dia_Cir" Type="Single" />
+          <Property Name="Ovality" Type="Single" />
+          <Property Name="Hardness" Type="Single" />
+          <Property Name="HardnessCor" Type="Single" />
+          <Property Name="HardnessDiff" Type="Single" />
+          <Property Name="HardnessDiffCor" Type="Single" />
+          <Property Name="Length" Type="Single" />
+          <Property Name="Dia_Cir2" Type="Single" />
+          <Property Name="Ovality2" Type="Single" />
+          <Property Name="PressureDropSealed" Type="Single" />
+          <Property Name="FilterVentSealed" Type="Single" />
+          <Property Name="Dia_Cir3" Type="Single" />
+          <Property Name="Ovality3" Type="Single" />
+          <Property Name="GlobalPorosity" Type="Single" />
+          <Property Name="LocalPorosity" Type="Single" />
+          <Property Name="AreaPorosity" Type="Single" />
+        </EntityType>
+        <EntityType Name="V_QualityTestsLast6Months">
+          <Key>
+            <PropertyRef Name="Fecha_y_hora" />
+            <PropertyRef Name="No__Sodiqube" />
+            <PropertyRef Name="Código_de_Filler" />
+            <PropertyRef Name="Máquina" />
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="Notificación_diámetro" />
+            <PropertyRef Name="Notificación_de_peso" />
+            <PropertyRef Name="Notificación_de_tiro" />
+          </Key>
+          <Property Name="Año" Type="Int32" />
+          <Property Name="Mes" Type="Int32" />
+          <Property Name="Semana" Type="Int32" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+          <Property Name="Fecha_y_hora" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Turno" Type="Byte" />
+          <Property Name="No__Sodiqube" Type="Int16" Nullable="false" />
+          <Property Name="Código_de_Filler" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Filler" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Máquina" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Diámetro__mm_" Type="Single" />
+          <Property Name="CycleId" Type="Int16" Nullable="false" />
+          <Property Name="Notificación_diámetro" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Peso__gr_" Type="Single" />
+          <Property Name="Notificación_de_peso" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tiro__mm_h2O_" Type="Single" />
+          <Property Name="Notificación_de_tiro" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="V_ReporteDatosIndividuales">
+          <Key>
+            <PropertyRef Name="Fecha_y_hora" />
+            <PropertyRef Name="No__Sodiqube" />
+            <PropertyRef Name="Máquina" />
+            <PropertyRef Name="Notificación_diámetro" />
+            <PropertyRef Name="Notificación_de_peso" />
+            <PropertyRef Name="Notificación_de_tiro" />
+          </Key>
+          <Property Name="Año" Type="Int32" />
+          <Property Name="Mes" Type="Int32" />
+          <Property Name="Semana" Type="Int32" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+          <Property Name="Fecha_y_hora" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Turno" Type="Byte" />
+          <Property Name="No__Sodiqube" Type="Int16" Nullable="false" />
+          <Property Name="Producto" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Máquina" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Diámetro" Type="Single" />
+          <Property Name="Notificación_diámetro" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Peso" Type="Single" />
+          <Property Name="Notificación_de_peso" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tiro" Type="Single" />
+          <Property Name="Notificación_de_tiro" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="V_ReporteMuestras">
+          <Key>
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="Fecha_y_hora" />
+            <PropertyRef Name="Filler" />
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Variable" />
+            <PropertyRef Name="CycleId" />
+            <PropertyRef Name="No__Sodiqube" />
+          </Key>
+          <Property Name="Año" Type="Int32" />
+          <Property Name="Mes" Type="Int32" />
+          <Property Name="Semana" Type="Int32" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fecha_y_hora" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Turno" Type="Byte" />
+          <Property Name="Máquina" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Código_de_Filler" Type="Int32" />
+          <Property Name="Filler" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Valor" Type="Double" />
+          <Property Name="Variable" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Límite_Especificación_Inferior" Type="Double" />
+          <Property Name="Límite_Especificación_Superior" Type="Double" />
+          <Property Name="Media" Type="Double" />
+          <Property Name="Límite_Control_Inferior" Type="Double" />
+          <Property Name="Límite_Control_Superior" Type="Double" />
+          <Property Name="CycleId" Type="Int16" Nullable="false" />
+          <Property Name="No__Sodiqube" Type="Int16" Nullable="false" />
+          <Property Name="C_Fue_notificado_" Type="Boolean" />
+          <Property Name="Tipo_de_notificación" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Details_Types">
+          <End Role="Types" Type="Self.Type" Multiplicity="1" />
+          <End Role="Details" Type="Self.Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Types">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Details">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SodiQubeDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Details" EntityType="Self.Detail" />
+          <EntitySet Name="Machines" EntityType="Self.Machine" />
+          <EntitySet Name="Parametros" EntityType="Self.Parametro" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="QualityStats" EntityType="Self.QualityStat" />
+          <EntitySet Name="QualityTests" EntityType="Self.QualityTest" />
+          <EntitySet Name="SubTypes" EntityType="Self.SubType" />
+          <EntitySet Name="TR_Historial" EntityType="Self.TR_Historial" />
+          <EntitySet Name="TR_QualityTestsSummary" EntityType="Self.TR_QualityTestsSummary" />
+          <EntitySet Name="Turnoes" EntityType="Self.Turno" />
+          <EntitySet Name="Types" EntityType="Self.Type" />
+          <EntitySet Name="QualityProceseds" EntityType="Self.QualityProcesed" />
+          <EntitySet Name="QualityProcesedDetails" EntityType="Self.QualityProcesedDetail" />
+          <EntitySet Name="V_ParametrosProductos" EntityType="Self.V_ParametrosProductos" />
+          <EntitySet Name="V_ProductosNotificados" EntityType="Self.V_ProductosNotificados" />
+          <EntitySet Name="V_QualityProcesed" EntityType="Self.V_QualityProcesed" />
+          <EntitySet Name="V_QualitystatsLast3moths" EntityType="Self.V_QualitystatsLast3moths" />
+          <EntitySet Name="V_QualitytestLast3moths" EntityType="Self.V_QualitytestLast3moths" />
+          <EntitySet Name="V_QualityTestsLast5Months" EntityType="Self.V_QualityTestsLast5Months" />
+          <EntitySet Name="V_QualityTestsLast6Months" EntityType="Self.V_QualityTestsLast6Months" />
+          <EntitySet Name="V_ReporteDatosIndividuales" EntityType="Self.V_ReporteDatosIndividuales" />
+          <EntitySet Name="V_ReporteMuestras" EntityType="Self.V_ReporteMuestras" />
+          <AssociationSet Name="FK_Details_Types" Association="Self.FK_Details_Types">
+            <End Role="Types" EntitySet="Types" />
+            <End Role="Details" EntitySet="Details" />
+          </AssociationSet>
+          <FunctionImport Name="InsertarNuevosRegistros" />
+          <FunctionImport Name="InsertarRegistrosVerificados_OLD_" />
+          <FunctionImport Name="VerificarLimiteInferiorDiametro" />
+          <FunctionImport Name="VerificarLimiteInferiorPeso" />
+          <FunctionImport Name="VerificarLimiteInferiorTiro" />
+          <FunctionImport Name="VerificarLimiteSuperiorDiametro" />
+          <FunctionImport Name="VerificarLimiteSuperiorPeso" />
+          <FunctionImport Name="VerificarLimiteSuperiorTiro" />
+          <FunctionImport Name="VerificarTiroDatosIndividuales" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SodiQubeDbModelStoreContainer" CdmEntityContainer="SodiQubeDbEntities">
+          <EntitySetMapping Name="Details">
+            <EntityTypeMapping TypeName="SodiQubeDbModel.Detail">
+              <MappingFragment StoreEntitySet="Details">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="SubTypeID" ColumnName="SubTypeID" />
+                <ScalarProperty Name="ParametroID" ColumnName="ParametroID" />
+                <ScalarProperty Name="Display" ColumnName="Display" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Machines">
+            <EntityTypeMapping TypeName="SodiQubeDbModel.Machine">
+              <MappingFragment StoreEntitySet="Machines">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Parametros">
+            <EntityTypeMapping TypeName="SodiQubeDbModel.Parametro">
+              <MappingFragment StoreEntitySet="Parametros">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="SodiQubeDbModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QualityStats">
+            <EntityTypeMapping TypeName="SodiQubeDbModel.QualityStat">
+              <MappingFragment StoreEntitySet="QualityStats">
+                <ScalarProperty Name="SodimatId" ColumnName="SodimatId" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+                <ScalarProperty Name="RodNumber" ColumnName="RodNumber" />
+                <ScalarProperty Name="StatId" ColumnName="StatId" />
+                <ScalarProperty Name="TstFile" ColumnName="TstFile" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
+                <ScalarProperty Name="BrandCode" ColumnName="BrandCode" />
+                <ScalarProperty Name="BatchCode" ColumnName="BatchCode" />
+                <ScalarProperty Name="ReservedFlag" ColumnName="ReservedFlag" />
+                <ScalarProperty Name="ReservedCode" ColumnName="ReservedCode" />
+                <ScalarProperty Name="ReservedCounter" ColumnName="ReservedCounter" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="WeightCor" ColumnName="WeightCor" />
+                <ScalarProperty Name="Moisture1" ColumnName="Moisture1" />
+                <ScalarProperty Name="PressureDrop" ColumnName="PressureDrop" />
+                <ScalarProperty Name="PressureDrop_FE" ColumnName="PressureDrop_FE" />
+                <ScalarProperty Name="FilterVent" ColumnName="FilterVent" />
+                <ScalarProperty Name="PaperVent" ColumnName="PaperVent" />
+                <ScalarProperty Name="Moisture2" ColumnName="Moisture2" />
+                <ScalarProperty Name="Dia_Cir" ColumnName="Dia_Cir" />
+                <ScalarProperty Name="Ovality" ColumnName="Ovality" />
+                <ScalarProperty Name="Hardness" ColumnName="Hardness" />
+                <ScalarProperty Name="HardnessCor" ColumnName="HardnessCor" />
+                <ScalarProperty Name="HardnessDiff" ColumnName="HardnessDiff" />
+                <ScalarProperty Name="HardnessDiffCor" ColumnName="HardnessDiffCor" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="Dia_Cir2" ColumnName="Dia_Cir2" />
+                <ScalarProperty Name="Ovality2" ColumnName="Ovality2" />
+                <ScalarProperty Name="PressureDropSealed" ColumnName="PressureDropSealed" />
+                <ScalarProperty Name="FilterVentSealed" ColumnName="FilterVentSealed" />
+                <ScalarProperty Name="Dia_Cir3" ColumnName="Dia_Cir3" />
+                <ScalarProperty Name="Ovality3" ColumnName="Ovality3" />
+                <ScalarProperty Name="GlobalPorosity" ColumnName="GlobalPorosity" />
+                <ScalarProperty Name="LocalPorosity" ColumnName="LocalPorosity" />
+                <ScalarProperty Name="AreaPorosity" ColumnName="AreaPorosity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QualityTests">
+            <EntityTypeMapping TypeName="SodiQubeDbModel.QualityTest">
+              <MappingFragment StoreEntitySet="QualityTests">
+                <ScalarProperty Name="SodimatId" ColumnName="SodimatId" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+                <ScalarProperty Name="RodId" ColumnName="RodId" />
+                <ScalarProperty Name="IsLastRod" ColumnName="IsLastRod" />
+                <ScalarProperty Name="TstFile" ColumnName="TstFile" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
+                <ScalarProperty Name="BrandCode" ColumnName="BrandCode" />
+                <ScalarProperty Name="BatchCode" ColumnName="BatchCode" />
+                <ScalarProperty Name="ReservedFlag" ColumnName="ReservedFlag" />
+                <ScalarProperty Name="ReservedCode" ColumnName="ReservedCode" />
+                <ScalarProperty Name="ReservedCounter" ColumnName="ReservedCounter" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="WeightCor" ColumnName="WeightCor" />
+                <ScalarProperty Name="Moisture1" ColumnName="Moisture1" />
+                <ScalarProperty Name="PressureDrop" ColumnName="PressureDrop" />
+                <ScalarProperty Name="PressureDrop_FE" ColumnName="PressureDrop_FE" />
+                <ScalarProperty Name="FilterVent" ColumnName="FilterVent" />
+                <ScalarProperty Name="PaperVent" ColumnName="PaperVent" />
+                <ScalarProperty Name="Moisture2" ColumnName="Moisture2" />
+                <ScalarProperty Name="Dia_Cir" ColumnName="Dia_Cir" />
+                <ScalarProperty Name="Ovality" ColumnName="Ovality" />
+                <ScalarProperty Name="Hardness" ColumnName="Hardness" />
+                <ScalarProperty Name="HardnessCor" ColumnName="HardnessCor" />
+                <ScalarProperty Name="HardnessDiff" ColumnName="HardnessDiff" />
+                <ScalarProperty Name="HardnessDiffCor" ColumnName="HardnessDiffCor" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="Dia_Cir2" ColumnName="Dia_Cir2" />
+                <ScalarProperty Name="Ovality2" ColumnName="Ovality2" />
+                <ScalarProperty Name="PressureDropSealed" ColumnName="PressureDropSealed" />
+                <ScalarProperty Name="FilterVentSealed" ColumnName="FilterVentSealed" />
+                <ScalarProperty Name="Dia_Cir3" ColumnName="Dia_Cir3" />
+                <ScalarProperty Name="Ovality3" ColumnName="Ovality3" />
+                <ScalarProperty Name="GlobalPorosity" ColumnName="GlobalPorosity" />
+                <ScalarProperty Name="LocalPorosity" ColumnName="LocalPorosity" />
+                <ScalarProperty Name="AreaPorosity" ColumnName="AreaPorosity" />
+                <ScalarProperty Name="WeightOutOfBounds" ColumnName="WeightOutOfBounds" />
+                <ScalarProperty Name="DiameterOutOfBounds" ColumnName="DiameterOutOfBounds" />
+                <ScalarProperty Name="PressureDropOutOfBounds" ColumnName="PressureDropOutOfBounds" />
+                <ScalarProperty Name="WeightCommentOutOfBounds" ColumnName="WeightCommentOutOfBounds" />
+                <ScalarProperty Name="DiameterCommentOutOfBounds" ColumnName="DiameterCommentOutOfBounds" />
+                <ScalarProperty Name="PressureDropCommentOutOfBounds" ColumnName="PressureDropCommentOutOfBounds" />
+                <ScalarProperty Name="NotificationDatePressureDrop" ColumnName="NotificationDatePressureDrop" />
+                <ScalarProperty Name="NotificationEmail" ColumnName="NotificationEmail" />
+                <ScalarProperty Name="isPressureDropProcessed" ColumnName="isPressureDropProcessed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubTypes">
+            <EntityTypeMapping TypeName="SodiQubeDbModel.SubType">
+              <MappingFragment StoreEntitySet="SubTypes">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TR_Historial">
+            <EntityTypeMapping TypeName="SodiQubeDbModel.TR_Historial">
+              <MappingFragment StoreEntitySet="TR_Historial">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fechaModificacionDatos" ColumnName="fechaModificacionDatos" />
+                <ScalarProperty Name="nombreUsuarioModificacion" ColumnName="nombreUsuarioModificacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TR_QualityTestsSummary">
+            <EntityTypeMapping TypeName="SodiQubeDbModel.TR_QualityTestsSummary">
+              <MappingFragment StoreEntitySet="TR_QualityTestsSummary">
+                <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+                <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="SodimatId" ColumnName="SodimatId" />
+                <ScalarProperty Name="Peso" ColumnName="Peso" />
+                <ScalarProperty Name="Tiro" ColumnName="Tiro" />
+                <ScalarProperty Name="Diametro" ColumnName="Diametro" />
+                <ScalarProperty Name="Turno" ColumnName="Turno" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Fecha2" ColumnName="Fecha2" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="notificadoPeso" ColumnName="notificadoPeso" />
+                <ScalarProperty Name="notificadoDiametro" ColumnName="notificadoDiametro" />
+                <ScalarProperty Name="fechaNotificacionPeso" ColumnName="fechaNotificacionPeso" />
+                <ScalarProperty Name="fechaNotificacionDiametro" ColumnName="fechaNotificacionDiametro" />
+                <ScalarProperty Name="notificadoTiro" ColumnName="notificadoTiro" />
+                <ScalarProperty Name="fechaNotificacionTiro" ColumnName="fechaNotificacionTiro" />
+                <ScalarProperty Name="correoNotificado" ColumnName="correoNotificado" />
+                <ScalarProperty Name="comentarioNotificacionTiro" ColumnName="comentarioNotificacionTiro" />
+                <ScalarProperty Name="comentarioNotificacionDiametro" ColumnName="comentarioNotificacionDiametro" />
+                <ScalarProperty Name="comentarioNotificacionPeso" ColumnName="comentarioNotificacionPeso" />
+                <ScalarProperty Name="LciTiro" ColumnName="LciTiro" />
+                <ScalarProperty Name="LcsTiro" ColumnName="LcsTiro" />
+                <ScalarProperty Name="TargetTiro" ColumnName="TargetTiro" />
+                <ScalarProperty Name="LciPeso" ColumnName="LciPeso" />
+                <ScalarProperty Name="LcsPeso" ColumnName="LcsPeso" />
+                <ScalarProperty Name="TargetPeso" ColumnName="TargetPeso" />
+                <ScalarProperty Name="LeiPeso" ColumnName="LeiPeso" />
+                <ScalarProperty Name="LesPeso" ColumnName="LesPeso" />
+                <ScalarProperty Name="LciDiametro" ColumnName="LciDiametro" />
+                <ScalarProperty Name="LcsDiametro" ColumnName="LcsDiametro" />
+                <ScalarProperty Name="TargetDiametro" ColumnName="TargetDiametro" />
+                <ScalarProperty Name="LeiDiametro" ColumnName="LeiDiametro" />
+                <ScalarProperty Name="LesDiametro" ColumnName="LesDiametro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Turnoes">
+            <EntityTypeMapping TypeName="SodiQubeDbModel.Turno">
+              <MappingFragment StoreEntitySet="Turno">
+                <ScalarProperty Name="IDTurno" ColumnName="IDTurno" />
+                <ScalarProperty Name="Inicio" ColumnName="Inicio" />
+                <ScalarProperty Name="Fin" ColumnName="Fin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Types">
+            <EntityTypeMapping TypeName="SodiQubeDbModel.Type">
+              <MappingFragment StoreEntitySet="Types">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QualityProceseds">
+            <EntityTypeMapping TypeName="SodiQubeDbModel.QualityProcesed">
+              <MappingFragment StoreEntitySet="QualityProcesed">
+                <ScalarProperty Name="SodimatId" ColumnName="SodimatId" />
+                <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+                <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Peso" ColumnName="Peso" />
+                <ScalarProperty Name="Tiro" ColumnName="Tiro" />
+                <ScalarProperty Name="Diametro" ColumnName="Diametro" />
+                <ScalarProperty Name="RangoPeso" ColumnName="RangoPeso" />
+                <ScalarProperty Name="RangoTiro" ColumnName="RangoTiro" />
+                <ScalarProperty Name="RangoDiametro" ColumnName="RangoDiametro" />
+                <ScalarProperty Name="Turno" ColumnName="Turno" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Fecha2" ColumnName="Fecha2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QualityProcesedDetails">
+            <EntityTypeMapping TypeName="SodiQubeDbModel.QualityProcesedDetail">
+              <MappingFragment StoreEntitySet="QualityProcesedDetail">
+                <ScalarProperty Name="SodimatId" ColumnName="SodimatId" />
+                <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+                <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Peso" ColumnName="Peso" />
+                <ScalarProperty Name="Tiro" ColumnName="Tiro" />
+                <ScalarProperty Name="Diametro" ColumnName="Diametro" />
+                <ScalarProperty Name="Turno" ColumnName="Turno" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_ParametrosProductos">
+            <EntityTypeMapping TypeName="SodiQubeDbModel.V_ParametrosProductos">
+              <MappingFragment StoreEntitySet="V_ParametrosProductos">
+                <ScalarProperty Name="Product_ID" ColumnName="Product ID" />
+                <ScalarProperty Name="Filler_Name" ColumnName="Filler Name" />
+                <ScalarProperty Name="Type_ID" ColumnName="Type ID" />
+                <ScalarProperty Name="Subtype_ID" ColumnName="Subtype ID" />
+                <ScalarProperty Name="Parameter_ID" ColumnName="Parameter ID" />
+                <ScalarProperty Name="Parameter_Description" ColumnName="Parameter Description" />
+                <ScalarProperty Name="Display" ColumnName="Display" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_ProductosNotificados">
+            <EntityTypeMapping TypeName="SodiQubeDbModel.V_ProductosNotificados">
+              <MappingFragment StoreEntitySet="V_ProductosNotificados">
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Turno" ColumnName="Turno" />
+                <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+                <ScalarProperty Name="Producto" ColumnName="Producto" />
+                <ScalarProperty Name="Máquina" ColumnName="Máquina" />
+                <ScalarProperty Name="SodiQube" ColumnName="SodiQube" />
+                <ScalarProperty Name="Diametro" ColumnName="Diametro" />
+                <ScalarProperty Name="Peso" ColumnName="Peso" />
+                <ScalarProperty Name="Tiro" ColumnName="Tiro" />
+                <ScalarProperty Name="Notificación_de_Tiro" ColumnName="Notificación de Tiro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_QualityProcesed">
+            <EntityTypeMapping TypeName="SodiQubeDbModel.V_QualityProcesed">
+              <MappingFragment StoreEntitySet="V_QualityProcesed">
+                <ScalarProperty Name="SodimatId" ColumnName="SodimatId" />
+                <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+                <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Peso" ColumnName="Peso" />
+                <ScalarProperty Name="Tiro" ColumnName="Tiro" />
+                <ScalarProperty Name="Diametro" ColumnName="Diametro" />
+                <ScalarProperty Name="RangoPeso" ColumnName="RangoPeso" />
+                <ScalarProperty Name="RangoTiro" ColumnName="RangoTiro" />
+                <ScalarProperty Name="RangoDiametro" ColumnName="RangoDiametro" />
+                <ScalarProperty Name="Turno" ColumnName="Turno" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Fecha2" ColumnName="Fecha2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_QualitystatsLast3moths">
+            <EntityTypeMapping TypeName="SodiQubeDbModel.V_QualitystatsLast3moths">
+              <MappingFragment StoreEntitySet="V_QualitystatsLast3moths">
+                <ScalarProperty Name="SodimatId" ColumnName="SodimatId" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+                <ScalarProperty Name="RodNumber" ColumnName="RodNumber" />
+                <ScalarProperty Name="StatId" ColumnName="StatId" />
+                <ScalarProperty Name="TstFile" ColumnName="TstFile" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
+                <ScalarProperty Name="BrandCode" ColumnName="BrandCode" />
+                <ScalarProperty Name="BatchCode" ColumnName="BatchCode" />
+                <ScalarProperty Name="ReservedFlag" ColumnName="ReservedFlag" />
+                <ScalarProperty Name="ReservedCode" ColumnName="ReservedCode" />
+                <ScalarProperty Name="ReservedCounter" ColumnName="ReservedCounter" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="WeightCor" ColumnName="WeightCor" />
+                <ScalarProperty Name="Moisture1" ColumnName="Moisture1" />
+                <ScalarProperty Name="PressureDrop" ColumnName="PressureDrop" />
+                <ScalarProperty Name="PressureDrop_FE" ColumnName="PressureDrop_FE" />
+                <ScalarProperty Name="FilterVent" ColumnName="FilterVent" />
+                <ScalarProperty Name="PaperVent" ColumnName="PaperVent" />
+                <ScalarProperty Name="Moisture2" ColumnName="Moisture2" />
+                <ScalarProperty Name="Dia_Cir" ColumnName="Dia_Cir" />
+                <ScalarProperty Name="Ovality" ColumnName="Ovality" />
+                <ScalarProperty Name="Hardness" ColumnName="Hardness" />
+                <ScalarProperty Name="HardnessCor" ColumnName="HardnessCor" />
+                <ScalarProperty Name="HardnessDiff" ColumnName="HardnessDiff" />
+                <ScalarProperty Name="HardnessDiffCor" ColumnName="HardnessDiffCor" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="Dia_Cir2" ColumnName="Dia_Cir2" />
+                <ScalarProperty Name="Ovality2" ColumnName="Ovality2" />
+                <ScalarProperty Name="PressureDropSealed" ColumnName="PressureDropSealed" />
+                <ScalarProperty Name="FilterVentSealed" ColumnName="FilterVentSealed" />
+                <ScalarProperty Name="Dia_Cir3" ColumnName="Dia_Cir3" />
+                <ScalarProperty Name="Ovality3" ColumnName="Ovality3" />
+                <ScalarProperty Name="GlobalPorosity" ColumnName="GlobalPorosity" />
+                <ScalarProperty Name="LocalPorosity" ColumnName="LocalPorosity" />
+                <ScalarProperty Name="AreaPorosity" ColumnName="AreaPorosity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_QualitytestLast3moths">
+            <EntityTypeMapping TypeName="SodiQubeDbModel.V_QualitytestLast3moths">
+              <MappingFragment StoreEntitySet="V_QualitytestLast3moths">
+                <ScalarProperty Name="SodimatId" ColumnName="SodimatId" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+                <ScalarProperty Name="RodId" ColumnName="RodId" />
+                <ScalarProperty Name="IsLastRod" ColumnName="IsLastRod" />
+                <ScalarProperty Name="TstFile" ColumnName="TstFile" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
+                <ScalarProperty Name="BrandCode" ColumnName="BrandCode" />
+                <ScalarProperty Name="BatchCode" ColumnName="BatchCode" />
+                <ScalarProperty Name="ReservedFlag" ColumnName="ReservedFlag" />
+                <ScalarProperty Name="ReservedCode" ColumnName="ReservedCode" />
+                <ScalarProperty Name="ReservedCounter" ColumnName="ReservedCounter" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="WeightCor" ColumnName="WeightCor" />
+                <ScalarProperty Name="Moisture1" ColumnName="Moisture1" />
+                <ScalarProperty Name="PressureDrop" ColumnName="PressureDrop" />
+                <ScalarProperty Name="PressureDrop_FE" ColumnName="PressureDrop_FE" />
+                <ScalarProperty Name="FilterVent" ColumnName="FilterVent" />
+                <ScalarProperty Name="PaperVent" ColumnName="PaperVent" />
+                <ScalarProperty Name="Moisture2" ColumnName="Moisture2" />
+                <ScalarProperty Name="Dia_Cir" ColumnName="Dia_Cir" />
+                <ScalarProperty Name="Ovality" ColumnName="Ovality" />
+                <ScalarProperty Name="Hardness" ColumnName="Hardness" />
+                <ScalarProperty Name="HardnessCor" ColumnName="HardnessCor" />
+                <ScalarProperty Name="HardnessDiff" ColumnName="HardnessDiff" />
+                <ScalarProperty Name="HardnessDiffCor" ColumnName="HardnessDiffCor" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="Dia_Cir2" ColumnName="Dia_Cir2" />
+                <ScalarProperty Name="Ovality2" ColumnName="Ovality2" />
+                <ScalarProperty Name="PressureDropSealed" ColumnName="PressureDropSealed" />
+                <ScalarProperty Name="FilterVentSealed" ColumnName="FilterVentSealed" />
+                <ScalarProperty Name="Dia_Cir3" ColumnName="Dia_Cir3" />
+                <ScalarProperty Name="Ovality3" ColumnName="Ovality3" />
+                <ScalarProperty Name="GlobalPorosity" ColumnName="GlobalPorosity" />
+                <ScalarProperty Name="LocalPorosity" ColumnName="LocalPorosity" />
+                <ScalarProperty Name="AreaPorosity" ColumnName="AreaPorosity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_QualityTestsLast5Months">
+            <EntityTypeMapping TypeName="SodiQubeDbModel.V_QualityTestsLast5Months">
+              <MappingFragment StoreEntitySet="V_QualityTestsLast5Months">
+                <ScalarProperty Name="SodimatId" ColumnName="SodimatId" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+                <ScalarProperty Name="RodId" ColumnName="RodId" />
+                <ScalarProperty Name="IsLastRod" ColumnName="IsLastRod" />
+                <ScalarProperty Name="TstFile" ColumnName="TstFile" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
+                <ScalarProperty Name="BrandCode" ColumnName="BrandCode" />
+                <ScalarProperty Name="BatchCode" ColumnName="BatchCode" />
+                <ScalarProperty Name="ReservedFlag" ColumnName="ReservedFlag" />
+                <ScalarProperty Name="ReservedCode" ColumnName="ReservedCode" />
+                <ScalarProperty Name="ReservedCounter" ColumnName="ReservedCounter" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="WeightCor" ColumnName="WeightCor" />
+                <ScalarProperty Name="Moisture1" ColumnName="Moisture1" />
+                <ScalarProperty Name="PressureDrop" ColumnName="PressureDrop" />
+                <ScalarProperty Name="PressureDrop_FE" ColumnName="PressureDrop_FE" />
+                <ScalarProperty Name="FilterVent" ColumnName="FilterVent" />
+                <ScalarProperty Name="PaperVent" ColumnName="PaperVent" />
+                <ScalarProperty Name="Moisture2" ColumnName="Moisture2" />
+                <ScalarProperty Name="Dia_Cir" ColumnName="Dia_Cir" />
+                <ScalarProperty Name="Ovality" ColumnName="Ovality" />
+                <ScalarProperty Name="Hardness" ColumnName="Hardness" />
+                <ScalarProperty Name="HardnessCor" ColumnName="HardnessCor" />
+                <ScalarProperty Name="HardnessDiff" ColumnName="HardnessDiff" />
+                <ScalarProperty Name="HardnessDiffCor" ColumnName="HardnessDiffCor" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="Dia_Cir2" ColumnName="Dia_Cir2" />
+                <ScalarProperty Name="Ovality2" ColumnName="Ovality2" />
+                <ScalarProperty Name="PressureDropSealed" ColumnName="PressureDropSealed" />
+                <ScalarProperty Name="FilterVentSealed" ColumnName="FilterVentSealed" />
+                <ScalarProperty Name="Dia_Cir3" ColumnName="Dia_Cir3" />
+                <ScalarProperty Name="Ovality3" ColumnName="Ovality3" />
+                <ScalarProperty Name="GlobalPorosity" ColumnName="GlobalPorosity" />
+                <ScalarProperty Name="LocalPorosity" ColumnName="LocalPorosity" />
+                <ScalarProperty Name="AreaPorosity" ColumnName="AreaPorosity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_QualityTestsLast6Months">
+            <EntityTypeMapping TypeName="SodiQubeDbModel.V_QualityTestsLast6Months">
+              <MappingFragment StoreEntitySet="V_QualityTestsLast6Months">
+                <ScalarProperty Name="Año" ColumnName="Año" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Semana" ColumnName="Semana" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Fecha_y_hora" ColumnName="Fecha y hora" />
+                <ScalarProperty Name="Turno" ColumnName="Turno" />
+                <ScalarProperty Name="No__Sodiqube" ColumnName="No. Sodiqube" />
+                <ScalarProperty Name="Código_de_Filler" ColumnName="Código de Filler" />
+                <ScalarProperty Name="Filler" ColumnName="Filler" />
+                <ScalarProperty Name="Máquina" ColumnName="Máquina" />
+                <ScalarProperty Name="Diámetro__mm_" ColumnName="Diámetro (mm)" />
+                <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+                <ScalarProperty Name="Notificación_diámetro" ColumnName="Notificación diámetro" />
+                <ScalarProperty Name="Peso__gr_" ColumnName="Peso (gr)" />
+                <ScalarProperty Name="Notificación_de_peso" ColumnName="Notificación de peso" />
+                <ScalarProperty Name="Tiro__mm_h2O_" ColumnName="Tiro (mm h2O)" />
+                <ScalarProperty Name="Notificación_de_tiro" ColumnName="Notificación de tiro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_ReporteDatosIndividuales">
+            <EntityTypeMapping TypeName="SodiQubeDbModel.V_ReporteDatosIndividuales">
+              <MappingFragment StoreEntitySet="V_ReporteDatosIndividuales">
+                <ScalarProperty Name="Año" ColumnName="Año" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Semana" ColumnName="Semana" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Fecha_y_hora" ColumnName="Fecha y hora" />
+                <ScalarProperty Name="Turno" ColumnName="Turno" />
+                <ScalarProperty Name="No__Sodiqube" ColumnName="No. Sodiqube" />
+                <ScalarProperty Name="Producto" ColumnName="Producto" />
+                <ScalarProperty Name="Máquina" ColumnName="Máquina" />
+                <ScalarProperty Name="Diámetro" ColumnName="Diámetro" />
+                <ScalarProperty Name="Notificación_diámetro" ColumnName="Notificación diámetro" />
+                <ScalarProperty Name="Peso" ColumnName="Peso" />
+                <ScalarProperty Name="Notificación_de_peso" ColumnName="Notificación de peso" />
+                <ScalarProperty Name="Tiro" ColumnName="Tiro" />
+                <ScalarProperty Name="Notificación_de_tiro" ColumnName="Notificación de tiro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_ReporteMuestras">
+            <EntityTypeMapping TypeName="SodiQubeDbModel.V_ReporteMuestras">
+              <MappingFragment StoreEntitySet="V_ReporteMuestras">
+                <ScalarProperty Name="Año" ColumnName="Año" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Semana" ColumnName="Semana" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Fecha_y_hora" ColumnName="Fecha y hora" />
+                <ScalarProperty Name="Turno" ColumnName="Turno" />
+                <ScalarProperty Name="Máquina" ColumnName="Máquina" />
+                <ScalarProperty Name="Código_de_Filler" ColumnName="Código de Filler" />
+                <ScalarProperty Name="Filler" ColumnName="Filler" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Variable" ColumnName="Variable" />
+                <ScalarProperty Name="Límite_Especificación_Inferior" ColumnName="Límite Especificación Inferior" />
+                <ScalarProperty Name="Límite_Especificación_Superior" ColumnName="Límite Especificación Superior" />
+                <ScalarProperty Name="Media" ColumnName="Media" />
+                <ScalarProperty Name="Límite_Control_Inferior" ColumnName="Límite Control Inferior" />
+                <ScalarProperty Name="Límite_Control_Superior" ColumnName="Límite Control Superior" />
+                <ScalarProperty Name="CycleId" ColumnName="CycleId" />
+                <ScalarProperty Name="No__Sodiqube" ColumnName="No. Sodiqube" />
+                <ScalarProperty Name="C_Fue_notificado_" ColumnName="¿Fue notificado?" />
+                <ScalarProperty Name="Tipo_de_notificación" ColumnName="Tipo de notificación" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="InsertarNuevosRegistros" FunctionName="SodiQubeDbModel.Store.InsertarNuevosRegistros" />
+          <FunctionImportMapping FunctionImportName="InsertarRegistrosVerificados_OLD_" FunctionName="SodiQubeDbModel.Store.InsertarRegistrosVerificados_OLD_" />
+          <FunctionImportMapping FunctionImportName="VerificarLimiteInferiorDiametro" FunctionName="SodiQubeDbModel.Store.VerificarLimiteInferiorDiametro" />
+          <FunctionImportMapping FunctionImportName="VerificarLimiteInferiorPeso" FunctionName="SodiQubeDbModel.Store.VerificarLimiteInferiorPeso" />
+          <FunctionImportMapping FunctionImportName="VerificarLimiteInferiorTiro" FunctionName="SodiQubeDbModel.Store.VerificarLimiteInferiorTiro" />
+          <FunctionImportMapping FunctionImportName="VerificarLimiteSuperiorDiametro" FunctionName="SodiQubeDbModel.Store.VerificarLimiteSuperiorDiametro" />
+          <FunctionImportMapping FunctionImportName="VerificarLimiteSuperiorPeso" FunctionName="SodiQubeDbModel.Store.VerificarLimiteSuperiorPeso" />
+          <FunctionImportMapping FunctionImportName="VerificarLimiteSuperiorTiro" FunctionName="SodiQubeDbModel.Store.VerificarLimiteSuperiorTiro" />
+          <FunctionImportMapping FunctionImportName="VerificarTiroDatosIndividuales" FunctionName="SodiQubeDbModel.Store.VerificarTiroDatosIndividuales" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

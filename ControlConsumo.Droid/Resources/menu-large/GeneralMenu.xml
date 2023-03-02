@@ -1,0 +1,14 @@
+﻿<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+  <item
+       android:id="@+id/menu_Cancel"
+       android:title="@string/Back"
+       android:icon="@drawable/ic_action_back"
+       android:orderInCategory="400"
+       android:showAsAction="always|withText" />
+  <item
+       android:id="@+id/menu_Add"
+       android:title="@string/menu_Save"
+       android:icon="@android:drawable/ic_menu_save"
+       android:orderInCategory="500"
+       android:showAsAction="always|withText" />
+</menu>

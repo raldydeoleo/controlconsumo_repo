@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="@dimen/dp_140"
+    android:layout_height="@dimen/dp_180"
+    android:gravity="center">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="-50dp"
+        android:layout_marginBottom="40dp"
+        android:layout_height="@dimen/dp_30"
+        android:background="@android:color/white">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/synchronizing"
+            android:textColor="@color/orange_base"
+            android:textSize="@dimen/sp_10" />
+    </FrameLayout>
+	    <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:id="@+id/progressBarSyncing"
+			android:layout_width="50dip"
+            android:layout_height="50dip"     
+		    android:layout_centerInParent="true"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="0"
+            android:background="@drawable/whitecircle"
+            android:progressDrawable="@drawable/progressbar" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_2"
+        android:gravity="center"
+        android:maxLines="1"
+        android:id="@+id/TableSync" />
+</LinearLayout>

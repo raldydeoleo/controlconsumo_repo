@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_margin="@dimen/dp_5"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dp_30">
+        <TextView
+            android:background="@drawable/bg_input_disabled"
+            android:text="Large Text"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/dp_2"
+            android:textSize="@dimen/dp_15"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/txtEquipmentID" />
+        <TextView
+            android:layout_marginLeft="@dimen/dp_2"
+            android:layout_marginRight="@dimen/dp_2"
+            android:layout_weight="1"
+            android:background="@drawable/bg_input_disabled"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textSize="@dimen/dp_15"
+            android:id="@+id/txtEquipment" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_margin="@dimen/dp_5"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dp_30">
+        <Spinner
+            android:layout_marginLeft="@dimen/dp_2"
+            android:layout_weight=".2"
+            android:background="@drawable/bg_spinner_white"
+            android:singleLine="true"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="fill_parent"
+            android:id="@+id/spnMaterial" />
+        <TextView
+            android:layout_marginLeft="@dimen/dp_2"
+            android:layout_weight=".6"
+            android:textSize="@dimen/dp_15"
+            android:layout_height="fill_parent"
+            android:background="@drawable/bg_input_disabled"
+            android:singleLine="true"
+            android:id="@+id/txtShort"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="@dimen/dp_0" />
+        <TextView
+            android:layout_marginLeft="@dimen/dp_2"
+            android:layout_marginRight="@dimen/dp_2"
+            android:layout_weight=".2"
+            android:singleLine="true"
+            android:textSize="@dimen/dp_15"
+            android:layout_height="fill_parent"
+            android:background="@drawable/bg_input_disabled"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="@dimen/dp_0"
+            android:id="@+id/txtMaterial" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_margin="@dimen/dp_5"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dp_30">
+        <Spinner
+            android:layout_marginLeft="@dimen/dp_2"
+            android:layout_weight=".4"
+            android:background="@drawable/bg_spinner_white"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="fill_parent"
+            android:id="@+id/spnVersion" />
+        <Spinner
+            android:layout_marginLeft="@dimen/dp_2"
+            android:layout_marginRight="@dimen/dp_2"
+            android:layout_weight=".6"
+            android:background="@drawable/bg_spinner_white"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="fill_parent"
+            android:id="@+id/spnSubEquipment" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dp_30"
+        android:layout_margin="@dimen/dp_5">
+        <Button
+            android:textColor="@android:color/white"
+            android:background="@drawable/selector_button_orange"
+            android:text="@string/ChangeDate"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/btnDate"
+            android:layout_marginRight="@dimen/dp_1" />
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_input_disabled"
+            android:layout_weight="1"
+            android:id="@+id/editDate"
+            android:editable="false"
+            android:textSize="@dimen/dp_15"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:layout_marginLeft="@dimen/dp_1" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dp_30"
+        android:layout_margin="@dimen/dp_5">
+        <Button
+            android:textColor="@android:color/white"
+            android:background="@drawable/selector_button_orange"
+            android:text="@string/ChangeTime"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/btnTime"
+            android:layout_marginRight="@dimen/dp_1" />
+        <EditText
+            android:background="@drawable/bg_input_disabled"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="@dimen/dp_15"
+            android:id="@+id/editTime"
+            android:editable="false"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:layout_marginLeft="@dimen/dp_1" />
+    </LinearLayout>
+</LinearLayout>

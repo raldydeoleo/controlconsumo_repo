@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ControlConsumoModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Bandejas">
+      <EntityTypeMapping TypeName="ControlConsumoModel.Bandeja">
+        <MappingFragment StoreEntitySet="Bandeja">
+          <ScalarProperty Name="idBandeja" ColumnName="idBandeja" />
+          <ScalarProperty Name="secuenciaInicial" ColumnName="secuenciaInicial" />
+          <ScalarProperty Name="secuenciaFinal" ColumnName="secuenciaFinal" />
+          <ScalarProperty Name="procesarSap" ColumnName="procesarSap" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+          <ScalarProperty Name="estatusVigencia" ColumnName="estatusVigencia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConfiguracionInicialControlSalidas">
+      <EntityTypeMapping TypeName="ControlConsumoModel.ConfiguracionInicialControlSalida">
+        <MappingFragment StoreEntitySet="ConfiguracionInicialControlSalidas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdEquipo" ColumnName="IdEquipo" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="FechaProduccion" ColumnName="FechaProduccion" />
+          <ScalarProperty Name="Turno" ColumnName="Turno" />
+          <ScalarProperty Name="CantidadConsumoPendiente" ColumnName="CantidadConsumoPendiente" />
+          <ScalarProperty Name="Unidad" ColumnName="Unidad" />
+          <ScalarProperty Name="FechaLectura" ColumnName="FechaLectura" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="UsuarioRegistro" ColumnName="UsuarioRegistro" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConfiguracionSincronizacionTablas">
+      <EntityTypeMapping TypeName="ControlConsumoModel.ConfiguracionSincronizacionTabla">
+        <MappingFragment StoreEntitySet="ConfiguracionSincronizacionTablas">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombreTabla" ColumnName="nombreTabla" />
+          <ScalarProperty Name="procesarSap" ColumnName="procesarSap" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+          <ScalarProperty Name="usuarioModificacion" ColumnName="usuarioModificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConfiguracionTiempoSalidas">
+      <EntityTypeMapping TypeName="ControlConsumoModel.ConfiguracionTiempoSalida">
+        <MappingFragment StoreEntitySet="ConfiguracionTiempoSalida">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idProceso" ColumnName="idProceso" />
+          <ScalarProperty Name="idTiempo" ColumnName="idTiempo" />
+          <ScalarProperty Name="tiempoMinimo" ColumnName="tiempoMinimo" />
+          <ScalarProperty Name="unidadTiempo" ColumnName="unidadTiempo" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="horaRegistro" ColumnName="horaRegistro" />
+          <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+          <ScalarProperty Name="usuarioModificacion" ColumnName="usuarioModificacion" />
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+          <ScalarProperty Name="HoraModificacion" ColumnName="HoraModificacion" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consumoes">
+      <EntityTypeMapping TypeName="ControlConsumoModel.Consumo">
+        <MappingFragment StoreEntitySet="Consumo">
+          <ScalarProperty Name="IdProceso" ColumnName="IdProceso" />
+          <ScalarProperty Name="Centro" ColumnName="Centro" />
+          <ScalarProperty Name="IdEquipo" ColumnName="IdEquipo" />
+          <ScalarProperty Name="IdTiempo" ColumnName="IdTiempo" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="VersionFabricacion" ColumnName="VersionFabricacion" />
+          <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+          <ScalarProperty Name="FechaProduccion" ColumnName="FechaProduccion" />
+          <ScalarProperty Name="Turno" ColumnName="Turno" />
+          <ScalarProperty Name="IdMaterial" ColumnName="IdMaterial" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="IdSubEquipo" ColumnName="IdSubEquipo" />
+          <ScalarProperty Name="Lote" ColumnName="Lote" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Unidad" ColumnName="Unidad" />
+          <ScalarProperty Name="NumeroCaja" ColumnName="NumeroCaja" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="FechaSincronizacion" ColumnName="FechaSincronizacion" />
+          <ScalarProperty Name="IdBandeja" ColumnName="IdBandeja" />
+          <ScalarProperty Name="IdEquipoOrigenMaterial" ColumnName="IdEquipoOrigenMaterial" />
+          <ScalarProperty Name="SecuenciaSalida" ColumnName="SecuenciaSalida" />
+          <ScalarProperty Name="FechaSalida" ColumnName="FechaSalida" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="EstadoSalidaNotificacion" ColumnName="EstadoSalidaNotificacion" />
+          <ScalarProperty Name="Sync" ColumnName="Sync" />
+          <ScalarProperty Name="FechaCargaErp" ColumnName="FechaCargaErp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstatusBandejas">
+      <EntityTypeMapping TypeName="ControlConsumoModel.EstatusBandeja">
+        <MappingFragment StoreEntitySet="EstatusBandeja">
+          <ScalarProperty Name="idBandeja" ColumnName="idBandeja" />
+          <ScalarProperty Name="secuenciaBandeja" ColumnName="secuenciaBandeja" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+          <ScalarProperty Name="idEquipoLlenado" ColumnName="idEquipoLlenado" />
+          <ScalarProperty Name="idProceso" ColumnName="idProceso" />
+          <ScalarProperty Name="idTiempo" ColumnName="idTiempo" />
+          <ScalarProperty Name="idMaterial" ColumnName="idMaterial" />
+          <ScalarProperty Name="versionFabricacion" ColumnName="versionFabricacion" />
+          <ScalarProperty Name="fechaLlenada" ColumnName="fechaLlenada" />
+          <ScalarProperty Name="horaLlenada" ColumnName="horaLlenada" />
+          <ScalarProperty Name="usuarioLlenada" ColumnName="usuarioLlenada" />
+          <ScalarProperty Name="secuenciaSalida" ColumnName="secuenciaSalida" />
+          <ScalarProperty Name="batchId" ColumnName="batchId" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="UMP" ColumnName="UMP" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="horaRegistro" ColumnName="horaRegistro" />
+          <ScalarProperty Name="fechaVaciada" ColumnName="fechaVaciada" />
+          <ScalarProperty Name="horaVaciada" ColumnName="horaVaciada" />
+          <ScalarProperty Name="idEquipoVaciado" ColumnName="idEquipoVaciado" />
+          <ScalarProperty Name="usuarioVaciada" ColumnName="usuarioVaciada" />
+          <ScalarProperty Name="formaVaciada" ColumnName="formaVaciada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HistorialReimpresionEtiquetas">
+      <EntityTypeMapping TypeName="ControlConsumoModel.HistorialReimpresionEtiqueta">
+        <MappingFragment StoreEntitySet="HistorialReimpresionEtiquetas">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IdEquipo" ColumnName="IdEquipo" />
+          <ScalarProperty Name="SecuenciaEtiqueta" ColumnName="SecuenciaEtiqueta" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="FechaProduccion" ColumnName="FechaProduccion" />
+          <ScalarProperty Name="Turno" ColumnName="Turno" />
+          <ScalarProperty Name="Empaque" ColumnName="Empaque" />
+          <ScalarProperty Name="AlmFiller" ColumnName="AlmFiller" />
+          <ScalarProperty Name="UsuarioReimpresion" ColumnName="UsuarioReimpresion" />
+          <ScalarProperty Name="FechaReimpresion" ColumnName="FechaReimpresion" />
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+          <ScalarProperty Name="IdMotivoReimpresion" ColumnName="IdMotivoReimpresion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MezclasProduccions">
+      <EntityTypeMapping TypeName="ControlConsumoModel.MezclasProduccion">
+        <MappingFragment StoreEntitySet="MezclasProduccions">
+          <ScalarProperty Name="Idproceso" ColumnName="Idproceso" />
+          <ScalarProperty Name="Idequipo" ColumnName="Idequipo" />
+          <ScalarProperty Name="SecuenciaEntrada" ColumnName="SecuenciaEntrada" />
+          <ScalarProperty Name="FechaEntrada" ColumnName="FechaEntrada" />
+          <ScalarProperty Name="SecuenciaSalida" ColumnName="SecuenciaSalida" />
+          <ScalarProperty Name="FechaSalida" ColumnName="FechaSalida" />
+          <ScalarProperty Name="FechaLlenada" ColumnName="FechaLlenada" />
+          <ScalarProperty Name="fechaCarga" ColumnName="fechaCarga" />
+          <ScalarProperty Name="Sync" ColumnName="Sync" />
+          <ScalarProperty Name="FechaCargaErp" ColumnName="FechaCargaErp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MotivoReimpresionEtiquetas">
+      <EntityTypeMapping TypeName="ControlConsumoModel.MotivoReimpresionEtiqueta">
+        <MappingFragment StoreEntitySet="MotivoReimpresionEtiqueta">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ParametrosSSIS">
+      <EntityTypeMapping TypeName="ControlConsumoModel.ParametrosSSI">
+        <MappingFragment StoreEntitySet="ParametrosSSIS">
+          <ScalarProperty Name="Llave" ColumnName="Llave" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductoTipoAlmacenamientoes">
+      <EntityTypeMapping TypeName="ControlConsumoModel.ProductoTipoAlmacenamiento">
+        <MappingFragment StoreEntitySet="ProductoTipoAlmacenamiento">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idTipoProductoTerminado" ColumnName="idTipoProductoTerminado" />
+          <ScalarProperty Name="idTipoAlmacenamiento" ColumnName="idTipoAlmacenamiento" />
+          <ScalarProperty Name="identificador" ColumnName="identificador" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="horaRegistro" ColumnName="horaRegistro" />
+          <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+          <ScalarProperty Name="usuarioModificacion" ColumnName="usuarioModificacion" />
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+          <ScalarProperty Name="HoraModificacion" ColumnName="HoraModificacion" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalidaProductoes">
+      <EntityTypeMapping TypeName="ControlConsumoModel.SalidaProducto">
+        <MappingFragment StoreEntitySet="SalidaProducto">
+          <ScalarProperty Name="IdProceso" ColumnName="IdProceso" />
+          <ScalarProperty Name="Centro" ColumnName="Centro" />
+          <ScalarProperty Name="IdEquipo" ColumnName="IdEquipo" />
+          <ScalarProperty Name="IdTiempo" ColumnName="IdTiempo" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="VersionFabricacion" ColumnName="VersionFabricacion" />
+          <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+          <ScalarProperty Name="FechaProduccion" ColumnName="FechaProduccion" />
+          <ScalarProperty Name="Turno" ColumnName="Turno" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="IdBandeja" ColumnName="IdBandeja" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Unidad" ColumnName="Unidad" />
+          <ScalarProperty Name="PesoProducto" ColumnName="PesoProducto" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="FechaSincronizacion" ColumnName="FechaSincronizacion" />
+          <ScalarProperty Name="Devuelto" ColumnName="Devuelto" />
+          <ScalarProperty Name="SecuenciaEtiqueta" ColumnName="SecuenciaEtiqueta" />
+          <ScalarProperty Name="Lote" ColumnName="Lote" />
+          <ScalarProperty Name="FechaCaducidad" ColumnName="FechaCaducidad" />
+          <ScalarProperty Name="EstadoSalidaNotificacion" ColumnName="EstadoSalidaNotificacion" />
+          <ScalarProperty Name="SubEquipo" ColumnName="SubEquipo" />
+          <ScalarProperty Name="Empaque" ColumnName="Empaque" />
+          <ScalarProperty Name="DocumentoMaterial" ColumnName="DocumentoMaterial" />
+          <ScalarProperty Name="FechaContabilizacion" ColumnName="FechaContabilizacion" />
+          <ScalarProperty Name="AlmFiller" ColumnName="AlmFiller" />
+          <ScalarProperty Name="Sync" ColumnName="Sync" />
+          <ScalarProperty Name="FechaCargaErp" ColumnName="FechaCargaErp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TiempoBandejas">
+      <EntityTypeMapping TypeName="ControlConsumoModel.TiempoBandeja">
+        <MappingFragment StoreEntitySet="TiempoBandeja">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="idProceso" ColumnName="idProceso" />
+          <ScalarProperty Name="idTiempo" ColumnName="idTiempo" />
+          <ScalarProperty Name="idBandeja" ColumnName="idBandeja" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="unidad" ColumnName="unidad" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoAlmacenamientoProductoes">
+      <EntityTypeMapping TypeName="ControlConsumoModel.TipoAlmacenamientoProducto">
+        <MappingFragment StoreEntitySet="TipoAlmacenamientoProducto">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="horaRegistro" ColumnName="horaRegistro" />
+          <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+          <ScalarProperty Name="usuarioModificacion" ColumnName="usuarioModificacion" />
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+          <ScalarProperty Name="HoraModificacion" ColumnName="HoraModificacion" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoProductoTerminadoes">
+      <EntityTypeMapping TypeName="ControlConsumoModel.TipoProductoTerminado">
+        <MappingFragment StoreEntitySet="TipoProductoTerminado">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="horaRegistro" ColumnName="horaRegistro" />
+          <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+          <ScalarProperty Name="horaModificacion" ColumnName="horaModificacion" />
+          <ScalarProperty Name="usuarioModificacion" ColumnName="usuarioModificacion" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trazas">
+      <EntityTypeMapping TypeName="ControlConsumoModel.Traza">
+        <MappingFragment StoreEntitySet="Traza">
+          <ScalarProperty Name="IdProceso" ColumnName="IdProceso" />
+          <ScalarProperty Name="IdTiempo" ColumnName="IdTiempo" />
+          <ScalarProperty Name="IdRegistro" ColumnName="IdRegistro" />
+          <ScalarProperty Name="AnoEjercicio" ColumnName="AnoEjercicio" />
+          <ScalarProperty Name="IdEquipo" ColumnName="IdEquipo" />
+          <ScalarProperty Name="Centro" ColumnName="Centro" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="VersionFabricacion" ColumnName="VersionFabricacion" />
+          <ScalarProperty Name="NumeroLote" ColumnName="NumeroLote" />
+          <ScalarProperty Name="LoteManufactura" ColumnName="LoteManufactura" />
+          <ScalarProperty Name="SecuenciaSalida" ColumnName="SecuenciaSalida" />
+          <ScalarProperty Name="FechaProduccion" ColumnName="FechaProduccion" />
+          <ScalarProperty Name="Turno" ColumnName="Turno" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="IdBandeja" ColumnName="IdBandeja" />
+          <ScalarProperty Name="IdEmpaque" ColumnName="IdEmpaque" />
+          <ScalarProperty Name="SecuenciaEmpaque" ColumnName="SecuenciaEmpaque" />
+          <ScalarProperty Name="CantidadPedido" ColumnName="CantidadPedido" />
+          <ScalarProperty Name="UnidadMedidaPedido" ColumnName="UnidadMedidaPedido" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="EstatusBandeja" ColumnName="EstatusBandeja" />
+          <ScalarProperty Name="DocumentoMaterial" ColumnName="DocumentoMaterial" />
+          <ScalarProperty Name="FechaContabilizacionDocumento" ColumnName="FechaContabilizacionDocumento" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="FechaSalida" ColumnName="FechaSalida" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="IdTiempoRegistroPadre" ColumnName="IdTiempoRegistroPadre" />
+          <ScalarProperty Name="IdRegistroPadre" ColumnName="IdRegistroPadre" />
+          <ScalarProperty Name="AnoEjercicioPadre" ColumnName="AnoEjercicioPadre" />
+          <ScalarProperty Name="Sync" ColumnName="Sync" />
+          <ScalarProperty Name="FechaCargaErp" ColumnName="FechaCargaErp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrazaSequences">
+      <EntityTypeMapping TypeName="ControlConsumoModel.TrazaSequence">
+        <MappingFragment StoreEntitySet="TrazaSequences">
+          <ScalarProperty Name="AnoEjercicioDocumentoMaterial" ColumnName="AnoEjercicioDocumentoMaterial" />
+          <ScalarProperty Name="IdTiempo" ColumnName="IdTiempo" />
+          <ScalarProperty Name="IdRegistro" ColumnName="IdRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Turnos">
+      <EntityTypeMapping TypeName="ControlConsumoModel.Turno">
+        <MappingFragment StoreEntitySet="Turnos">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Etiqueta" ColumnName="Etiqueta" />
+          <ScalarProperty Name="Inicio" ColumnName="Inicio" />
+          <ScalarProperty Name="Fin" ColumnName="Fin" />
+          <ScalarProperty Name="MinutosInicio" ColumnName="MinutosInicio" />
+          <ScalarProperty Name="MinutosFin" ColumnName="MinutosFin" />
+          <ScalarProperty Name="Empaque" ColumnName="Empaque" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SSIS_Configurations">
+      <EntityTypeMapping TypeName="ControlConsumoModel.SSIS_Configuration">
+        <MappingFragment StoreEntitySet="SSIS Configurations">
+          <ScalarProperty Name="ConfigurationFilter" ColumnName="ConfigurationFilter" />
+          <ScalarProperty Name="ConfiguredValue" ColumnName="ConfiguredValue" />
+          <ScalarProperty Name="PackagePath" ColumnName="PackagePath" />
+          <ScalarProperty Name="ConfiguredValueType" ColumnName="ConfiguredValueType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_EstatusBandejas">
+      <EntityTypeMapping TypeName="ControlConsumoModel.View_EstatusBandejas">
+        <MappingFragment StoreEntitySet="View_EstatusBandejas">
+          <ScalarProperty Name="Id_Bandeja" ColumnName="Id Bandeja" />
+          <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+          <ScalarProperty Name="Id_Proc" ColumnName="Id Proc" />
+          <ScalarProperty Name="Id_Tiempo" ColumnName="Id Tiempo" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="Versión_fabricación" ColumnName="Versión fabricación" />
+          <ScalarProperty Name="Equipo_llenado" ColumnName="Equipo llenado" />
+          <ScalarProperty Name="Fecha_" ColumnName="Fecha " />
+          <ScalarProperty Name="Hora_de_llenada" ColumnName="Hora de llenada" />
+          <ScalarProperty Name="Usuario_de_llenado" ColumnName="Usuario de llenado" />
+          <ScalarProperty Name="Secuencia_Salida" ColumnName="Secuencia Salida" />
+          <ScalarProperty Name="Batch_ID" ColumnName="Batch ID" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="UMP" ColumnName="UMP" />
+          <ScalarProperty Name="Fecha_de_registro" ColumnName="Fecha de registro" />
+          <ScalarProperty Name="Hora__de_registro" ColumnName="Hora  de registro" />
+          <ScalarProperty Name="Equipo_de_vaciado" ColumnName="Equipo de vaciado" />
+          <ScalarProperty Name="Fecha_de_vaciado_" ColumnName="Fecha de vaciado " />
+          <ScalarProperty Name="Hora_de_vaciado" ColumnName="Hora de vaciado" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Forma_de_vaciado" ColumnName="Forma de vaciado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Lynxsp_CargarDatosTraza" FunctionName="ControlConsumoModel.Store.Lynxsp_CargarDatosTraza">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ControlConsumoModel.Lynxsp_CargarDatosTraza_Result">
+          <ScalarProperty Name="IdTiempo" ColumnName="IdTiempo" />
+          <ScalarProperty Name="IdRegistro" ColumnName="IdRegistro" />
+          <ScalarProperty Name="AnoEjercicio" ColumnName="AnoEjercicio" />
+          <ScalarProperty Name="LoteManufactura" ColumnName="LoteManufactura" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetSalidas" FunctionName="ControlConsumoModel.Store.SP_GetSalidas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ControlConsumoModel.SP_GetSalidas_Result">
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Maquina" ColumnName="Maquina" />
+          <ScalarProperty Name="Cantidad_de_Cigarros" ColumnName="Cantidad de Cigarros" />
+          <ScalarProperty Name="Unidad" ColumnName="Unidad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

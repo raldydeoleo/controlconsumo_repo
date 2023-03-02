@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/custom_dialog_first_rl"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<LinearLayout
+		android:orientation="vertical"
+		android:background="@color/white"
+		android:layout_width="@dimen/dp_850"
+		android:layout_height="wrap_content">
+		<TextView
+			android:textColor="@android:color/black"
+			android:layout_margin="@dimen/dp_10"
+			android:gravity="center"
+			android:textSize="@dimen/dp_40"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:background="@drawable/bg_input_focused"
+			android:text="¿Desea imprimir la siguiente etiqueta?"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content" />
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+			<TextView
+				android:background="@drawable/selector_input_text"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:textColor="@color/input_text"
+				android:layout_width="@dimen/dp_0"
+				android:layout_height="wrap_content"
+				android:id="@+id/txtViewHora"
+				android:singleLine="true"
+				android:gravity="center"
+				android:layout_marginLeft="0.0dp"
+				android:layout_margin="@dimen/dp_5"
+				android:layout_weight="2.50"
+				android:layout_marginRight="14.0dp" />
+			<TextView
+				android:background="@drawable/selector_input_text"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:textColor="@color/input_text"
+				android:layout_width="@dimen/dp_10"
+				android:layout_height="wrap_content"
+				android:layout_margin="@dimen/dp_5"
+				android:id="@+id/txtViewAlmacenamiento_Filler"
+				android:singleLine="true"
+				android:gravity="right"
+				android:layout_weight="3.50" />
+			<TextView
+				android:background="@drawable/selector_input_text"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:textColor="@color/input_text"
+				android:layout_width="@dimen/dp_0"
+				android:layout_height="wrap_content"
+				android:layout_margin="@dimen/dp_5"
+				android:id="@+id/txtViewEmpaque"
+				android:singleLine="true"
+				android:gravity="right"
+				android:layout_weight="4"
+				android:layout_marginLeft="0.0dp" />
+			<TextView
+				android:background="@drawable/selector_input_text"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:textColor="@color/input_text"
+				android:layout_width="@dimen/dp_0"
+				android:layout_height="wrap_content"
+				android:layout_margin="@dimen/dp_5"
+				android:id="@+id/txtViewSecuencia"
+				android:singleLine="true"
+				android:gravity="right"
+				android:layout_weight="2.50" />
+		</LinearLayout>
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_height="@dimen/dp_48"
+			android:layout_width="wrap_content">
+			<TextView
+				android:textSize="@dimen/dp_25"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:id="@+id/EditUserNameFull"
+				android:textColor="@android:color/black"
+				android:textStyle="bold"
+				android:layout_width="400.0dp"
+				android:layout_height="fill_parent"
+				android:background="@drawable/selector_input_text"
+				android:hint="Motivo de reimpresión:"
+				android:singleLine="true"
+				android:layout_marginRight="8dp"
+				android:layout_marginLeft="10.0dp" />
+			<Spinner
+				android:id="@+id/spnMotivoReimpresion"
+				android:layout_width="428.0dp"
+				android:layout_height="@dimen/dp_60"
+				android:layout_margin="@dimen/dp_0"
+				android:background="@drawable/selector_spinner"
+				android:visibility="visible" />
+		</LinearLayout>
+		<LinearLayout
+			android:layout_margin="@dimen/dp_10"
+			android:layout_height="@dimen/dp_48"
+			android:layout_width="wrap_content"
+			android:orientation="horizontal">
+			<TextView
+				android:textSize="@dimen/dp_25"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:id="@+id/EditUserNameFull"
+				android:textColor="@android:color/black"
+				android:textStyle="bold"
+				android:layout_width="400.0dp"
+				android:layout_height="wrap_content"
+				android:background="@drawable/selector_input_text"
+				android:hint="Cantidad de reimpresiones:"
+				android:singleLine="true"
+				android:layout_marginRight="7dp"
+				android:layout_marginLeft="-0dp" />
+			<RadioGroup
+				android:id="@+id/rgCantidadImpresiones"
+				android:orientation="horizontal"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+			</RadioGroup>
+			<ImageButton
+				android:layout_weight=".1"
+				android:src="@drawable/ic_printer"
+				android:layout_width="@dimen/dp_250"
+				android:layout_height="match_parent"
+				android:id="@+id/imgButtonPrint" />
+		</LinearLayout>
+		<LinearLayout
+			android:orientation="horizontal"
+			android:background="@color/white"
+			android:layout_margin="@dimen/dp_35"
+			android:layout_width="fill_parent"
+			android:layout_height="match_parent"
+			android:gravity="center_horizontal">
+			<Button
+				android:focusable="false"
+				android:textColor="@android:color/black"
+				android:text="@string/Cancel"
+				android:layout_width="fill_parent"
+				android:layout_height="54.0dp"
+				android:id="@+id/btnCancelPrintConfirmationDialog" />
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,1 @@
+<LinearLayout android:orientation="vertical" android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"><LinearLayout android:orientation="vertical" android:layout_width="@dimen/dp_500" android:layout_height="@dimen/dp_500" android:id="@+id/layoutPeso" /></LinearLayout>

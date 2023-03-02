@@ -1,0 +1,13 @@
+ControlConsumo.Shared
+LinkOS.Plugin.Abstractions
+LinkOS.Plugin
+Newtonsoft.Json
+OxyPlot
+OxyPlot.Xamarin.Android
+SQLite.Net.Async
+SQLite.Net
+System.Runtime
+Xamarin.Android.Support.v4
+Xamarin.Android.Support.v7.RecyclerView
+ZSDK_ANDROIDX
+System.Resources.ResourceManager

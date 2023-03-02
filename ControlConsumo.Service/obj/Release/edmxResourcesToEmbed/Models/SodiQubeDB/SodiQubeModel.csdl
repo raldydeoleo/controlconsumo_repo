@@ -1,0 +1,588 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SodiQubeDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Detail">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="TypeID" />
+      <PropertyRef Name="SubTypeID" />
+      <PropertyRef Name="ParametroID" />
+    </Key>
+    <Property Name="ProductID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TypeID" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="SubTypeID" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ParametroID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Display" Type="Boolean" Nullable="false" />
+    <Property Name="Value" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
+    <NavigationProperty Name="Type" Relationship="Self.FK_Details_Types" FromRole="Details" ToRole="Types" />
+  </EntityType>
+  <EntityType Name="Machine">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MachineCode" Type="String" MaxLength="22" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="Parametro">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="QualityStat">
+    <Key>
+      <PropertyRef Name="SodimatId" />
+      <PropertyRef Name="DateTime" />
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="RodNumber" />
+      <PropertyRef Name="StatId" />
+    </Key>
+    <Property Name="SodimatId" Type="Int16" Nullable="false" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CycleId" Type="Int16" Nullable="false" />
+    <Property Name="RodNumber" Type="Int16" Nullable="false" />
+    <Property Name="StatId" Type="Int16" Nullable="false" />
+    <Property Name="TstFile" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="ProductCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="MachineCode" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+    <Property Name="BrandCode" Type="Int32" />
+    <Property Name="BatchCode" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+    <Property Name="ReservedFlag" Type="Int16" />
+    <Property Name="ReservedCode" Type="Int32" />
+    <Property Name="ReservedCounter" Type="Int32" />
+    <Property Name="Weight" Type="Single" />
+    <Property Name="WeightCor" Type="Single" />
+    <Property Name="Moisture1" Type="Single" />
+    <Property Name="PressureDrop" Type="Single" />
+    <Property Name="PressureDrop_FE" Type="Single" />
+    <Property Name="FilterVent" Type="Single" />
+    <Property Name="PaperVent" Type="Single" />
+    <Property Name="Moisture2" Type="Single" />
+    <Property Name="Dia_Cir" Type="Single" />
+    <Property Name="Ovality" Type="Single" />
+    <Property Name="Hardness" Type="Single" />
+    <Property Name="HardnessCor" Type="Single" />
+    <Property Name="HardnessDiff" Type="Single" />
+    <Property Name="HardnessDiffCor" Type="Single" />
+    <Property Name="Length" Type="Single" />
+    <Property Name="Dia_Cir2" Type="Single" />
+    <Property Name="Ovality2" Type="Single" />
+    <Property Name="PressureDropSealed" Type="Single" />
+    <Property Name="FilterVentSealed" Type="Single" />
+    <Property Name="Dia_Cir3" Type="Single" />
+    <Property Name="Ovality3" Type="Single" />
+    <Property Name="GlobalPorosity" Type="Single" />
+    <Property Name="LocalPorosity" Type="Single" />
+    <Property Name="AreaPorosity" Type="Single" />
+  </EntityType>
+  <EntityType Name="QualityTest">
+    <Key>
+      <PropertyRef Name="SodimatId" />
+      <PropertyRef Name="DateTime" />
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="RodId" />
+      <PropertyRef Name="IsLastRod" />
+    </Key>
+    <Property Name="SodimatId" Type="Int16" Nullable="false" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CycleId" Type="Int16" Nullable="false" />
+    <Property Name="RodId" Type="Int16" Nullable="false" />
+    <Property Name="IsLastRod" Type="Int16" Nullable="false" />
+    <Property Name="TstFile" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="ProductCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="MachineCode" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+    <Property Name="BrandCode" Type="Int32" />
+    <Property Name="BatchCode" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+    <Property Name="ReservedFlag" Type="Int16" />
+    <Property Name="ReservedCode" Type="Int32" />
+    <Property Name="ReservedCounter" Type="Int32" />
+    <Property Name="Weight" Type="Single" />
+    <Property Name="WeightCor" Type="Single" />
+    <Property Name="Moisture1" Type="Single" />
+    <Property Name="PressureDrop" Type="Single" />
+    <Property Name="PressureDrop_FE" Type="Single" />
+    <Property Name="FilterVent" Type="Single" />
+    <Property Name="PaperVent" Type="Single" />
+    <Property Name="Moisture2" Type="Single" />
+    <Property Name="Dia_Cir" Type="Single" />
+    <Property Name="Ovality" Type="Single" />
+    <Property Name="Hardness" Type="Single" />
+    <Property Name="HardnessCor" Type="Single" />
+    <Property Name="HardnessDiff" Type="Single" />
+    <Property Name="HardnessDiffCor" Type="Single" />
+    <Property Name="Length" Type="Single" />
+    <Property Name="Dia_Cir2" Type="Single" />
+    <Property Name="Ovality2" Type="Single" />
+    <Property Name="PressureDropSealed" Type="Single" />
+    <Property Name="FilterVentSealed" Type="Single" />
+    <Property Name="Dia_Cir3" Type="Single" />
+    <Property Name="Ovality3" Type="Single" />
+    <Property Name="GlobalPorosity" Type="Single" />
+    <Property Name="LocalPorosity" Type="Single" />
+    <Property Name="AreaPorosity" Type="Single" />
+    <Property Name="WeightOutOfBounds" Type="Boolean" />
+    <Property Name="DiameterOutOfBounds" Type="Boolean" />
+    <Property Name="PressureDropOutOfBounds" Type="Boolean" />
+    <Property Name="WeightCommentOutOfBounds" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DiameterCommentOutOfBounds" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PressureDropCommentOutOfBounds" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NotificationDatePressureDrop" Type="DateTime" Precision="3" />
+    <Property Name="NotificationEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isPressureDropProcessed" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="SubType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TR_Historial">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fechaModificacionDatos" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="nombreUsuarioModificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TR_QualityTestsSummary">
+    <Key>
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="MachineCode" />
+      <PropertyRef Name="Product" />
+      <PropertyRef Name="SodimatId" />
+      <PropertyRef Name="Fecha2" />
+    </Key>
+    <Property Name="CycleId" Type="Int16" Nullable="false" />
+    <Property Name="MachineCode" Type="String" MaxLength="22" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Product" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SodimatId" Type="Int16" Nullable="false" />
+    <Property Name="Peso" Type="Double" />
+    <Property Name="Tiro" Type="Double" />
+    <Property Name="Diametro" Type="Double" />
+    <Property Name="Turno" Type="Byte" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Fecha2" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="notificadoPeso" Type="Boolean" />
+    <Property Name="notificadoDiametro" Type="Boolean" />
+    <Property Name="fechaNotificacionPeso" Type="DateTime" Precision="3" />
+    <Property Name="fechaNotificacionDiametro" Type="DateTime" Precision="3" />
+    <Property Name="notificadoTiro" Type="Boolean" />
+    <Property Name="fechaNotificacionTiro" Type="DateTime" Precision="3" />
+    <Property Name="correoNotificado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="comentarioNotificacionTiro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="comentarioNotificacionDiametro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="comentarioNotificacionPeso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LciTiro" Type="Double" />
+    <Property Name="LcsTiro" Type="Double" />
+    <Property Name="TargetTiro" Type="Double" />
+    <Property Name="LciPeso" Type="Double" />
+    <Property Name="LcsPeso" Type="Double" />
+    <Property Name="TargetPeso" Type="Double" />
+    <Property Name="LeiPeso" Type="Double" />
+    <Property Name="LesPeso" Type="Double" />
+    <Property Name="LciDiametro" Type="Double" />
+    <Property Name="LcsDiametro" Type="Double" />
+    <Property Name="TargetDiametro" Type="Double" />
+    <Property Name="LeiDiametro" Type="Double" />
+    <Property Name="LesDiametro" Type="Double" />
+  </EntityType>
+  <EntityType Name="Turno">
+    <Key>
+      <PropertyRef Name="IDTurno" />
+    </Key>
+    <Property Name="IDTurno" Type="Byte" Nullable="false" />
+    <Property Name="Inicio" Type="Byte" Nullable="false" />
+    <Property Name="Fin" Type="Byte" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Details" Relationship="Self.FK_Details_Types" FromRole="Types" ToRole="Details" />
+  </EntityType>
+  <EntityType Name="QualityProcesed">
+    <Key>
+      <PropertyRef Name="SodimatId" />
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="MachineCode" />
+      <PropertyRef Name="Product" />
+    </Key>
+    <Property Name="SodimatId" Type="Int16" Nullable="false" />
+    <Property Name="CycleId" Type="Int16" Nullable="false" />
+    <Property Name="MachineCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Product" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Peso" Type="Double" />
+    <Property Name="Tiro" Type="Double" />
+    <Property Name="Diametro" Type="Double" />
+    <Property Name="RangoPeso" Type="Single" />
+    <Property Name="RangoTiro" Type="Single" />
+    <Property Name="RangoDiametro" Type="Single" />
+    <Property Name="Turno" Type="Byte" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+    <Property Name="Fecha2" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="QualityProcesedDetail">
+    <Key>
+      <PropertyRef Name="SodimatId" />
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="MachineCode" />
+      <PropertyRef Name="Product" />
+    </Key>
+    <Property Name="SodimatId" Type="Int16" Nullable="false" />
+    <Property Name="CycleId" Type="Int16" Nullable="false" />
+    <Property Name="MachineCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Product" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Peso" Type="Single" />
+    <Property Name="Tiro" Type="Single" />
+    <Property Name="Diametro" Type="Single" />
+    <Property Name="Turno" Type="Byte" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="V_ParametrosProductos">
+    <Key>
+      <PropertyRef Name="Product_ID" />
+      <PropertyRef Name="Filler_Name" />
+      <PropertyRef Name="Type_ID" />
+      <PropertyRef Name="Subtype_ID" />
+      <PropertyRef Name="Parameter_ID" />
+      <PropertyRef Name="Parameter_Description" />
+      <PropertyRef Name="Display" />
+      <PropertyRef Name="Value" />
+    </Key>
+    <Property Name="Product_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Filler_Name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Type_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Subtype_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Parameter_ID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Parameter_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Display" Type="Boolean" Nullable="false" />
+    <Property Name="Value" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_ProductosNotificados">
+    <Key>
+      <PropertyRef Name="Fecha" />
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="Producto" />
+      <PropertyRef Name="Máquina" />
+      <PropertyRef Name="SodiQube" />
+    </Key>
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Turno" Type="Byte" />
+    <Property Name="CycleId" Type="Int16" Nullable="false" />
+    <Property Name="Producto" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Máquina" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SodiQube" Type="Int16" Nullable="false" />
+    <Property Name="Diametro" Type="Double" />
+    <Property Name="Peso" Type="Double" />
+    <Property Name="Tiro" Type="Double" />
+    <Property Name="Notificación_de_Tiro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="V_QualityProcesed">
+    <Key>
+      <PropertyRef Name="SodimatId" />
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="MachineCode" />
+      <PropertyRef Name="Product" />
+    </Key>
+    <Property Name="SodimatId" Type="Int16" Nullable="false" />
+    <Property Name="CycleId" Type="Int16" Nullable="false" />
+    <Property Name="MachineCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Product" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Peso" Type="Double" />
+    <Property Name="Tiro" Type="Double" />
+    <Property Name="Diametro" Type="Double" />
+    <Property Name="RangoPeso" Type="Single" />
+    <Property Name="RangoTiro" Type="Single" />
+    <Property Name="RangoDiametro" Type="Single" />
+    <Property Name="Turno" Type="Byte" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+    <Property Name="Fecha2" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="V_QualitystatsLast3moths">
+    <Key>
+      <PropertyRef Name="SodimatId" />
+      <PropertyRef Name="DateTime" />
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="RodNumber" />
+      <PropertyRef Name="StatId" />
+    </Key>
+    <Property Name="SodimatId" Type="Int16" Nullable="false" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CycleId" Type="Int16" Nullable="false" />
+    <Property Name="RodNumber" Type="Int16" Nullable="false" />
+    <Property Name="StatId" Type="Int16" Nullable="false" />
+    <Property Name="TstFile" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="ProductCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="MachineCode" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="BrandCode" Type="Int32" />
+    <Property Name="BatchCode" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+    <Property Name="ReservedFlag" Type="Int16" />
+    <Property Name="ReservedCode" Type="Int32" />
+    <Property Name="ReservedCounter" Type="Int32" />
+    <Property Name="Weight" Type="Single" />
+    <Property Name="WeightCor" Type="Single" />
+    <Property Name="Moisture1" Type="Single" />
+    <Property Name="PressureDrop" Type="Single" />
+    <Property Name="PressureDrop_FE" Type="Single" />
+    <Property Name="FilterVent" Type="Single" />
+    <Property Name="PaperVent" Type="Single" />
+    <Property Name="Moisture2" Type="Single" />
+    <Property Name="Dia_Cir" Type="Single" />
+    <Property Name="Ovality" Type="Single" />
+    <Property Name="Hardness" Type="Single" />
+    <Property Name="HardnessCor" Type="Single" />
+    <Property Name="HardnessDiff" Type="Single" />
+    <Property Name="HardnessDiffCor" Type="Single" />
+    <Property Name="Length" Type="Single" />
+    <Property Name="Dia_Cir2" Type="Single" />
+    <Property Name="Ovality2" Type="Single" />
+    <Property Name="PressureDropSealed" Type="Single" />
+    <Property Name="FilterVentSealed" Type="Single" />
+    <Property Name="Dia_Cir3" Type="Single" />
+    <Property Name="Ovality3" Type="Single" />
+    <Property Name="GlobalPorosity" Type="Single" />
+    <Property Name="LocalPorosity" Type="Single" />
+    <Property Name="AreaPorosity" Type="Single" />
+  </EntityType>
+  <EntityType Name="V_QualitytestLast3moths">
+    <Key>
+      <PropertyRef Name="SodimatId" />
+      <PropertyRef Name="DateTime" />
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="RodId" />
+      <PropertyRef Name="IsLastRod" />
+    </Key>
+    <Property Name="SodimatId" Type="Int16" Nullable="false" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CycleId" Type="Int16" Nullable="false" />
+    <Property Name="RodId" Type="Int16" Nullable="false" />
+    <Property Name="IsLastRod" Type="Int16" Nullable="false" />
+    <Property Name="TstFile" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="ProductCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="MachineCode" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="BrandCode" Type="Int32" />
+    <Property Name="BatchCode" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+    <Property Name="ReservedFlag" Type="Int16" />
+    <Property Name="ReservedCode" Type="Int32" />
+    <Property Name="ReservedCounter" Type="Int32" />
+    <Property Name="Weight" Type="Single" />
+    <Property Name="WeightCor" Type="Single" />
+    <Property Name="Moisture1" Type="Single" />
+    <Property Name="PressureDrop" Type="Single" />
+    <Property Name="PressureDrop_FE" Type="Single" />
+    <Property Name="FilterVent" Type="Single" />
+    <Property Name="PaperVent" Type="Single" />
+    <Property Name="Moisture2" Type="Single" />
+    <Property Name="Dia_Cir" Type="Single" />
+    <Property Name="Ovality" Type="Single" />
+    <Property Name="Hardness" Type="Single" />
+    <Property Name="HardnessCor" Type="Single" />
+    <Property Name="HardnessDiff" Type="Single" />
+    <Property Name="HardnessDiffCor" Type="Single" />
+    <Property Name="Length" Type="Single" />
+    <Property Name="Dia_Cir2" Type="Single" />
+    <Property Name="Ovality2" Type="Single" />
+    <Property Name="PressureDropSealed" Type="Single" />
+    <Property Name="FilterVentSealed" Type="Single" />
+    <Property Name="Dia_Cir3" Type="Single" />
+    <Property Name="Ovality3" Type="Single" />
+    <Property Name="GlobalPorosity" Type="Single" />
+    <Property Name="LocalPorosity" Type="Single" />
+    <Property Name="AreaPorosity" Type="Single" />
+  </EntityType>
+  <EntityType Name="V_QualityTestsLast5Months">
+    <Key>
+      <PropertyRef Name="SodimatId" />
+      <PropertyRef Name="DateTime" />
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="RodId" />
+      <PropertyRef Name="IsLastRod" />
+    </Key>
+    <Property Name="SodimatId" Type="Int16" Nullable="false" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CycleId" Type="Int16" Nullable="false" />
+    <Property Name="RodId" Type="Int16" Nullable="false" />
+    <Property Name="IsLastRod" Type="Int16" Nullable="false" />
+    <Property Name="TstFile" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="ProductCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="MachineCode" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+    <Property Name="BrandCode" Type="Int32" />
+    <Property Name="BatchCode" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+    <Property Name="ReservedFlag" Type="Int16" />
+    <Property Name="ReservedCode" Type="Int32" />
+    <Property Name="ReservedCounter" Type="Int32" />
+    <Property Name="Weight" Type="Single" />
+    <Property Name="WeightCor" Type="Single" />
+    <Property Name="Moisture1" Type="Single" />
+    <Property Name="PressureDrop" Type="Single" />
+    <Property Name="PressureDrop_FE" Type="Single" />
+    <Property Name="FilterVent" Type="Single" />
+    <Property Name="PaperVent" Type="Single" />
+    <Property Name="Moisture2" Type="Single" />
+    <Property Name="Dia_Cir" Type="Single" />
+    <Property Name="Ovality" Type="Single" />
+    <Property Name="Hardness" Type="Single" />
+    <Property Name="HardnessCor" Type="Single" />
+    <Property Name="HardnessDiff" Type="Single" />
+    <Property Name="HardnessDiffCor" Type="Single" />
+    <Property Name="Length" Type="Single" />
+    <Property Name="Dia_Cir2" Type="Single" />
+    <Property Name="Ovality2" Type="Single" />
+    <Property Name="PressureDropSealed" Type="Single" />
+    <Property Name="FilterVentSealed" Type="Single" />
+    <Property Name="Dia_Cir3" Type="Single" />
+    <Property Name="Ovality3" Type="Single" />
+    <Property Name="GlobalPorosity" Type="Single" />
+    <Property Name="LocalPorosity" Type="Single" />
+    <Property Name="AreaPorosity" Type="Single" />
+  </EntityType>
+  <EntityType Name="V_QualityTestsLast6Months">
+    <Key>
+      <PropertyRef Name="Fecha_y_hora" />
+      <PropertyRef Name="No__Sodiqube" />
+      <PropertyRef Name="Código_de_Filler" />
+      <PropertyRef Name="Máquina" />
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="Notificación_diámetro" />
+      <PropertyRef Name="Notificación_de_peso" />
+      <PropertyRef Name="Notificación_de_tiro" />
+    </Key>
+    <Property Name="Año" Type="Int32" />
+    <Property Name="Mes" Type="Int32" />
+    <Property Name="Semana" Type="Int32" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+    <Property Name="Fecha_y_hora" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Turno" Type="Byte" />
+    <Property Name="No__Sodiqube" Type="Int16" Nullable="false" />
+    <Property Name="Código_de_Filler" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Filler" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Máquina" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Diámetro__mm_" Type="Single" />
+    <Property Name="CycleId" Type="Int16" Nullable="false" />
+    <Property Name="Notificación_diámetro" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Peso__gr_" Type="Single" />
+    <Property Name="Notificación_de_peso" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tiro__mm_h2O_" Type="Single" />
+    <Property Name="Notificación_de_tiro" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_ReporteDatosIndividuales">
+    <Key>
+      <PropertyRef Name="Fecha_y_hora" />
+      <PropertyRef Name="No__Sodiqube" />
+      <PropertyRef Name="Máquina" />
+      <PropertyRef Name="Notificación_diámetro" />
+      <PropertyRef Name="Notificación_de_peso" />
+      <PropertyRef Name="Notificación_de_tiro" />
+    </Key>
+    <Property Name="Año" Type="Int32" />
+    <Property Name="Mes" Type="Int32" />
+    <Property Name="Semana" Type="Int32" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+    <Property Name="Fecha_y_hora" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Turno" Type="Byte" />
+    <Property Name="No__Sodiqube" Type="Int16" Nullable="false" />
+    <Property Name="Producto" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Máquina" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Diámetro" Type="Single" />
+    <Property Name="Notificación_diámetro" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Peso" Type="Single" />
+    <Property Name="Notificación_de_peso" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tiro" Type="Single" />
+    <Property Name="Notificación_de_tiro" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_ReporteMuestras">
+    <Key>
+      <PropertyRef Name="Fecha" />
+      <PropertyRef Name="Fecha_y_hora" />
+      <PropertyRef Name="Filler" />
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Variable" />
+      <PropertyRef Name="CycleId" />
+      <PropertyRef Name="No__Sodiqube" />
+    </Key>
+    <Property Name="Año" Type="Int32" />
+    <Property Name="Mes" Type="Int32" />
+    <Property Name="Semana" Type="Int32" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Fecha_y_hora" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Turno" Type="Byte" />
+    <Property Name="Máquina" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Código_de_Filler" Type="Int32" />
+    <Property Name="Filler" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Valor" Type="Double" />
+    <Property Name="Variable" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Límite_Especificación_Inferior" Type="Double" />
+    <Property Name="Límite_Especificación_Superior" Type="Double" />
+    <Property Name="Media" Type="Double" />
+    <Property Name="Límite_Control_Inferior" Type="Double" />
+    <Property Name="Límite_Control_Superior" Type="Double" />
+    <Property Name="CycleId" Type="Int16" Nullable="false" />
+    <Property Name="No__Sodiqube" Type="Int16" Nullable="false" />
+    <Property Name="C_Fue_notificado_" Type="Boolean" />
+    <Property Name="Tipo_de_notificación" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_Details_Types">
+    <End Role="Types" Type="Self.Type" Multiplicity="1" />
+    <End Role="Details" Type="Self.Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Types">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Details">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SodiQubeDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Details" EntityType="Self.Detail" />
+    <EntitySet Name="Machines" EntityType="Self.Machine" />
+    <EntitySet Name="Parametros" EntityType="Self.Parametro" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="QualityStats" EntityType="Self.QualityStat" />
+    <EntitySet Name="QualityTests" EntityType="Self.QualityTest" />
+    <EntitySet Name="SubTypes" EntityType="Self.SubType" />
+    <EntitySet Name="TR_Historial" EntityType="Self.TR_Historial" />
+    <EntitySet Name="TR_QualityTestsSummary" EntityType="Self.TR_QualityTestsSummary" />
+    <EntitySet Name="Turnoes" EntityType="Self.Turno" />
+    <EntitySet Name="Types" EntityType="Self.Type" />
+    <EntitySet Name="QualityProceseds" EntityType="Self.QualityProcesed" />
+    <EntitySet Name="QualityProcesedDetails" EntityType="Self.QualityProcesedDetail" />
+    <EntitySet Name="V_ParametrosProductos" EntityType="Self.V_ParametrosProductos" />
+    <EntitySet Name="V_ProductosNotificados" EntityType="Self.V_ProductosNotificados" />
+    <EntitySet Name="V_QualityProcesed" EntityType="Self.V_QualityProcesed" />
+    <EntitySet Name="V_QualitystatsLast3moths" EntityType="Self.V_QualitystatsLast3moths" />
+    <EntitySet Name="V_QualitytestLast3moths" EntityType="Self.V_QualitytestLast3moths" />
+    <EntitySet Name="V_QualityTestsLast5Months" EntityType="Self.V_QualityTestsLast5Months" />
+    <EntitySet Name="V_QualityTestsLast6Months" EntityType="Self.V_QualityTestsLast6Months" />
+    <EntitySet Name="V_ReporteDatosIndividuales" EntityType="Self.V_ReporteDatosIndividuales" />
+    <EntitySet Name="V_ReporteMuestras" EntityType="Self.V_ReporteMuestras" />
+    <AssociationSet Name="FK_Details_Types" Association="Self.FK_Details_Types">
+      <End Role="Types" EntitySet="Types" />
+      <End Role="Details" EntitySet="Details" />
+    </AssociationSet>
+    <FunctionImport Name="InsertarNuevosRegistros" />
+    <FunctionImport Name="InsertarRegistrosVerificados_OLD_" />
+    <FunctionImport Name="VerificarLimiteInferiorDiametro" />
+    <FunctionImport Name="VerificarLimiteInferiorPeso" />
+    <FunctionImport Name="VerificarLimiteInferiorTiro" />
+    <FunctionImport Name="VerificarLimiteSuperiorDiametro" />
+    <FunctionImport Name="VerificarLimiteSuperiorPeso" />
+    <FunctionImport Name="VerificarLimiteSuperiorTiro" />
+    <FunctionImport Name="VerificarTiroDatosIndividuales" />
+  </EntityContainer>
+</Schema>

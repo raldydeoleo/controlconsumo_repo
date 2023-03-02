@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="color_de_prueba_mamey">#e58700</color>
+  <color name="dark_gray">#b8b8b8</color>
+  <color name="light_gray">#e5e5e5</color>
+  <color name="light_blue">#69d2e7</color>
+  <color name="text_color_column">#959595</color>
+  <color name="white_pale_background">#f3f3f3</color>
+  <color name="white">#ffffff</color>
+  <color name="yellow">#E5B81C</color>
+  <color name="bg_app">#f3f3f3</color>
+  <color name="blue_dark">#0099CC</color>
+  <color name="orange_base">#fa6901</color>
+  <color name="orange_base_d1">#d15700</color>
+  <color name="orange_base_c1">#f89249</color>
+  <color name="blue_base">#69d2e7</color>
+  <color name="gray_base">#838383</color>
+  <color name="gray_dark">#CCC</color>
+  <color name="gray_bg_base">#e5e5e5</color>
+  <color name="gray_light_d1">#f6f6f6</color>
+  <color name="gray_light_d2">#a1a1a1</color>
+  <color name="gray_light_d3">#DDDDDD</color>
+  <color name="gray_super_light">#50DDDDDD</color>
+  <color name="blue_base_translucent">#8069d2e7</color>
+  <color name="input_text">#99000000</color>
+  <color name="black_d1">#474747</color> 
+  <color name="status_pending">#ff4500</color>
+  <color name="status_processed">#4C9465</color>
+  <color name="status_rejected">#ff003a</color>
+  <color name="red_light">#FF0000</color>
+  <color name="yellow_light">#FFFF00</color>
+  <color name="green_light">#98CB00</color>
+  <color name="red_dark">#E22B27</color>
+  <color name="report_green">#6aff2f</color>
+  <color name="report_yellow">#f9ff5f</color>
+  <color name="report_blue">#2fffb8</color>
+</resources>

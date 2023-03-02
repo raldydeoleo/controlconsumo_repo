@@ -1,0 +1,2130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<api>
+<package name="com.zebra.android.comm">
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.comm.ZebraPrinterConnectionA" extends-generic-aware="com.zebra.android.comm.ZebraPrinterConnectionA" final="false" name="BluetoothPrinterConnection" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="BluetoothPrinterConnection" static="false" type="com.zebra.android.comm.BluetoothPrinterConnection" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor deprecated="not deprecated" final="false" name="BluetoothPrinterConnection" static="false" type="com.zebra.android.comm.BluetoothPrinterConnection" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+</constructor>
+<constructor deprecated="not deprecated" final="false" name="BluetoothPrinterConnection" static="false" type="com.zebra.android.comm.BluetoothPrinterConnection" visibility="protected">
+<parameter name="p0" type="com.zebra.android.comm.internal.ZebraConnector">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="int">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="getFriendlyName" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getMACAddress" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+</method>
+<field deprecated="not deprecated" final="false" name="friendlyName" static="false" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="macAddress" static="false" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="protected" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="BluetoothZebraConnectorImpl" static="false" visibility="">
+<implements name="com.zebra.android.comm.internal.ZebraConnector" name-generic-aware="com.zebra.android.comm.internal.ZebraConnector">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="BluetoothZebraConnectorImpl" static="false" type="com.zebra.android.comm.BluetoothZebraConnectorImpl" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="open" native="false" return="com.zebra.android.comm.internal.ZebraSocket" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.comm.ZebraPrinterConnectionA" extends-generic-aware="com.zebra.android.comm.ZebraPrinterConnectionA" final="false" name="TcpPrinterConnection" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="TcpPrinterConnection" static="false" type="com.zebra.android.comm.TcpPrinterConnection" visibility="protected">
+<parameter name="p0" type="com.zebra.android.comm.internal.ZebraConnector">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+</constructor>
+<constructor deprecated="not deprecated" final="false" name="TcpPrinterConnection" static="false" type="com.zebra.android.comm.TcpPrinterConnection" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="int">
+</parameter>
+</constructor>
+<constructor deprecated="not deprecated" final="false" name="TcpPrinterConnection" static="false" type="com.zebra.android.comm.TcpPrinterConnection" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="getAddress" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getPortNumber" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+</method>
+<field deprecated="not deprecated" final="true" name="DEFAULT_CPCL_TCP_PORT" static="true" transient="false" type="int" type-generic-aware="int" value="6101" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="DEFAULT_ZPL_TCP_PORT" static="true" transient="false" type="int" type-generic-aware="int" value="9100" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TcpZebraConnectorImpl" static="false" visibility="">
+<implements name="com.zebra.android.comm.internal.ZebraConnector" name-generic-aware="com.zebra.android.comm.internal.ZebraConnector">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="TcpZebraConnectorImpl" static="false" type="com.zebra.android.comm.TcpZebraConnectorImpl" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="open" native="false" return="com.zebra.android.comm.internal.ZebraSocket" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="ZebraPrinterConnection" static="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="bytesAvailable" native="false" return="int" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="close" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="getMaxTimeoutForRead" native="false" return="int" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="getTimeToWaitForMoreData" native="false" return="int" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="isConnected" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="open" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="read" native="false" return="byte[]" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="toString" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="waitForData" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="write" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="byte[]">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="write" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="byte[]">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+</interface>
+<class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="ZebraPrinterConnectionA" static="false" visibility="public">
+<implements name="com.zebra.android.comm.ZebraPrinterConnection" name-generic-aware="com.zebra.android.comm.ZebraPrinterConnection">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="ZebraPrinterConnectionA" static="false" type="com.zebra.android.comm.ZebraPrinterConnectionA" visibility="protected">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="bytesAvailable" native="false" return="int" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="close" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getMaxTimeoutForRead" native="false" return="int" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getTimeToWaitForMoreData" native="false" return="int" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="isConnected" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="open" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="read" native="false" return="byte[]" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="waitForData" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="write" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="byte[]">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="write" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="byte[]">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<field deprecated="not deprecated" final="true" name="DEFAULT_MAX_TIMEOUT_FOR_READ" static="true" transient="false" type="int" type-generic-aware="int" value="5000" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="DEFAULT_TIME_TO_WAIT_FOR_MORE_DATA" static="true" transient="false" type="int" type-generic-aware="int" value="500" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="commLink" static="false" transient="false" type="com.zebra.android.comm.internal.ZebraSocket" type-generic-aware="com.zebra.android.comm.internal.ZebraSocket" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="inputStream" static="false" transient="false" type="java.io.InputStream" type-generic-aware="java.io.InputStream" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="isConnected" static="false" transient="false" type="boolean" type-generic-aware="boolean" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="maxTimeoutForRead" static="false" transient="false" type="int" type-generic-aware="int" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="outputStream" static="false" transient="false" type="java.io.OutputStream" type-generic-aware="java.io.OutputStream" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="timeToWaitForMoreData" static="false" transient="false" type="int" type-generic-aware="int" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="zebraConnector" static="false" transient="false" type="com.zebra.android.comm.internal.ZebraConnector" type-generic-aware="com.zebra.android.comm.internal.ZebraConnector" visibility="protected" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Exception" extends-generic-aware="java.lang.Exception" final="false" name="ZebraPrinterConnectionException" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="ZebraPrinterConnectionException" static="false" type="com.zebra.android.comm.ZebraPrinterConnectionException" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</constructor>
+</class>
+</package>
+<package name="com.zebra.android.comm.internal">
+<interface abstract="true" deprecated="not deprecated" final="false" name="PrinterCommand" static="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="sendAndWaitForResponse" native="false" return="byte[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="sendAndWaitForResponse" native="false" return="byte[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="PrinterCommandImpl" static="false" visibility="public">
+<implements name="com.zebra.android.comm.internal.PrinterCommand" name-generic-aware="com.zebra.android.comm.internal.PrinterCommand">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="PrinterCommandImpl" static="false" type="com.zebra.android.comm.internal.PrinterCommandImpl" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="sendAndWaitForResponse" native="false" return="byte[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="sendAndWaitForResponse" native="false" return="byte[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="ZebraBluetoothSocket" static="false" visibility="public">
+<implements name="com.zebra.android.comm.internal.ZebraSocket" name-generic-aware="com.zebra.android.comm.internal.ZebraSocket">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="ZebraBluetoothSocket" static="false" type="com.zebra.android.comm.internal.ZebraBluetoothSocket" visibility="public">
+<parameter name="p0" type="android.bluetooth.BluetoothSocket">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="close" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="connect" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getInputStream" native="false" return="java.io.InputStream" static="false" synchronized="false" visibility="public">
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getOutputStream" native="false" return="java.io.OutputStream" static="false" synchronized="false" visibility="public">
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="ZebraConnector" static="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="open" native="false" return="com.zebra.android.comm.internal.ZebraSocket" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="ZebraNetworkSocket" static="false" visibility="public">
+<implements name="com.zebra.android.comm.internal.ZebraSocket" name-generic-aware="com.zebra.android.comm.internal.ZebraSocket">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="ZebraNetworkSocket" static="false" type="com.zebra.android.comm.internal.ZebraNetworkSocket" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="close" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="connect" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getInputStream" native="false" return="java.io.InputStream" static="false" synchronized="false" visibility="public">
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getOutputStream" native="false" return="java.io.OutputStream" static="false" synchronized="false" visibility="public">
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="ZebraSocket" static="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="close" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="connect" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="getInputStream" native="false" return="java.io.InputStream" static="false" synchronized="false" visibility="public">
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="getOutputStream" native="false" return="java.io.OutputStream" static="false" synchronized="false" visibility="public">
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</interface>
+</package>
+<package name="com.zebra.android.discovery">
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="BluetoothDiscoverer" static="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="findPrinters" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+<parameter name="p1" type="com.zebra.android.discovery.DiscoveryHandler">
+</parameter>
+<exception name="InterruptedException" type="java.lang.InterruptedException">
+</exception>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="BluetoothDiscoverer.1" static="true" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="android.content.BroadcastReceiver" extends-generic-aware="android.content.BroadcastReceiver" final="false" name="BluetoothDiscoverer.BtRadioMonitor" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="onReceive" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+<parameter name="p1" type="android.content.Intent">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="android.content.BroadcastReceiver" extends-generic-aware="android.content.BroadcastReceiver" final="false" name="BluetoothDiscoverer.BtReceiver" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="onReceive" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+<parameter name="p1" type="android.content.Intent">
+</parameter>
+</method>
+</class>
+<class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="DiscoveredPrinter" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="DiscoveredPrinter" static="false" type="com.zebra.android.discovery.DiscoveredPrinter" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</constructor>
+<field deprecated="not deprecated" final="true" name="address" static="false" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.discovery.DiscoveredPrinter" extends-generic-aware="com.zebra.android.discovery.DiscoveredPrinter" final="false" name="DiscoveredPrinterBluetooth" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="DiscoveredPrinterBluetooth" static="false" type="com.zebra.android.discovery.DiscoveredPrinterBluetooth" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</constructor>
+<field deprecated="not deprecated" final="true" name="friendlyName" static="false" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.discovery.DiscoveredPrinter" extends-generic-aware="com.zebra.android.discovery.DiscoveredPrinter" final="false" name="DiscoveredPrinterNetwork" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="DiscoveredPrinterNetwork" static="false" type="com.zebra.android.discovery.DiscoveredPrinterNetwork" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+</constructor>
+<field deprecated="not deprecated" final="false" name="dnsName" static="false" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="port" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Exception" extends-generic-aware="java.lang.Exception" final="false" name="DiscoveryException" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="DiscoveryException" static="false" type="com.zebra.android.discovery.DiscoveryException" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</constructor>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="DiscoveryHandler" static="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="discoveryError" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="discoveryFinished" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="foundPrinter" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.zebra.android.discovery.DiscoveredPrinter">
+</parameter>
+</method>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="NetworkDiscoverer" static="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="directedBroadcast" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.zebra.android.discovery.DiscoveryHandler">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+<exception name="DiscoveryException" type="com.zebra.android.discovery.DiscoveryException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="directedBroadcast" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.zebra.android.discovery.DiscoveryHandler">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<exception name="DiscoveryException" type="com.zebra.android.discovery.DiscoveryException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="findPrinters" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.zebra.android.discovery.DiscoveryHandler">
+</parameter>
+<exception name="DiscoveryException" type="com.zebra.android.discovery.DiscoveryException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="localBroadcast" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.zebra.android.discovery.DiscoveryHandler">
+</parameter>
+<exception name="DiscoveryException" type="com.zebra.android.discovery.DiscoveryException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="localBroadcast" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.zebra.android.discovery.DiscoveryHandler">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<exception name="DiscoveryException" type="com.zebra.android.discovery.DiscoveryException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="multicast" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.zebra.android.discovery.DiscoveryHandler">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<exception name="DiscoveryException" type="com.zebra.android.discovery.DiscoveryException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="multicast" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.zebra.android.discovery.DiscoveryHandler">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<exception name="DiscoveryException" type="com.zebra.android.discovery.DiscoveryException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="subnetSearch" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.zebra.android.discovery.DiscoveryHandler">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+<exception name="DiscoveryException" type="com.zebra.android.discovery.DiscoveryException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="subnetSearch" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.zebra.android.discovery.DiscoveryHandler">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<exception name="DiscoveryException" type="com.zebra.android.discovery.DiscoveryException">
+</exception>
+</method>
+</class>
+</package>
+<package name="com.zebra.android.discovery.internal">
+<class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="BroadcastA" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="BroadcastA" static="false" type="com.zebra.android.discovery.internal.BroadcastA" visibility="protected">
+<parameter name="p0" type="int">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="createDiscoSocket" native="false" return="com.zebra.android.discovery.internal.ZebraDiscoSocket" static="false" synchronized="false" visibility="protected">
+<exception name="DiscoveryException" type="com.zebra.android.discovery.DiscoveryException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="doBroadcast" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.zebra.android.discovery.DiscoveryHandler">
+</parameter>
+<exception name="DiscoveryException" type="com.zebra.android.discovery.DiscoveryException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="doDiscovery" native="false" return="boolean" static="false" synchronized="false" visibility="protected">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getDnsNameFromDiscoveryPacket" native="false" return="java.lang.String" static="true" synchronized="false" visibility="protected">
+<parameter name="p0" type="byte[]">
+</parameter>
+<exception name="DiscoveryPacketDecodeException" type="com.zebra.android.discovery.internal.DiscoveryPacketDecodeException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getIpAddressFromDiscoveryPacket" native="false" return="java.lang.String" static="true" synchronized="false" visibility="protected">
+<parameter name="p0" type="byte[]">
+</parameter>
+<exception name="DiscoveryPacketDecodeException" type="com.zebra.android.discovery.internal.DiscoveryPacketDecodeException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getPortBasedOnProductName" native="false" return="int" static="true" synchronized="false" visibility="protected">
+<parameter name="p0" type="byte[]">
+</parameter>
+<exception name="DiscoveryPacketDecodeException" type="com.zebra.android.discovery.internal.DiscoveryPacketDecodeException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="setSocketOptions" native="false" return="void" static="false" synchronized="false" visibility="protected">
+<parameter name="p0" type="com.zebra.android.discovery.internal.ZebraDiscoSocket">
+</parameter>
+<exception name="DiscoveryException" type="com.zebra.android.discovery.DiscoveryException">
+</exception>
+</method>
+<field deprecated="not deprecated" final="true" name="DEFAULT_LATE_ARRIVAL_DELAY" static="true" transient="false" type="int" type-generic-aware="int" value="6000" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="MAX_DATAGRAM_SIZE" static="true" transient="false" type="int" type-generic-aware="int" value="600" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="broadcastIpAddresses" static="false" transient="false" type="java.net.InetAddress[]" type-generic-aware="java.net.InetAddress[]" value="null" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="discoveryHandler" static="false" transient="false" type="com.zebra.android.discovery.DiscoveryHandler" type-generic-aware="com.zebra.android.discovery.DiscoveryHandler" visibility="protected" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="BroadcastA.1" static="false" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.discovery.internal.BroadcastA" extends-generic-aware="com.zebra.android.discovery.internal.BroadcastA" final="false" name="DirectedBroadcast" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="DirectedBroadcast" static="false" type="com.zebra.android.discovery.internal.DirectedBroadcast" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor deprecated="not deprecated" final="false" name="DirectedBroadcast" static="false" type="com.zebra.android.discovery.internal.DirectedBroadcast" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="setSocketOptions" native="false" return="void" static="false" synchronized="false" visibility="protected">
+<parameter name="p0" type="com.zebra.android.discovery.internal.ZebraDiscoSocket">
+</parameter>
+<exception name="DiscoveryException" type="com.zebra.android.discovery.DiscoveryException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Exception" extends-generic-aware="java.lang.Exception" final="false" name="DiscoveryPacketDecodeException" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="DiscoveryPacketDecodeException" static="false" type="com.zebra.android.discovery.internal.DiscoveryPacketDecodeException" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</constructor>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="DiscoveryPacketDecoder" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="DiscoveryPacketDecoder" static="false" type="com.zebra.android.discovery.internal.DiscoveryPacketDecoder" visibility="public">
+<parameter name="p0" type="byte[]">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="getDiscoveryEntryValue" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<exception name="DiscoveryPacketDecodeException" type="com.zebra.android.discovery.internal.DiscoveryPacketDecodeException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getDnsName" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+<exception name="DiscoveryPacketDecodeException" type="com.zebra.android.discovery.internal.DiscoveryPacketDecodeException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getIpAddress" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+<exception name="DiscoveryPacketDecodeException" type="com.zebra.android.discovery.internal.DiscoveryPacketDecodeException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getPrinterPort" native="false" return="int" static="false" synchronized="false" visibility="public">
+<exception name="DiscoveryPacketDecodeException" type="com.zebra.android.discovery.internal.DiscoveryPacketDecodeException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.discovery.internal.BroadcastA" extends-generic-aware="com.zebra.android.discovery.internal.BroadcastA" final="false" name="FindPrinters" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="FindPrinters" static="false" type="com.zebra.android.discovery.internal.FindPrinters" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="setSocketOptions" native="false" return="void" static="false" synchronized="false" visibility="protected">
+<parameter name="p0" type="com.zebra.android.discovery.internal.ZebraDiscoSocket">
+</parameter>
+<exception name="DiscoveryException" type="com.zebra.android.discovery.DiscoveryException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.discovery.internal.BroadcastA" extends-generic-aware="com.zebra.android.discovery.internal.BroadcastA" final="false" name="LocalBroadcast" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="LocalBroadcast" static="false" type="com.zebra.android.discovery.internal.LocalBroadcast" visibility="public">
+</constructor>
+<constructor deprecated="not deprecated" final="false" name="LocalBroadcast" static="false" type="com.zebra.android.discovery.internal.LocalBroadcast" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="setSocketOptions" native="false" return="void" static="false" synchronized="false" visibility="protected">
+<parameter name="p0" type="com.zebra.android.discovery.internal.ZebraDiscoSocket">
+</parameter>
+<exception name="DiscoveryException" type="com.zebra.android.discovery.DiscoveryException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.discovery.internal.BroadcastA" extends-generic-aware="com.zebra.android.discovery.internal.BroadcastA" final="false" name="MulticastBroadcast" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="MulticastBroadcast" static="false" type="com.zebra.android.discovery.internal.MulticastBroadcast" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</constructor>
+<constructor deprecated="not deprecated" final="false" name="MulticastBroadcast" static="false" type="com.zebra.android.discovery.internal.MulticastBroadcast" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="setSocketOptions" native="false" return="void" static="false" synchronized="false" visibility="protected">
+<parameter name="p0" type="com.zebra.android.discovery.internal.ZebraDiscoSocket">
+</parameter>
+<exception name="DiscoveryException" type="com.zebra.android.discovery.DiscoveryException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.discovery.internal.BroadcastA" extends-generic-aware="com.zebra.android.discovery.internal.BroadcastA" final="false" name="SubnetSearch" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="SubnetSearch" static="false" type="com.zebra.android.discovery.internal.SubnetSearch" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor deprecated="not deprecated" final="false" name="SubnetSearch" static="false" type="com.zebra.android.discovery.internal.SubnetSearch" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="setSocketOptions" native="false" return="void" static="false" synchronized="false" visibility="protected">
+<parameter name="p0" type="com.zebra.android.discovery.internal.ZebraDiscoSocket">
+</parameter>
+<exception name="DiscoveryException" type="com.zebra.android.discovery.DiscoveryException">
+</exception>
+</method>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="ZebraDiscoSocket" static="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="close" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="joinGroup" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+<exception name="UnknownHostException" type="java.net.UnknownHostException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="receive" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.net.DatagramPacket">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="send" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.net.DatagramPacket">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="setInterface" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.net.InetAddress">
+</parameter>
+<exception name="SocketException" type="java.net.SocketException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="setSoTimeout" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<exception name="SocketException" type="java.net.SocketException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="setTimeToLive" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="ZebraDiscoSocketImpl" static="false" visibility="public">
+<implements name="com.zebra.android.discovery.internal.ZebraDiscoSocket" name-generic-aware="com.zebra.android.discovery.internal.ZebraDiscoSocket">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="ZebraDiscoSocketImpl" static="false" type="com.zebra.android.discovery.internal.ZebraDiscoSocketImpl" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="close" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="joinGroup" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+<exception name="UnknownHostException" type="java.net.UnknownHostException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="receive" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.net.DatagramPacket">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="send" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.net.DatagramPacket">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="setInterface" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.net.InetAddress">
+</parameter>
+<exception name="SocketException" type="java.net.SocketException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="setSoTimeout" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<exception name="SocketException" type="java.net.SocketException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="setTimeToLive" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+</package>
+<package name="com.zebra.android.graphics.internal">
+<class abstract="true" deprecated="not deprecated" extends="java.io.OutputStream" extends-generic-aware="java.io.OutputStream" final="false" name="CompressedBitmapOutputStreamA" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="CompressedBitmapOutputStreamA" static="false" type="com.zebra.android.graphics.internal.CompressedBitmapOutputStreamA" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="bufferAndWrite" native="false" return="void" static="false" synchronized="false" visibility="protected">
+<parameter name="p0" type="char">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="write" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<field deprecated="not deprecated" final="false" name="internalEncodedBuffer" static="false" transient="false" type="java.io.ByteArrayOutputStream" type-generic-aware="java.io.ByteArrayOutputStream" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="printerConnection" static="false" transient="false" type="com.zebra.android.comm.ZebraPrinterConnection" type-generic-aware="com.zebra.android.comm.ZebraPrinterConnection" visibility="protected" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.graphics.internal.CompressedBitmapOutputStreamA" extends-generic-aware="com.zebra.android.graphics.internal.CompressedBitmapOutputStreamA" final="false" name="CompressedBitmapOutputStreamCpcl" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="CompressedBitmapOutputStreamCpcl" static="false" type="com.zebra.android.graphics.internal.CompressedBitmapOutputStreamCpcl" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+</constructor>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.graphics.internal.CompressedBitmapOutputStreamA" extends-generic-aware="com.zebra.android.graphics.internal.CompressedBitmapOutputStreamA" final="false" name="CompressedBitmapOutputStreamZpl" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="CompressedBitmapOutputStreamZpl" static="false" type="com.zebra.android.graphics.internal.CompressedBitmapOutputStreamZpl" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+</constructor>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="CpclCrcHeader" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="CpclCrcHeader" static="false" type="com.zebra.android.graphics.internal.CpclCrcHeader" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="byte2int" native="false" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="byte">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="convertTo8dot3" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getCRC16ForCertificateFilesOnly" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="byte[]">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getWChecksum" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="byte[]">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="stringPadToPlaces" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="char">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+<parameter name="p3" type="boolean">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="stringPadToPlaces" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="DitheredImageProvider" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="DitheredImageProvider" static="false" type="com.zebra.android.graphics.internal.DitheredImageProvider" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="getDitheredImage" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="android.graphics.Bitmap">
+</parameter>
+<parameter name="p1" type="java.io.OutputStream">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getDitheredImage" native="false" return="void" static="true" synchronized="false" visibility="protected">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="com.zebra.android.graphics.internal.ImageData">
+</parameter>
+<parameter name="p3" type="java.io.OutputStream">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="ImageData" static="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="getRow" native="false" return="int[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="ImageDataAndroid" static="false" visibility="public">
+<implements name="com.zebra.android.graphics.internal.ImageData" name-generic-aware="com.zebra.android.graphics.internal.ImageData">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="ImageDataAndroid" static="false" type="com.zebra.android.graphics.internal.ImageDataAndroid" visibility="public">
+<parameter name="p0" type="android.graphics.Bitmap">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="getRow" native="false" return="int[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+</class>
+</package>
+<package name="com.zebra.android.printer">
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="FieldDescriptionData" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="FieldDescriptionData" static="false" type="com.zebra.android.printer.FieldDescriptionData" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</constructor>
+<field deprecated="not deprecated" final="true" name="fieldName" static="false" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="fieldNumber" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
+</field>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="FileUtil" static="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="retrieveFileNames" native="false" return="java.lang.String[]" static="false" synchronized="false" visibility="public">
+<exception name="ZebraIllegalArgumentException" type="com.zebra.android.printer.ZebraIllegalArgumentException">
+</exception>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="retrieveFileNames" native="false" return="java.lang.String[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String[]">
+</parameter>
+<exception name="ZebraIllegalArgumentException" type="com.zebra.android.printer.ZebraIllegalArgumentException">
+</exception>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="sendFileContents" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+</interface>
+<interface abstract="true" deprecated="not deprecated" final="false" name="FormatUtil" static="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="getVariableFields" native="false" return="com.zebra.android.printer.FieldDescriptionData[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="printStoredFormat" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.lang.String[]">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="printStoredFormat" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.lang.String[]">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+<exception name="UnsupportedEncodingException" type="java.io.UnsupportedEncodingException">
+</exception>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="printStoredFormat" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.util.Map&lt;java.lang.Integer, java.lang.String&gt;">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="printStoredFormat" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.util.Map&lt;java.lang.Integer, java.lang.String&gt;">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+<exception name="UnsupportedEncodingException" type="java.io.UnsupportedEncodingException">
+</exception>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="retrieveFormatFromPrinter" native="false" return="byte[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+</interface>
+<interface abstract="true" deprecated="not deprecated" final="false" name="GraphicsUtil" static="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="printImage" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.graphics.Bitmap">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="int">
+</parameter>
+<parameter name="p4" type="int">
+</parameter>
+<parameter name="p5" type="boolean">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="printImage" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="printImage" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="int">
+</parameter>
+<parameter name="p4" type="int">
+</parameter>
+<parameter name="p5" type="boolean">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="storeImage" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="android.graphics.Bitmap">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="int">
+</parameter>
+<exception name="ZebraIllegalArgumentException" type="com.zebra.android.printer.ZebraIllegalArgumentException">
+</exception>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+</interface>
+<interface abstract="true" deprecated="not deprecated" final="false" name="MagCardReader" static="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="read" native="false" return="java.lang.String[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Enum" extends-generic-aware="java.lang.Enum&lt;com.zebra.android.printer.PrinterLanguage&gt;" final="true" name="PrinterLanguage" static="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="valueOf" native="false" return="com.zebra.android.printer.PrinterLanguage" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="values" native="false" return="com.zebra.android.printer.PrinterLanguage[]" static="true" synchronized="false" visibility="public">
+</method>
+<field deprecated="not deprecated" final="true" name="CPCL" static="true" transient="false" type="com.zebra.android.printer.PrinterLanguage" type-generic-aware="com.zebra.android.printer.PrinterLanguage" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="ZPL" static="true" transient="false" type="com.zebra.android.printer.PrinterLanguage" type-generic-aware="com.zebra.android.printer.PrinterLanguage" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="PrinterStatus" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="PrinterStatus" static="false" type="com.zebra.android.printer.PrinterStatus" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+</constructor>
+<method abstract="true" deprecated="not deprecated" final="false" name="updateStatus" native="false" return="void" static="false" synchronized="false" visibility="protected">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<field deprecated="not deprecated" final="false" name="isHeadCold" static="false" transient="false" type="boolean" type-generic-aware="boolean" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="isHeadOpen" static="false" transient="false" type="boolean" type-generic-aware="boolean" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="isHeadTooHot" static="false" transient="false" type="boolean" type-generic-aware="boolean" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="isPaperOut" static="false" transient="false" type="boolean" type-generic-aware="boolean" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="isPartialFormatInProgress" static="false" transient="false" type="boolean" type-generic-aware="boolean" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="isPaused" static="false" transient="false" type="boolean" type-generic-aware="boolean" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="isReadyToPrint" static="false" transient="false" type="boolean" type-generic-aware="boolean" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="isReceiveBufferFull" static="false" transient="false" type="boolean" type-generic-aware="boolean" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="isRibbonOut" static="false" transient="false" type="boolean" type-generic-aware="boolean" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="labelLengthInDots" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="labelsRemainingInBatch" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="numberOfFormatsInReceiveBuffer" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="printMode" static="false" transient="false" type="com.zebra.android.printer.ZplPrintMode" type-generic-aware="com.zebra.android.printer.ZplPrintMode" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="printerConnection" static="false" transient="false" type="com.zebra.android.comm.ZebraPrinterConnection" type-generic-aware="com.zebra.android.comm.ZebraPrinterConnection" visibility="protected" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="PrinterStatusMessages" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="PrinterStatusMessages" static="false" type="com.zebra.android.printer.PrinterStatusMessages" visibility="public">
+<parameter name="p0" type="com.zebra.android.printer.PrinterStatus">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="getStatusMessage" native="false" return="java.lang.String[]" static="false" synchronized="false" visibility="public">
+</method>
+<field deprecated="not deprecated" final="true" name="HEAD_OPEN_MSG" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;HEAD OPEN&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="HEAD_TOO_HOT_MSG" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;HEAD TOO HOT&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="NULL_MSG" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;INVALID STATUS&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="PAPER_OUT_MSG" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;PAPER OUT&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="PAUSE_MSG" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;PAUSE&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="RECEIVE_BUFFER_FULL_MSG" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;RECEIVE BUFFER FULL&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="RIBBON_OUT_MSG" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;RIBBON OUT&quot;" visibility="public" volatile="false">
+</field>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="SmartcardReader" static="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="close" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="doCommand" native="false" return="byte[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="getATR" native="false" return="byte[]" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+</interface>
+<interface abstract="true" deprecated="not deprecated" final="false" name="ToolsUtil" static="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="calibrate" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="printConfigurationLabel" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="reset" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="restoreDefaults" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="sendCommand" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Exception" extends-generic-aware="java.lang.Exception" final="false" name="ZebraIllegalArgumentException" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="ZebraIllegalArgumentException" static="false" type="com.zebra.android.printer.ZebraIllegalArgumentException" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</constructor>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="ZebraPrinter" static="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="getCurrentStatus" native="false" return="com.zebra.android.printer.PrinterStatus" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="getFileUtil" native="false" return="com.zebra.android.printer.FileUtil" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="getFormatUtil" native="false" return="com.zebra.android.printer.FormatUtil" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="getGraphicsUtil" native="false" return="com.zebra.android.printer.GraphicsUtil" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="getMagCardReader" native="false" return="com.zebra.android.printer.MagCardReader" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="getPrinterControlLanguage" native="false" return="com.zebra.android.printer.PrinterLanguage" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="getSmartcardReader" native="false" return="com.zebra.android.printer.SmartcardReader" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="getToolsUtil" native="false" return="com.zebra.android.printer.ToolsUtil" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="ZebraPrinterFactory" static="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="getInstance" native="false" return="com.zebra.android.printer.ZebraPrinter" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+<exception name="ZebraPrinterLanguageUnknownException" type="com.zebra.android.printer.ZebraPrinterLanguageUnknownException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getInstance" native="false" return="com.zebra.android.printer.ZebraPrinter" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.zebra.android.printer.PrinterLanguage">
+</parameter>
+<parameter name="p1" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getInstance" native="false" return="com.zebra.android.printer.ZebraPrinter" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String[]">
+</parameter>
+<parameter name="p1" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+<exception name="ZebraPrinterLanguageUnknownException" type="com.zebra.android.printer.ZebraPrinterLanguageUnknownException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Exception" extends-generic-aware="java.lang.Exception" final="false" name="ZebraPrinterLanguageUnknownException" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="ZebraPrinterLanguageUnknownException" static="false" type="com.zebra.android.printer.ZebraPrinterLanguageUnknownException" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</constructor>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Enum" extends-generic-aware="java.lang.Enum&lt;com.zebra.android.printer.ZplPrintMode&gt;" final="true" name="ZplPrintMode" static="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="valueOf" native="false" return="com.zebra.android.printer.ZplPrintMode" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="values" native="false" return="com.zebra.android.printer.ZplPrintMode[]" static="true" synchronized="false" visibility="public">
+</method>
+<field deprecated="not deprecated" final="true" name="APPLICATOR" static="true" transient="false" type="com.zebra.android.printer.ZplPrintMode" type-generic-aware="com.zebra.android.printer.ZplPrintMode" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="CUTTER" static="true" transient="false" type="com.zebra.android.printer.ZplPrintMode" type-generic-aware="com.zebra.android.printer.ZplPrintMode" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="DELAYED_CUT" static="true" transient="false" type="com.zebra.android.printer.ZplPrintMode" type-generic-aware="com.zebra.android.printer.ZplPrintMode" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="KIOSK" static="true" transient="false" type="com.zebra.android.printer.ZplPrintMode" type-generic-aware="com.zebra.android.printer.ZplPrintMode" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="LINERLESS_PEEL" static="true" transient="false" type="com.zebra.android.printer.ZplPrintMode" type-generic-aware="com.zebra.android.printer.ZplPrintMode" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="LINERLESS_REWIND" static="true" transient="false" type="com.zebra.android.printer.ZplPrintMode" type-generic-aware="com.zebra.android.printer.ZplPrintMode" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="PARTIAL_CUTTER" static="true" transient="false" type="com.zebra.android.printer.ZplPrintMode" type-generic-aware="com.zebra.android.printer.ZplPrintMode" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="PEEL_OFF" static="true" transient="false" type="com.zebra.android.printer.ZplPrintMode" type-generic-aware="com.zebra.android.printer.ZplPrintMode" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="REWIND" static="true" transient="false" type="com.zebra.android.printer.ZplPrintMode" type-generic-aware="com.zebra.android.printer.ZplPrintMode" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="RFID" static="true" transient="false" type="com.zebra.android.printer.ZplPrintMode" type-generic-aware="com.zebra.android.printer.ZplPrintMode" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="TEAR_OFF" static="true" transient="false" type="com.zebra.android.printer.ZplPrintMode" type-generic-aware="com.zebra.android.printer.ZplPrintMode" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="UNKNOWN" static="true" transient="false" type="com.zebra.android.printer.ZplPrintMode" type-generic-aware="com.zebra.android.printer.ZplPrintMode" visibility="public" volatile="false">
+</field>
+</class>
+</package>
+<package name="com.zebra.android.printer.internal">
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="CommandType" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="getId" native="false" return="java.lang.String" static="false" synchronized="false" visibility="protected">
+</method>
+<field deprecated="not deprecated" final="true" name="ccCommand" static="true" transient="false" type="com.zebra.android.printer.internal.CommandType" type-generic-aware="com.zebra.android.printer.internal.CommandType" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="dfCommand" static="true" transient="false" type="com.zebra.android.printer.internal.CommandType" type-generic-aware="com.zebra.android.printer.internal.CommandType" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="fnCommand" static="true" transient="false" type="com.zebra.android.printer.internal.CommandType" type-generic-aware="com.zebra.android.printer.internal.CommandType" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="unknownCommand" static="true" transient="false" type="com.zebra.android.printer.internal.CommandType" type-generic-aware="com.zebra.android.printer.internal.CommandType" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="xaCommand" static="true" transient="false" type="com.zebra.android.printer.internal.CommandType" type-generic-aware="com.zebra.android.printer.internal.CommandType" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="xzCommand" static="true" transient="false" type="com.zebra.android.printer.internal.CommandType" type-generic-aware="com.zebra.android.printer.internal.CommandType" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="FileUtilA" static="false" visibility="public">
+<implements name="com.zebra.android.printer.FileUtil" name-generic-aware="com.zebra.android.printer.FileUtil">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="FileUtilA" static="false" type="com.zebra.android.printer.internal.FileUtilA" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+</constructor>
+<method abstract="true" deprecated="not deprecated" final="false" name="extractFilePropertiesFromDirResult" native="false" return="com.zebra.android.printer.internal.PrinterFilePropertiesList" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<exception name="ZebraIllegalArgumentException" type="com.zebra.android.printer.ZebraIllegalArgumentException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getFileConnection" native="false" return="com.zebra.android.printer.internal.ZebraFileConnection" static="false" synchronized="false" visibility="protected">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="retrieveFileNames" native="false" return="java.lang.String[]" static="false" synchronized="false" visibility="public">
+<exception name="ZebraIllegalArgumentException" type="com.zebra.android.printer.ZebraIllegalArgumentException">
+</exception>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="retrieveFileNames" native="false" return="java.lang.String[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String[]">
+</parameter>
+<exception name="ZebraIllegalArgumentException" type="com.zebra.android.printer.ZebraIllegalArgumentException">
+</exception>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="sendFileContents" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<field deprecated="not deprecated" final="false" name="printerConnection" static="false" transient="false" type="com.zebra.android.comm.ZebraPrinterConnection" type-generic-aware="com.zebra.android.comm.ZebraPrinterConnection" visibility="protected" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.printer.internal.FileUtilA" extends-generic-aware="com.zebra.android.printer.internal.FileUtilA" final="false" name="FileUtilCpcl" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="FileUtilCpcl" static="false" type="com.zebra.android.printer.internal.FileUtilCpcl" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="extractFilePropertiesFromDirResult" native="false" return="com.zebra.android.printer.internal.PrinterFilePropertiesList" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<exception name="ZebraIllegalArgumentException" type="com.zebra.android.printer.ZebraIllegalArgumentException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.printer.internal.FileUtilA" extends-generic-aware="com.zebra.android.printer.internal.FileUtilA" final="false" name="FileUtilZpl" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="FileUtilZpl" static="false" type="com.zebra.android.printer.internal.FileUtilZpl" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="extractFilePropertiesFromDirResult" native="false" return="com.zebra.android.printer.internal.PrinterFilePropertiesList" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<exception name="ZebraIllegalArgumentException" type="com.zebra.android.printer.ZebraIllegalArgumentException">
+</exception>
+</method>
+</class>
+<class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="FormatUtilA" static="false" visibility="public">
+<implements name="com.zebra.android.printer.FormatUtil" name-generic-aware="com.zebra.android.printer.FormatUtil">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="FormatUtilA" static="false" type="com.zebra.android.printer.internal.FormatUtilA" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="printStoredFormat" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.lang.String[]">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="printStoredFormat" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.lang.String[]">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+<exception name="UnsupportedEncodingException" type="java.io.UnsupportedEncodingException">
+</exception>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<field deprecated="not deprecated" final="false" name="printerConnection" static="false" transient="false" type="com.zebra.android.comm.ZebraPrinterConnection" type-generic-aware="com.zebra.android.comm.ZebraPrinterConnection" visibility="protected" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.printer.internal.FormatUtilA" extends-generic-aware="com.zebra.android.printer.internal.FormatUtilA" final="false" name="FormatUtilCpcl" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="FormatUtilCpcl" static="false" type="com.zebra.android.printer.internal.FormatUtilCpcl" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="countVariableFields" native="false" return="int" static="false" synchronized="false" visibility="protected">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getVariableFields" native="false" return="com.zebra.android.printer.FieldDescriptionData[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="printStoredFormat" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.util.Map&lt;java.lang.Integer, java.lang.String&gt;">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="printStoredFormat" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.util.Map&lt;java.lang.Integer, java.lang.String&gt;">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+<exception name="UnsupportedEncodingException" type="java.io.UnsupportedEncodingException">
+</exception>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="retrieveFormatFromPrinter" native="false" return="byte[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.printer.internal.FormatUtilA" extends-generic-aware="com.zebra.android.printer.internal.FormatUtilA" final="false" name="FormatUtilZpl" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="FormatUtilZpl" static="false" type="com.zebra.android.printer.internal.FormatUtilZpl" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="getVariableFields" native="false" return="com.zebra.android.printer.FieldDescriptionData[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="printStoredFormat" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.util.Map&lt;java.lang.Integer, java.lang.String&gt;">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="printStoredFormat" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.util.Map&lt;java.lang.Integer, java.lang.String&gt;">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+<exception name="UnsupportedEncodingException" type="java.io.UnsupportedEncodingException">
+</exception>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="retrieveFormatFromPrinter" native="false" return="byte[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+</class>
+<class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="GraphicsUtilA" static="false" visibility="public">
+<implements name="com.zebra.android.printer.GraphicsUtil" name-generic-aware="com.zebra.android.printer.GraphicsUtil">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="GraphicsUtilA" static="false" type="com.zebra.android.printer.internal.GraphicsUtilA" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="getImage" native="false" return="android.graphics.Bitmap" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="printImage" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="printImage" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="int">
+</parameter>
+<parameter name="p4" type="int">
+</parameter>
+<parameter name="p5" type="boolean">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="scaleImage" native="false" return="android.graphics.Bitmap" static="false" synchronized="false" visibility="protected">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="android.graphics.Bitmap">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.printer.internal.GraphicsUtilA" extends-generic-aware="com.zebra.android.printer.internal.GraphicsUtilA" final="false" name="GraphicsUtilCpcl" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="GraphicsUtilCpcl" static="false" type="com.zebra.android.printer.internal.GraphicsUtilCpcl" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="createPcxHeader" native="false" return="byte[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="createPcxImage" native="false" return="byte[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="android.graphics.Bitmap">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="createPcxImage" native="false" return="byte[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="byte[]">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="printImage" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.graphics.Bitmap">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="int">
+</parameter>
+<parameter name="p4" type="int">
+</parameter>
+<parameter name="p5" type="boolean">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="storeImage" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="android.graphics.Bitmap">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="int">
+</parameter>
+<exception name="ZebraIllegalArgumentException" type="com.zebra.android.printer.ZebraIllegalArgumentException">
+</exception>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<field deprecated="not deprecated" final="false" name="printerConnection" static="false" transient="false" type="com.zebra.android.comm.ZebraPrinterConnection" type-generic-aware="com.zebra.android.comm.ZebraPrinterConnection" visibility="protected" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.printer.internal.GraphicsUtilA" extends-generic-aware="com.zebra.android.printer.internal.GraphicsUtilA" final="false" name="GraphicsUtilZpl" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="GraphicsUtilZpl" static="false" type="com.zebra.android.printer.internal.GraphicsUtilZpl" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="printImage" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.graphics.Bitmap">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="int">
+</parameter>
+<parameter name="p4" type="int">
+</parameter>
+<parameter name="p5" type="boolean">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="storeImage" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="android.graphics.Bitmap">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="int">
+</parameter>
+<exception name="ZebraIllegalArgumentException" type="com.zebra.android.printer.ZebraIllegalArgumentException">
+</exception>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<field deprecated="not deprecated" final="false" name="printerConnection" static="false" transient="false" type="com.zebra.android.comm.ZebraPrinterConnection" type-generic-aware="com.zebra.android.comm.ZebraPrinterConnection" visibility="protected" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="IndexAndCommandType" static="false" visibility="">
+<constructor deprecated="not deprecated" final="false" name="IndexAndCommandType" static="false" type="com.zebra.android.printer.internal.IndexAndCommandType" visibility="protected">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="com.zebra.android.printer.internal.CommandType">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="getIndex" native="false" return="int" static="false" synchronized="false" visibility="protected">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="MagCardReaderCpcl" static="false" visibility="public">
+<implements name="com.zebra.android.printer.MagCardReader" name-generic-aware="com.zebra.android.printer.MagCardReader">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="MagCardReaderCpcl" static="false" type="com.zebra.android.printer.internal.MagCardReaderCpcl" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="read" native="false" return="java.lang.String[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<field deprecated="not deprecated" final="false" name="printerConnection" static="false" transient="false" type="com.zebra.android.comm.ZebraPrinterConnection" type-generic-aware="com.zebra.android.comm.ZebraPrinterConnection" visibility="protected" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Exception" extends-generic-aware="java.lang.Exception" final="false" name="MalformedFormatException" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="MalformedFormatException" static="false" type="com.zebra.android.printer.internal.MalformedFormatException" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</constructor>
+</class>
+<class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="PrinterFileProperties" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="PrinterFileProperties" static="false" type="com.zebra.android.printer.internal.PrinterFileProperties" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="getExt" native="false" return="java.lang.String" static="false" synchronized="false" visibility="protected">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getFullName" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+</method>
+<field deprecated="not deprecated" final="false" name="drivePrefix" static="false" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="extension" static="false" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="fileName" static="false" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="protected" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.printer.internal.PrinterFileProperties" extends-generic-aware="com.zebra.android.printer.internal.PrinterFileProperties" final="false" name="PrinterFilePropertiesCpcl" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="PrinterFilePropertiesCpcl" static="false" type="com.zebra.android.printer.internal.PrinterFilePropertiesCpcl" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</constructor>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="PrinterFilePropertiesList" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="PrinterFilePropertiesList" static="false" type="com.zebra.android.printer.internal.PrinterFilePropertiesList" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="add" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.zebra.android.printer.internal.PrinterFileProperties">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="filterByExtension" native="false" return="com.zebra.android.printer.internal.PrinterFilePropertiesList" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String[]">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="get" native="false" return="com.zebra.android.printer.internal.PrinterFileProperties" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getFileNamesFromProperties" native="false" return="java.lang.String[]" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="size" native="false" return="int" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.printer.internal.PrinterFileProperties" extends-generic-aware="com.zebra.android.printer.internal.PrinterFileProperties" final="false" name="PrinterFilePropertiesZpl" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="PrinterFilePropertiesZpl" static="false" type="com.zebra.android.printer.internal.PrinterFilePropertiesZpl" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</constructor>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.printer.PrinterStatus" extends-generic-aware="com.zebra.android.printer.PrinterStatus" final="false" name="PrinterStatusCpcl" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="PrinterStatusCpcl" static="false" type="com.zebra.android.printer.internal.PrinterStatusCpcl" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="updateStatus" native="false" return="void" static="false" synchronized="false" visibility="protected">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.printer.PrinterStatus" extends-generic-aware="com.zebra.android.printer.PrinterStatus" final="false" name="PrinterStatusZpl" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="PrinterStatusZpl" static="false" type="com.zebra.android.printer.internal.PrinterStatusZpl" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="updateStatus" native="false" return="void" static="false" synchronized="false" visibility="protected">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="RleEncodedImage" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="RleEncodedImage" static="false" type="com.zebra.android.printer.internal.RleEncodedImage" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="rleEncoding" native="false" return="byte[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="byte[]">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="RleEncodedImage.DataBuffer" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="RleEncodedImage.DataBuffer" static="false" type="com.zebra.android.printer.internal.RleEncodedImage.DataBuffer" visibility="public">
+<parameter name="p1" type="byte[]">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="getByte" native="false" return="byte" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="SmartcardReaderCpcl" static="false" visibility="public">
+<implements name="com.zebra.android.printer.SmartcardReader" name-generic-aware="com.zebra.android.printer.SmartcardReader">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="SmartcardReaderCpcl" static="false" type="com.zebra.android.printer.internal.SmartcardReaderCpcl" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="close" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="doCommand" native="false" return="byte[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getATR" native="false" return="byte[]" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<field deprecated="not deprecated" final="false" name="printerConnection" static="false" transient="false" type="com.zebra.android.comm.ZebraPrinterConnection" type-generic-aware="com.zebra.android.comm.ZebraPrinterConnection" visibility="protected" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="ToolsUtilCpcl" static="false" visibility="public">
+<implements name="com.zebra.android.printer.ToolsUtil" name-generic-aware="com.zebra.android.printer.ToolsUtil">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="ToolsUtilCpcl" static="false" type="com.zebra.android.printer.internal.ToolsUtilCpcl" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="calibrate" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="printConfigurationLabel" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="reset" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="restoreDefaults" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="sendCommand" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<field deprecated="not deprecated" final="false" name="connection" static="false" transient="false" type="com.zebra.android.comm.ZebraPrinterConnection" type-generic-aware="com.zebra.android.comm.ZebraPrinterConnection" visibility="protected" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="ToolsUtilZpl" static="false" visibility="public">
+<implements name="com.zebra.android.printer.ToolsUtil" name-generic-aware="com.zebra.android.printer.ToolsUtil">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="ToolsUtilZpl" static="false" type="com.zebra.android.printer.internal.ToolsUtilZpl" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="calibrate" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="printConfigurationLabel" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="reset" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="restoreDefaults" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="sendCommand" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<field deprecated="not deprecated" final="false" name="connection" static="false" transient="false" type="com.zebra.android.comm.ZebraPrinterConnection" type-generic-aware="com.zebra.android.comm.ZebraPrinterConnection" visibility="protected" volatile="false">
+</field>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="ZebraFileConnection" static="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="close" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="fileSize" native="false" return="int" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="openInputStream" native="false" return="java.io.InputStream" static="false" synchronized="false" visibility="public">
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="ZebraFileConnectionImpl" static="false" visibility="public">
+<implements name="com.zebra.android.printer.internal.ZebraFileConnection" name-generic-aware="com.zebra.android.printer.internal.ZebraFileConnection">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="ZebraFileConnectionImpl" static="false" type="com.zebra.android.printer.internal.ZebraFileConnectionImpl" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="close" native="false" return="void" static="false" synchronized="false" visibility="public">
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="fileSize" native="false" return="int" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="openInputStream" native="false" return="java.io.InputStream" static="false" synchronized="false" visibility="public">
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+<class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="ZebraPrinterA" static="false" visibility="public">
+<implements name="com.zebra.android.printer.ZebraPrinter" name-generic-aware="com.zebra.android.printer.ZebraPrinter">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="ZebraPrinterA" static="false" type="com.zebra.android.printer.internal.ZebraPrinterA" visibility="protected">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+</constructor>
+<field deprecated="not deprecated" final="false" name="connection" static="false" transient="false" type="com.zebra.android.comm.ZebraPrinterConnection" type-generic-aware="com.zebra.android.comm.ZebraPrinterConnection" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="fileUtil" static="false" transient="false" type="com.zebra.android.printer.FileUtil" type-generic-aware="com.zebra.android.printer.FileUtil" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="formatUtil" static="false" transient="false" type="com.zebra.android.printer.FormatUtil" type-generic-aware="com.zebra.android.printer.FormatUtil" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="graphicsUtil" static="false" transient="false" type="com.zebra.android.printer.GraphicsUtil" type-generic-aware="com.zebra.android.printer.GraphicsUtil" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="magCardReader" static="false" transient="false" type="com.zebra.android.printer.MagCardReader" type-generic-aware="com.zebra.android.printer.MagCardReader" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="smartcardReader" static="false" transient="false" type="com.zebra.android.printer.SmartcardReader" type-generic-aware="com.zebra.android.printer.SmartcardReader" visibility="protected" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="toolsUtil" static="false" transient="false" type="com.zebra.android.printer.ToolsUtil" type-generic-aware="com.zebra.android.printer.ToolsUtil" visibility="protected" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.printer.internal.ZebraPrinterA" extends-generic-aware="com.zebra.android.printer.internal.ZebraPrinterA" final="false" name="ZebraPrinterCpcl" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="ZebraPrinterCpcl" static="false" type="com.zebra.android.printer.internal.ZebraPrinterCpcl" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="getCurrentStatus" native="false" return="com.zebra.android.printer.PrinterStatus" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getFileUtil" native="false" return="com.zebra.android.printer.FileUtil" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getFormatUtil" native="false" return="com.zebra.android.printer.FormatUtil" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getGraphicsUtil" native="false" return="com.zebra.android.printer.GraphicsUtil" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getMagCardReader" native="false" return="com.zebra.android.printer.MagCardReader" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getPrinterControlLanguage" native="false" return="com.zebra.android.printer.PrinterLanguage" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getSmartcardReader" native="false" return="com.zebra.android.printer.SmartcardReader" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getToolsUtil" native="false" return="com.zebra.android.printer.ToolsUtil" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.zebra.android.printer.internal.ZebraPrinterA" extends-generic-aware="com.zebra.android.printer.internal.ZebraPrinterA" final="false" name="ZebraPrinterZpl" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="ZebraPrinterZpl" static="false" type="com.zebra.android.printer.internal.ZebraPrinterZpl" visibility="public">
+<parameter name="p0" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="getCurrentStatus" native="false" return="com.zebra.android.printer.PrinterStatus" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getFileUtil" native="false" return="com.zebra.android.printer.FileUtil" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getFormatUtil" native="false" return="com.zebra.android.printer.FormatUtil" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getGraphicsUtil" native="false" return="com.zebra.android.printer.GraphicsUtil" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getMagCardReader" native="false" return="com.zebra.android.printer.MagCardReader" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getPrinterControlLanguage" native="false" return="com.zebra.android.printer.PrinterLanguage" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getSmartcardReader" native="false" return="com.zebra.android.printer.SmartcardReader" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getToolsUtil" native="false" return="com.zebra.android.printer.ToolsUtil" static="false" synchronized="false" visibility="public">
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+</class>
+</package>
+<package name="com.zebra.android.sgd">
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="SGD" static="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="DO" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+<parameter name="p2" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="DO" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+<parameter name="p2" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+<parameter name="p3" type="int">
+</parameter>
+<parameter name="p4" type="int">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="GET" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="GET" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="int">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="SET" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="SET" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+<parameter name="p2" type="com.zebra.android.comm.ZebraPrinterConnection">
+</parameter>
+<exception name="ZebraPrinterConnectionException" type="com.zebra.android.comm.ZebraPrinterConnectionException">
+</exception>
+</method>
+</class>
+</package>
+<package name="com.zebra.android.util.internal">
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="CPCLUtilities" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="CPCLUtilities" static="false" type="com.zebra.android.util.internal.CPCLUtilities" visibility="public">
+</constructor>
+<field deprecated="not deprecated" final="true" name="PRINTER_CONFIG_LABEL" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="PRINTER_FORM_FEED" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="PRINTER_STATUS" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="VERSION_PREFIXES" static="true" transient="false" type="java.lang.String[]" type-generic-aware="java.lang.String[]" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="FileUtilities" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="FileUtilities" static="false" type="com.zebra.android.util.internal.FileUtilities" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="parseDriveAndExtension" native="false" return="com.zebra.android.util.internal.PrinterFilePath" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<exception name="ZebraIllegalArgumentException" type="com.zebra.android.printer.ZebraIllegalArgumentException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="ImageConverter" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="ImageConverter" static="false" type="com.zebra.android.util.internal.ImageConverter" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="bitmapToAscii" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="byte[]">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="PrinterFilePath" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="PrinterFilePath" static="false" type="com.zebra.android.util.internal.PrinterFilePath" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="getDrive" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getFileName" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="SGDUtilities" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="SGDUtilities" static="false" type="com.zebra.android.util.internal.SGDUtilities" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="decorateWithGetCommand" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<field deprecated="not deprecated" final="true" name="APPL_NAME" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;appl.name&quot;" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Sleeper" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="Sleeper" static="false" type="com.zebra.android.util.internal.Sleeper" visibility="protected">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="performSleep" native="false" return="void" static="false" synchronized="false" visibility="protected">
+<parameter name="p0" type="long">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="sleep" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="StringUtilities" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="StringUtilities" static="false" type="com.zebra.android.util.internal.StringUtilities" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="countSubstringOccurences" native="false" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="doesPrefixExistInArray" native="false" return="boolean" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String[]">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="indexOf" native="false" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.lang.String[]">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="padWithChar" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="char">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="boolean">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="split" native="false" return="java.lang.String[]" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="stripQuotes" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<field deprecated="not deprecated" final="true" name="CRLF" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;\u000D\u000A&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="LF" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;\u000A&quot;" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="ThreadExecutor" static="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="execute" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.Thread[]">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="ZPLUtilities" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="ZPLUtilities" static="false" type="com.zebra.android.util.internal.ZPLUtilities" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="decorateWithCommandPrefix" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="decorateWithFormatPrefix" native="false" return="java.lang.String" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<field deprecated="not deprecated" final="true" name="PRINTER_CALIBRATE" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="PRINTER_CONFIG_LABEL" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="PRINTER_INFO" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="PRINTER_RESET" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="PRINTER_RESTORE_DEFAULTS" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="PRINTER_STATUS" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="ZPL_INTERNAL_COMMAND_PREFIX" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="ZPL_INTERNAL_COMMAND_PREFIX_CHAR" static="true" transient="false" type="int" type-generic-aware="int" value="16" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="ZPL_INTERNAL_DELIMITER" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="ZPL_INTERNAL_DELIMITER_CHAR" static="true" transient="false" type="int" type-generic-aware="int" value="31" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="ZPL_INTERNAL_FORMAT_PREFIX" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="ZPL_INTERNAL_FORMAT_PREFIX_CHAR" static="true" transient="false" type="int" type-generic-aware="int" value="30" visibility="public" volatile="false">
+</field>
+</class>
+</package>
+</api>

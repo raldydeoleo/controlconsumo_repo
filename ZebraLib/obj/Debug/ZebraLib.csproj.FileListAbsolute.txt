@@ -1,0 +1,9 @@
+C:\Users\rdejesus\source\repos\ControlConsumo\ZebraLib\bin\Debug\ZebraLib.dll
+C:\Users\rdejesus\source\repos\ControlConsumo\ZebraLib\bin\Debug\ZebraLib.pdb
+C:\Users\rdejesus\source\repos\ControlConsumo\ZebraLib\bin\Debug\Newtonsoft.Json.dll
+C:\Users\rdejesus\source\repos\ControlConsumo\ZebraLib\bin\Debug\Newtonsoft.Json.xml
+C:\Users\rdejesus\source\repos\ControlConsumo\ZebraLib\obj\Debug\ZebraLib.csproj.CoreCompileInputs.cache
+C:\Users\rdejesus\source\repos\ControlConsumo\ZebraLib\obj\Debug\ZebraLib.csproj.CopyComplete
+C:\Users\rdejesus\source\repos\ControlConsumo\ZebraLib\obj\Debug\ZebraLib.dll
+C:\Users\rdejesus\source\repos\ControlConsumo\ZebraLib\obj\Debug\ZebraLib.pdb
+C:\Users\rdejesus\source\repos\ControlConsumo\ZebraLib\obj\Debug\ZebraLib.csprojAssemblyReference.cache

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="Lemo.ControlConsumo" android:installLocation="auto" android:versionName="2.6.0" android:versionCode="2">
+  <uses-sdk android:targetSdkVersion="23" android:minSdkVersion="11" />
+  <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.BLUETOOTH" />
+  <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+  <uses-permission android:name="android.permission.REBOOT" />
+  <application android:label="ControlConsumo" android:allowBackup="true" android:largeHeap="true" android:icon="@drawable/logo" android:theme="@style/AppTheme" android:debuggable="false" android:name="android.app.Application">
+    <service android:name="md5fa458722ae6626b6e9e2a25211189c8c.SyncService">
+      <intent-filter>
+        <action android:name="controlconsumo.droid.SyncService" />
+      </intent-filter>
+    </service>
+    <receiver android:name="md5e49297a80df2a6b6bf1e6d00854d022d.PrinterManager_UsbReceiver">
+      <intent-filter>
+        <action android:name="device" />
+      </intent-filter>
+    </receiver>
+    <activity android:launchMode="singleTop" android:screenOrientation="landscape" android:windowSoftInputMode="stateUnspecified|adjustPan" android:name="md52d555fe420dd702263cbf279f0a03d31.CloseActivity" />
+    <activity android:launchMode="singleTop" android:screenOrientation="landscape" android:name="md52d555fe420dd702263cbf279f0a03d31.ConfigActivity" />
+    <activity android:launchMode="singleTop" android:screenOrientation="landscape" android:name="md52d555fe420dd702263cbf279f0a03d31.EquipmentActivity" />
+    <activity android:launchMode="singleTop" android:screenOrientation="landscape" android:name="md52d555fe420dd702263cbf279f0a03d31.LoginActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize" android:launchMode="singleTop" android:screenOrientation="landscape" android:windowSoftInputMode="stateAlwaysHidden|adjustPan" android:name="md52d555fe420dd702263cbf279f0a03d31.MenuActivity" />
+    <activity android:launchMode="singleTop" android:screenOrientation="landscape" android:name="md52d555fe420dd702263cbf279f0a03d31.ReportActivity" />
+    <activity android:launchMode="singleTop" android:screenOrientation="landscape" android:name="md52d555fe420dd702263cbf279f0a03d31.QualityActivity" />
+    <activity android:launchMode="singleTop" android:screenOrientation="landscape" android:windowSoftInputMode="stateAlwaysHidden|adjustPan" android:name="md52d555fe420dd702263cbf279f0a03d31.ReceiptActivity" />
+    <activity android:launchMode="singleTop" android:screenOrientation="landscape" android:windowSoftInputMode="stateUnspecified|adjustPan" android:name="md52d555fe420dd702263cbf279f0a03d31.ReleaseActivity" />
+    <activity android:launchMode="singleTop" android:screenOrientation="landscape" android:windowSoftInputMode="stateUnspecified|adjustPan" android:name="md52d555fe420dd702263cbf279f0a03d31.ReportVarillaActivity" />
+    <activity android:launchMode="singleTop" android:screenOrientation="landscape" android:windowSoftInputMode="stateUnspecified|adjustPan" android:name="md52d555fe420dd702263cbf279f0a03d31.ReturnActivity" />
+    <activity android:launchMode="singleTop" android:screenOrientation="landscape" android:name="md52d555fe420dd702263cbf279f0a03d31.ReturnProductActivity" />
+    <activity android:launchMode="singleTop" android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar" android:name="md52d555fe420dd702263cbf279f0a03d31.SyncActivity" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="Lemo.ControlConsumo.mono.MonoRuntimeProvider.__mono_init__" />
+  </application>
+</manifest>

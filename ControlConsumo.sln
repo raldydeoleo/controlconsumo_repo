@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlConsumo.Droid", "ControlConsumo.Droid\ControlConsumo.Droid.csproj", "{3EBE7706-05C9-4B42-B3A5-B977C5FEC938}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlConsumo.Shared", "ControlConsumo.Shared\ControlConsumo.Shared.csproj", "{6AD03310-906E-4611-BA3B-1458B918FA55}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bindings", "Bindings", "{08D9B371-4DC2-4D0E-AF72-50DED99AE52C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZebraLib", "ZebraLib\ZebraLib.csproj", "{9CA48746-8793-48C1-8E5E-6AAF9F44F638}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlConsumo.Service", "ControlConsumo.Service\ControlConsumo.Service.csproj", "{592D84AE-6BB6-4467-BB05-3590DE1BD393}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3EBE7706-05C9-4B42-B3A5-B977C5FEC938}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EBE7706-05C9-4B42-B3A5-B977C5FEC938}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EBE7706-05C9-4B42-B3A5-B977C5FEC938}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3EBE7706-05C9-4B42-B3A5-B977C5FEC938}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EBE7706-05C9-4B42-B3A5-B977C5FEC938}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EBE7706-05C9-4B42-B3A5-B977C5FEC938}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6AD03310-906E-4611-BA3B-1458B918FA55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AD03310-906E-4611-BA3B-1458B918FA55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AD03310-906E-4611-BA3B-1458B918FA55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AD03310-906E-4611-BA3B-1458B918FA55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CA48746-8793-48C1-8E5E-6AAF9F44F638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CA48746-8793-48C1-8E5E-6AAF9F44F638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CA48746-8793-48C1-8E5E-6AAF9F44F638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CA48746-8793-48C1-8E5E-6AAF9F44F638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{592D84AE-6BB6-4467-BB05-3590DE1BD393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{592D84AE-6BB6-4467-BB05-3590DE1BD393}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{592D84AE-6BB6-4467-BB05-3590DE1BD393}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{592D84AE-6BB6-4467-BB05-3590DE1BD393}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9CA48746-8793-48C1-8E5E-6AAF9F44F638} = {08D9B371-4DC2-4D0E-AF72-50DED99AE52C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+		SolutionGuid = {B5F235B3-D5EE-4762-80B4-32437D9D749B}
+	EndGlobalSection
+EndGlobal

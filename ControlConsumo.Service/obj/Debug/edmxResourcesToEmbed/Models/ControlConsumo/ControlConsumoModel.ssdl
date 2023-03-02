@@ -1,0 +1,513 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ControlConsumoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bandeja">
+    <Key>
+      <PropertyRef Name="idBandeja" />
+    </Key>
+    <Property Name="idBandeja" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="secuenciaInicial" Type="int" Nullable="false" />
+    <Property Name="secuenciaFinal" Type="int" Nullable="false" />
+    <Property Name="procesarSap" Type="bit" Nullable="false" />
+    <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="usuarioRegistro" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatusVigencia" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ConfiguracionInicialControlSalidas">
+    <Key>
+      <PropertyRef Name="IdEquipo" />
+      <PropertyRef Name="IdProducto" />
+      <PropertyRef Name="FechaProduccion" />
+      <PropertyRef Name="Turno" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEquipo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IdProducto" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="FechaProduccion" Type="date" Nullable="false" />
+    <Property Name="Turno" Type="int" Nullable="false" />
+    <Property Name="CantidadConsumoPendiente" Type="float" Nullable="false" />
+    <Property Name="Unidad" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="FechaLectura" Type="datetime" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioRegistro" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="25" />
+    <Property Name="Estatus" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ConfiguracionSincronizacionTablas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreTabla" Type="varchar" MaxLength="75" Nullable="false" />
+    <Property Name="procesarSap" Type="bit" Nullable="false" />
+    <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="usuarioRegistro" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fechaModificacion" Type="datetime" />
+    <Property Name="usuarioModificacion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ConfiguracionTiempoSalida">
+    <Key>
+      <PropertyRef Name="idProceso" />
+      <PropertyRef Name="idTiempo" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idProceso" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="idTiempo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="tiempoMinimo" Type="float" Nullable="false" />
+    <Property Name="unidadTiempo" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="fechaRegistro" Type="date" Nullable="false" />
+    <Property Name="horaRegistro" Type="time" Precision="7" Nullable="false" />
+    <Property Name="usuarioRegistro" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usuarioModificacion" Type="varchar" MaxLength="50" />
+    <Property Name="fechaModificacion" Type="datetime" />
+    <Property Name="HoraModificacion" Type="time" Precision="7" />
+    <Property Name="estatus" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Consumo">
+    <Key>
+      <PropertyRef Name="IdProceso" />
+      <PropertyRef Name="Centro" />
+      <PropertyRef Name="IdEquipo" />
+      <PropertyRef Name="IdTiempo" />
+      <PropertyRef Name="IdProducto" />
+      <PropertyRef Name="VersionFabricacion" />
+      <PropertyRef Name="Secuencia" />
+      <PropertyRef Name="FechaProduccion" />
+      <PropertyRef Name="Turno" />
+      <PropertyRef Name="IdMaterial" />
+      <PropertyRef Name="Usuario" />
+    </Key>
+    <Property Name="IdProceso" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Centro" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IdEquipo" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="IdTiempo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IdProducto" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="VersionFabricacion" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Secuencia" Type="int" Nullable="false" />
+    <Property Name="FechaProduccion" Type="datetime" Nullable="false" />
+    <Property Name="Turno" Type="int" Nullable="false" />
+    <Property Name="IdMaterial" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Usuario" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IdSubEquipo" Type="varchar" MaxLength="15" />
+    <Property Name="Lote" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Cantidad" Type="float" Nullable="false" />
+    <Property Name="Unidad" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="NumeroCaja" Type="int" Nullable="false" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="FechaSincronizacion" Type="datetime" Nullable="false" />
+    <Property Name="IdBandeja" Type="varchar" MaxLength="15" />
+    <Property Name="IdEquipoOrigenMaterial" Type="varchar" MaxLength="15" />
+    <Property Name="SecuenciaSalida" Type="int" />
+    <Property Name="FechaSalida" Type="datetime" />
+    <Property Name="BatchId" Type="varchar" MaxLength="18" />
+    <Property Name="EstadoSalidaNotificacion" Type="bit" />
+    <Property Name="Sync" Type="bit" Nullable="false" />
+    <Property Name="FechaCargaErp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EstatusBandeja">
+    <Key>
+      <PropertyRef Name="idBandeja" />
+      <PropertyRef Name="secuenciaBandeja" />
+    </Key>
+    <Property Name="idBandeja" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="secuenciaBandeja" Type="int" Nullable="false" />
+    <Property Name="estatus" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="idEquipoLlenado" Type="varchar" MaxLength="10" />
+    <Property Name="idProceso" Type="varchar" MaxLength="10" />
+    <Property Name="idTiempo" Type="varchar" MaxLength="10" />
+    <Property Name="idMaterial" Type="varchar" MaxLength="25" />
+    <Property Name="versionFabricacion" Type="varchar" MaxLength="10" />
+    <Property Name="fechaLlenada" Type="date" />
+    <Property Name="horaLlenada" Type="time" Precision="7" />
+    <Property Name="usuarioLlenada" Type="varchar" MaxLength="25" />
+    <Property Name="secuenciaSalida" Type="int" Nullable="false" />
+    <Property Name="batchId" Type="varchar" MaxLength="50" />
+    <Property Name="cantidad" Type="float" Nullable="false" />
+    <Property Name="UMP" Type="varchar" MaxLength="10" />
+    <Property Name="fechaRegistro" Type="date" Nullable="false" />
+    <Property Name="horaRegistro" Type="time" Precision="7" Nullable="false" />
+    <Property Name="fechaVaciada" Type="date" />
+    <Property Name="horaVaciada" Type="time" Precision="7" />
+    <Property Name="idEquipoVaciado" Type="varchar" MaxLength="10" />
+    <Property Name="usuarioVaciada" Type="varchar" MaxLength="25" />
+    <Property Name="formaVaciada" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="HistorialReimpresionEtiquetas">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEquipo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="SecuenciaEtiqueta" Type="int" Nullable="false" />
+    <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="FechaProduccion" Type="datetime" Nullable="false" />
+    <Property Name="Turno" Type="int" Nullable="false" />
+    <Property Name="Empaque" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="AlmFiller" Type="varchar" MaxLength="1" />
+    <Property Name="UsuarioReimpresion" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="FechaReimpresion" Type="datetime" Nullable="false" />
+    <Property Name="Estatus" Type="bit" Nullable="false" />
+    <Property Name="IdMotivoReimpresion" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MezclasProduccions">
+    <Key>
+      <PropertyRef Name="Idproceso" />
+      <PropertyRef Name="Idequipo" />
+      <PropertyRef Name="SecuenciaEntrada" />
+      <PropertyRef Name="FechaEntrada" />
+      <PropertyRef Name="SecuenciaSalida" />
+      <PropertyRef Name="FechaSalida" />
+    </Key>
+    <Property Name="Idproceso" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Idequipo" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="SecuenciaEntrada" Type="int" Nullable="false" />
+    <Property Name="FechaEntrada" Type="datetime" Nullable="false" />
+    <Property Name="SecuenciaSalida" Type="int" Nullable="false" />
+    <Property Name="FechaSalida" Type="datetime" Nullable="false" />
+    <Property Name="FechaLlenada" Type="datetime" Nullable="false" />
+    <Property Name="fechaCarga" Type="datetime" Nullable="false" />
+    <Property Name="Sync" Type="bit" Nullable="false" />
+    <Property Name="FechaCargaErp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MotivoReimpresionEtiqueta">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="50" />
+    <Property Name="Estatus" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ParametrosSSIS">
+    <Key>
+      <PropertyRef Name="Llave" />
+    </Key>
+    <Property Name="Llave" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Valor" Type="nvarchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductoTipoAlmacenamiento">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idTipoProductoTerminado" Type="int" Nullable="false" />
+    <Property Name="idTipoAlmacenamiento" Type="int" Nullable="false" />
+    <Property Name="identificador" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="fechaRegistro" Type="date" Nullable="false" />
+    <Property Name="horaRegistro" Type="time" Precision="7" />
+    <Property Name="usuarioRegistro" Type="varchar" MaxLength="50" />
+    <Property Name="usuarioModificacion" Type="varchar" MaxLength="50" />
+    <Property Name="fechaModificacion" Type="varchar" MaxLength="4" />
+    <Property Name="HoraModificacion" Type="time" Precision="7" />
+    <Property Name="estatus" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SalidaProducto">
+    <Key>
+      <PropertyRef Name="IdProceso" />
+      <PropertyRef Name="Centro" />
+      <PropertyRef Name="IdEquipo" />
+      <PropertyRef Name="IdTiempo" />
+      <PropertyRef Name="IdProducto" />
+      <PropertyRef Name="VersionFabricacion" />
+      <PropertyRef Name="Secuencia" />
+      <PropertyRef Name="FechaProduccion" />
+      <PropertyRef Name="Turno" />
+      <PropertyRef Name="BatchId" />
+      <PropertyRef Name="Usuario" />
+    </Key>
+    <Property Name="IdProceso" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Centro" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IdEquipo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IdTiempo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IdProducto" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="VersionFabricacion" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Secuencia" Type="int" Nullable="false" />
+    <Property Name="FechaProduccion" Type="datetime" Nullable="false" />
+    <Property Name="Turno" Type="int" Nullable="false" />
+    <Property Name="BatchId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Usuario" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IdBandeja" Type="varchar" MaxLength="25" />
+    <Property Name="Cantidad" Type="float" Nullable="false" />
+    <Property Name="Unidad" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="PesoProducto" Type="float" Nullable="false" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="FechaSincronizacion" Type="datetime" Nullable="false" />
+    <Property Name="Devuelto" Type="bit" />
+    <Property Name="SecuenciaEtiqueta" Type="int" />
+    <Property Name="Lote" Type="varchar" MaxLength="50" />
+    <Property Name="FechaCaducidad" Type="date" />
+    <Property Name="EstadoSalidaNotificacion" Type="bit" />
+    <Property Name="SubEquipo" Type="varchar" MaxLength="15" />
+    <Property Name="Empaque" Type="varchar" MaxLength="15" />
+    <Property Name="DocumentoMaterial" Type="varchar" MaxLength="10" />
+    <Property Name="FechaContabilizacion" Type="date" />
+    <Property Name="AlmFiller" Type="varchar" MaxLength="1" />
+    <Property Name="Sync" Type="bit" Nullable="false" />
+    <Property Name="FechaCargaErp" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ControlConsumo.dbo.SSIS Configurations' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SSIS Configurations">
+    <Key>
+      <PropertyRef Name="ConfigurationFilter" />
+      <PropertyRef Name="PackagePath" />
+      <PropertyRef Name="ConfiguredValueType" />
+    </Key>
+    <Property Name="ConfigurationFilter" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ConfiguredValue" Type="nvarchar" MaxLength="255" />
+    <Property Name="PackagePath" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ConfiguredValueType" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TiempoBandeja">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idProceso" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="idTiempo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="idBandeja" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="cantidad" Type="float" Nullable="false" />
+    <Property Name="unidad" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoAlmacenamientoProducto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="fechaRegistro" Type="date" Nullable="false" />
+    <Property Name="horaRegistro" Type="time" Precision="7" Nullable="false" />
+    <Property Name="usuarioRegistro" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usuarioModificacion" Type="varchar" MaxLength="50" />
+    <Property Name="fechaModificacion" Type="datetime" />
+    <Property Name="HoraModificacion" Type="time" Precision="7" />
+    <Property Name="estatus" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoProductoTerminado">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="alias" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="fechaRegistro" Type="date" Nullable="false" />
+    <Property Name="horaRegistro" Type="time" Precision="7" Nullable="false" />
+    <Property Name="usuarioRegistro" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fechaModificacion" Type="date" />
+    <Property Name="horaModificacion" Type="time" Precision="7" />
+    <Property Name="usuarioModificacion" Type="varchar" MaxLength="50" />
+    <Property Name="estatus" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Traza">
+    <Key>
+      <PropertyRef Name="IdProceso" />
+      <PropertyRef Name="IdTiempo" />
+      <PropertyRef Name="IdRegistro" />
+      <PropertyRef Name="AnoEjercicio" />
+    </Key>
+    <Property Name="IdProceso" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="IdTiempo" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="IdRegistro" Type="int" Nullable="false" />
+    <Property Name="AnoEjercicio" Type="int" Nullable="false" />
+    <Property Name="IdEquipo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Centro" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="IdProducto" Type="varchar" MaxLength="18" Nullable="false" />
+    <Property Name="VersionFabricacion" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="NumeroLote" Type="varchar" MaxLength="10" />
+    <Property Name="LoteManufactura" Type="varchar" MaxLength="100" />
+    <Property Name="SecuenciaSalida" Type="int" Nullable="false" />
+    <Property Name="FechaProduccion" Type="datetime" Nullable="false" />
+    <Property Name="Turno" Type="int" Nullable="false" />
+    <Property Name="BatchId" Type="varchar" MaxLength="18" />
+    <Property Name="IdBandeja" Type="varchar" MaxLength="10" />
+    <Property Name="IdEmpaque" Type="varchar" MaxLength="15" />
+    <Property Name="SecuenciaEmpaque" Type="int" />
+    <Property Name="CantidadPedido" Type="float" Nullable="false" />
+    <Property Name="UnidadMedidaPedido" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="Peso" Type="float" Nullable="false" />
+    <Property Name="EstatusBandeja" Type="bit" Nullable="false" />
+    <Property Name="DocumentoMaterial" Type="varchar" MaxLength="10" />
+    <Property Name="FechaContabilizacionDocumento" Type="datetime" />
+    <Property Name="Usuario" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="FechaSalida" Type="datetime" />
+    <Property Name="FechaRegistro" Type="datetime" />
+    <Property Name="IdTiempoRegistroPadre" Type="varchar" MaxLength="2" />
+    <Property Name="IdRegistroPadre" Type="int" />
+    <Property Name="AnoEjercicioPadre" Type="int" />
+    <Property Name="Sync" Type="bit" Nullable="false" />
+    <Property Name="FechaCargaErp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TrazaSequences">
+    <Key>
+      <PropertyRef Name="AnoEjercicioDocumentoMaterial" />
+      <PropertyRef Name="IdTiempo" />
+    </Key>
+    <Property Name="AnoEjercicioDocumentoMaterial" Type="smallint" Nullable="false" />
+    <Property Name="IdTiempo" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="IdRegistro" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Turnos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="tinyint" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Etiqueta" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="Inicio" Type="int" Nullable="false" />
+    <Property Name="Fin" Type="int" Nullable="false" />
+    <Property Name="MinutosInicio" Type="int" Nullable="false" />
+    <Property Name="MinutosFin" Type="int" Nullable="false" />
+    <Property Name="Empaque" Type="varchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ControlConsumo.dbo.View_EstatusBandejas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_EstatusBandejas">
+    <Key>
+      <PropertyRef Name="Id Bandeja" />
+      <PropertyRef Name="Secuencia" />
+      <PropertyRef Name="estatus" />
+      <PropertyRef Name="Secuencia Salida" />
+      <PropertyRef Name="cantidad" />
+      <PropertyRef Name="Fecha de registro" />
+      <PropertyRef Name="Hora  de registro" />
+    </Key>
+    <Property Name="Id Bandeja" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Secuencia" Type="int" Nullable="false" />
+    <Property Name="estatus" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Id Proc" Type="varchar" MaxLength="10" />
+    <Property Name="Id Tiempo" Type="varchar" MaxLength="10" />
+    <Property Name="Material" Type="varchar" MaxLength="9" />
+    <Property Name="Versión fabricación" Type="varchar" MaxLength="10" />
+    <Property Name="Equipo llenado" Type="varchar" MaxLength="10" />
+    <Property Name="Fecha " Type="date" />
+    <Property Name="Hora de llenada" Type="time" Precision="7" />
+    <Property Name="Usuario de llenado" Type="varchar" MaxLength="25" />
+    <Property Name="Secuencia Salida" Type="int" Nullable="false" />
+    <Property Name="Batch ID" Type="varchar" MaxLength="50" />
+    <Property Name="cantidad" Type="float" Nullable="false" />
+    <Property Name="UMP" Type="varchar" MaxLength="10" />
+    <Property Name="Fecha de registro" Type="date" Nullable="false" />
+    <Property Name="Hora  de registro" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Equipo de vaciado" Type="varchar" MaxLength="10" />
+    <Property Name="Fecha de vaciado " Type="date" />
+    <Property Name="Hora de vaciado" Type="time" Precision="7" />
+    <Property Name="Usuario" Type="varchar" MaxLength="25" />
+    <Property Name="Forma de vaciado" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <Association Name="FK__EstatusBa__idBan__0F624AF8">
+    <End Role="Bandeja" Type="Self.Bandeja" Multiplicity="1" />
+    <End Role="EstatusBandeja" Type="Self.EstatusBandeja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bandeja">
+        <PropertyRef Name="idBandeja" />
+      </Principal>
+      <Dependent Role="EstatusBandeja">
+        <PropertyRef Name="idBandeja" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProductoT__idTip__571DF1D5">
+    <End Role="TipoProductoTerminado" Type="Self.TipoProductoTerminado" Multiplicity="1" />
+    <End Role="ProductoTipoAlmacenamiento" Type="Self.ProductoTipoAlmacenamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoProductoTerminado">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProductoTipoAlmacenamiento">
+        <PropertyRef Name="idTipoProductoTerminado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProductoT__idTip__5812160E">
+    <End Role="TipoAlmacenamientoProducto" Type="Self.TipoAlmacenamientoProducto" Multiplicity="1" />
+    <End Role="ProductoTipoAlmacenamiento" Type="Self.ProductoTipoAlmacenamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoAlmacenamientoProducto">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProductoTipoAlmacenamiento">
+        <PropertyRef Name="idTipoAlmacenamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Lynxsp_CargarDatosTraza" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdProceso" Type="varchar" Mode="In" />
+    <Parameter Name="IdEquipo" Type="varchar" Mode="In" />
+    <Parameter Name="SecSalida" Type="int" Mode="In" />
+    <Parameter Name="FechaSalida" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="SP_GetSalidas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Telem">
+    <Parameter Name="FechaProduccion" Type="datetime" Mode="In" />
+    <Parameter Name="Turno" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="ControlConsumoModelStoreContainer">
+    <EntitySet Name="Bandeja" EntityType="Self.Bandeja" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ConfiguracionInicialControlSalidas" EntityType="Self.ConfiguracionInicialControlSalidas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ConfiguracionSincronizacionTablas" EntityType="Self.ConfiguracionSincronizacionTablas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ConfiguracionTiempoSalida" EntityType="Self.ConfiguracionTiempoSalida" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Consumo" EntityType="Self.Consumo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EstatusBandeja" EntityType="Self.EstatusBandeja" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HistorialReimpresionEtiquetas" EntityType="Self.HistorialReimpresionEtiquetas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MezclasProduccions" EntityType="Self.MezclasProduccions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MotivoReimpresionEtiqueta" EntityType="Self.MotivoReimpresionEtiqueta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ParametrosSSIS" EntityType="Self.ParametrosSSIS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductoTipoAlmacenamiento" EntityType="Self.ProductoTipoAlmacenamiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SalidaProducto" EntityType="Self.SalidaProducto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TiempoBandeja" EntityType="Self.TiempoBandeja" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoAlmacenamientoProducto" EntityType="Self.TipoAlmacenamientoProducto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoProductoTerminado" EntityType="Self.TipoProductoTerminado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Traza" EntityType="Self.Traza" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrazaSequences" EntityType="Self.TrazaSequences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Turnos" EntityType="Self.Turnos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSIS Configurations" EntityType="Self.SSIS Configurations" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SSIS Configurations].[ConfigurationFilter] AS [ConfigurationFilter], 
+    [SSIS Configurations].[ConfiguredValue] AS [ConfiguredValue], 
+    [SSIS Configurations].[PackagePath] AS [PackagePath], 
+    [SSIS Configurations].[ConfiguredValueType] AS [ConfiguredValueType]
+    FROM [dbo].[SSIS Configurations] AS [SSIS Configurations]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_EstatusBandejas" EntityType="Self.View_EstatusBandejas" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_EstatusBandejas].[Id Bandeja] AS [Id Bandeja], 
+    [View_EstatusBandejas].[Secuencia] AS [Secuencia], 
+    [View_EstatusBandejas].[estatus] AS [estatus], 
+    [View_EstatusBandejas].[Id Proc] AS [Id Proc], 
+    [View_EstatusBandejas].[Id Tiempo] AS [Id Tiempo], 
+    [View_EstatusBandejas].[Material] AS [Material], 
+    [View_EstatusBandejas].[Versión fabricación] AS [Versión fabricación], 
+    [View_EstatusBandejas].[Equipo llenado] AS [Equipo llenado], 
+    [View_EstatusBandejas].[Fecha ] AS [Fecha ], 
+    [View_EstatusBandejas].[Hora de llenada] AS [Hora de llenada], 
+    [View_EstatusBandejas].[Usuario de llenado] AS [Usuario de llenado], 
+    [View_EstatusBandejas].[Secuencia Salida] AS [Secuencia Salida], 
+    [View_EstatusBandejas].[Batch ID] AS [Batch ID], 
+    [View_EstatusBandejas].[cantidad] AS [cantidad], 
+    [View_EstatusBandejas].[UMP] AS [UMP], 
+    [View_EstatusBandejas].[Fecha de registro] AS [Fecha de registro], 
+    [View_EstatusBandejas].[Hora  de registro] AS [Hora  de registro], 
+    [View_EstatusBandejas].[Equipo de vaciado] AS [Equipo de vaciado], 
+    [View_EstatusBandejas].[Fecha de vaciado ] AS [Fecha de vaciado ], 
+    [View_EstatusBandejas].[Hora de vaciado] AS [Hora de vaciado], 
+    [View_EstatusBandejas].[Usuario] AS [Usuario], 
+    [View_EstatusBandejas].[Forma de vaciado] AS [Forma de vaciado]
+    FROM [dbo].[View_EstatusBandejas] AS [View_EstatusBandejas]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__EstatusBa__idBan__0F624AF8" Association="Self.FK__EstatusBa__idBan__0F624AF8">
+      <End Role="Bandeja" EntitySet="Bandeja" />
+      <End Role="EstatusBandeja" EntitySet="EstatusBandeja" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProductoT__idTip__571DF1D5" Association="Self.FK__ProductoT__idTip__571DF1D5">
+      <End Role="TipoProductoTerminado" EntitySet="TipoProductoTerminado" />
+      <End Role="ProductoTipoAlmacenamiento" EntitySet="ProductoTipoAlmacenamiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProductoT__idTip__5812160E" Association="Self.FK__ProductoT__idTip__5812160E">
+      <End Role="TipoAlmacenamientoProducto" EntitySet="TipoAlmacenamientoProducto" />
+      <End Role="ProductoTipoAlmacenamiento" EntitySet="ProductoTipoAlmacenamiento" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
